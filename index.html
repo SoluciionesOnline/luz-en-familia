@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173f3a">
+
+  <title>Luz en Familia</title>
+
+  <meta
+    name="description"
+    content="Un espacio para jugar, aprender y crecer juntos en la fe."
+  >
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       CABECERA
+  ====================================================== -->
+  <header class="topbar">
+    <button
+      class="brand"
+      type="button"
+      data-route="home"
+      aria-label="Ir al inicio"
+    >
+      <span class="brand-mark">✦</span>
+
+      <span class="brand-copy">
+        <strong>Luz en Familia</strong>
+        <small>Crecer juntos en la fe</small>
+      </span>
+    </button>
+
+    <div class="topbar-actions">
+      <button
+        class="seed-counter"
+        id="seedCounter"
+        type="button"
+        data-route="missions"
+        aria-label="Ver mis Semillas"
+      >
+        <span>🌱</span>
+        <strong id="seedTotal">0</strong>
+      </button>
+
+      <button
+        class="profile-avatar"
+        id="profileButton"
+        type="button"
+        data-route="family"
+        aria-label="Abrir perfil familiar"
+      >
+        👩‍👧‍👦
+      </button>
+    </div>
+  </header>
+
+
+  <!-- =====================================================
+       CONTENIDO PRINCIPAL
+  ====================================================== -->
+  <main id="app">
+
+    <!-- ================= INICIO ================= -->
+    <section class="screen active" id="screen-home">
+
+      <div class="welcome">
+        <div>
+          <p class="eyebrow" id="welcomeDate">HOY EN LUZ EN FAMILIA</p>
+          <h1 id="welcomeTitle">
+            Un pequeño momento de fe puede iluminar todo el día.
+          </h1>
+        </div>
+
+        <div class="level-badge">
+          <span id="levelIcon">🌱</span>
+          <div>
+            <small>Tu familia está en</small>
+            <strong id="familyLevel">Semilla</strong>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- PROGRESO -->
+      <article class="family-progress-card">
+        <div class="progress-heading">
+          <div>
+            <span class="card-kicker">Nuestro camino</span>
+            <h2>Seguimos creciendo juntos</h2>
+          </div>
+
+          <strong id="progressPercent">0%</strong>
+        </div>
+
+        <div class="progress-track">
+          <div
+            class="progress-fill"
+            id="levelProgress"
+            style="width: 0%"
+          ></div>
+        </div>
+
+        <div class="progress-footer">
+          <span id="currentLevelLabel">🌱 Semilla</span>
+          <span id="nextLevelLabel">Próximo: 🌿 Brote</span>
+        </div>
+      </article>
+
+
+      <!-- LOS TRES CAMINOS DIARIOS -->
+      <section class="daily-section">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Para hoy</span>
+            <h2>Tres momentos para vuestra familia</h2>
+          </div>
+
+          <button
+            class="text-button"
+            id="refreshDailyButton"
+            type="button"
+          >
+            Ver otras propuestas
+          </button>
+        </div>
+
+        <div class="daily-grid">
+
+          <!-- PARA EL NIÑO -->
+          <article class="daily-card daily-card-kids">
+            <div class="daily-icon">🎮</div>
+
+            <span class="daily-label">PARA TU HIJO</span>
+
+            <h3 id="dailyKidTitle">
+              Misión bíblica del día
+            </h3>
+
+            <p id="dailyKidDescription">
+              Descubre una nueva historia mientras juegas.
+            </p>
+
+            <div class="reward-chip">
+              + <span id="dailyKidSeeds">15</span> 🌱
+            </div>
+
+            <button
+              class="primary-button"
+              id="dailyKidButton"
+              type="button"
+              data-route="games"
+            >
+              Comenzar misión
+            </button>
+          </article>
+
+
+          <!-- PARA MAMÁ -->
+          <article class="daily-card daily-card-mom">
+            <div class="daily-icon">💛</div>
+
+            <span class="daily-label">PARA TI, MAMÁ</span>
+
+            <h3>¿Cómo está tu corazón hoy?</h3>
+
+            <p>
+              Encuentra un momento de calma, Palabra y oración
+              según lo que estés viviendo.
+            </p>
+
+            <div class="mood-preview">
+              <span>🕊️</span>
+              <span>🙏</span>
+              <span>✨</span>
+              <span>💗</span>
+            </div>
+
+            <button
+              class="primary-button"
+              type="button"
+              data-route="mom"
+            >
+              Entrar a mi espacio
+            </button>
+          </article>
+
+
+          <!-- PARA TODA LA FAMILIA -->
+          <article class="daily-card daily-card-family">
+            <div class="daily-icon">📖</div>
+
+            <span class="daily-label">PARA HACER JUNTOS</span>
+
+            <h3 id="dailyFamilyTitle">
+              Una historia para conversar
+            </h3>
+
+            <p id="dailyFamilyDescription">
+              Descubrid una enseñanza bíblica y llevadla a la vida.
+            </p>
+
+            <button
+              class="primary-button"
+              id="dailyFamilyButton"
+              type="button"
+              data-route="bible"
+            >
+              Vivir este momento
+            </button>
+          </article>
+
+        </div>
+      </section>
+
+
+      <!-- MISIÓN ACTIVA -->
+      <section class="home-section">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Misión familiar</span>
+            <h2>Una pequeña acción para hoy</h2>
+          </div>
+        </div>
+
+        <article class="mission-feature">
+          <div class="mission-feature-icon">⭐</div>
+
+          <div class="mission-feature-copy">
+            <span class="mission-type">MISIÓN DEL DÍA</span>
+
+            <h3 id="homeMissionTitle">
+              Tres razones para agradecer
+            </h3>
+
+            <p id="homeMissionText">
+              Antes de dormir, cada miembro de la familia comparte
+              tres cosas por las que quiere dar gracias.
+            </p>
+
+            <div class="mission-meta">
+              <span>⏱️ 5 min</span>
+              <span>🌱 +20 Semillas</span>
+            </div>
+          </div>
+
+          <button
+            class="secondary-button"
+            id="completeHomeMission"
+            type="button"
+          >
+            Completar
+          </button>
+        </article>
+      </section>
+
+
+      <!-- ACCESOS RÁPIDOS -->
+      <section class="home-section">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Explorar</span>
+            <h2>¿Qué os apetece hacer?</h2>
+          </div>
+        </div>
+
+        <div class="quick-grid">
+
+          <button
+            class="quick-card"
+            type="button"
+            data-route="games"
+          >
+            <span class="quick-icon quick-purple">🎮</span>
+            <span>
+              <strong>Juegos bíblicos</strong>
+              <small>Aprender jugando</small>
+            </span>
+          </button>
+
+          <button
+            class="quick-card"
+            type="button"
+            data-route="missions"
+          >
+            <span class="quick-icon quick-gold">⭐</span>
+            <span>
+              <strong>Misiones</strong>
+              <small>Retos para crecer juntos</small>
+            </span>
+          </button>
+
+          <button
+            class="quick-card"
+            type="button"
+            data-route="bible"
+          >
+            <span class="quick-icon quick-blue">📖</span>
+            <span>
+              <strong>Biblia en Familia</strong>
+              <small>Historias y enseñanzas</small>
+            </span>
+          </button>
+
+          <button
+            class="quick-card"
+            type="button"
+            data-route="mom"
+          >
+            <span class="quick-icon quick-pink">💛</span>
+            <span>
+              <strong>Para Mamá</strong>
+              <small>Un refugio para tu corazón</small>
+            </span>
+          </button>
+
+          <button
+            class="quick-card"
+            type="button"
+            id="prayerJarShortcut"
+          >
+            <span class="quick-icon quick-green">🙏</span>
+            <span>
+              <strong>Frasco de Oraciones</strong>
+              <small>Una oración para hoy</small>
+            </span>
+          </button>
+
+          <button
+            class="quick-card"
+            type="button"
+            data-route="family"
+          >
+            <span class="quick-icon quick-orange">🏡</span>
+            <span>
+              <strong>Nuestra familia</strong>
+              <small>Progreso y recompensas</small>
+            </span>
+          </button>
+
+        </div>
+      </section>
+
+    </section>
+
+
+    <!-- ================= JUGAR ================= -->
+    <section class="screen" id="screen-games">
+
+      <div class="page-hero games-hero">
+        <span class="page-icon">🎮</span>
+
+        <div>
+          <span class="page-kicker">APRENDER JUGANDO</span>
+          <h1>Juegos Bíblicos</h1>
+          <p>
+            Cada partida cambia. Juega, descubre y gana Semillas.
+          </p>
+        </div>
+      </div>
+
+      <div class="games-grid">
+
+        <button
+          class="game-card"
+          type="button"
+          data-game="who"
+        >
+          <span class="game-emoji">🕵️</span>
+          <span class="game-difficulty">Pistas</span>
+          <strong>¿Quién soy?</strong>
+          <small>
+            Descubre el personaje bíblico con el menor número de pistas.
+          </small>
+          <span class="game-reward">Hasta +25 🌱</span>
+        </button>
+
+        <button
+          class="game-card"
+          type="button"
+          data-game="book"
+        >
+          <span class="game-emoji">🔤</span>
+          <span class="game-difficulty">Palabras</span>
+          <strong>Descifra el libro</strong>
+          <small>
+            Ordena las letras y descubre libros de la Biblia.
+          </small>
+          <span class="game-reward">+15 🌱</span>
+        </button>
+
+        <button
+          class="game-card"
+          type="button"
+          data-game="memory"
+        >
+          <span class="game-emoji">🧠</span>
+          <span class="game-difficulty">Memoria</span>
+          <strong>Memoria de la Palabra</strong>
+          <small>
+            Encuentra las parejas entre versículos y referencias.
+          </small>
+          <span class="game-reward">Hasta +30 🌱</span>
+        </button>
+
+        <button
+          class="game-card"
+          type="button"
+          data-game="find"
+        >
+          <span class="game-emoji">👀</span>
+          <span class="game-difficulty">Velocidad</span>
+          <strong>Encuentra</strong>
+          <small>
+            Localiza la coincidencia antes de que termine el tiempo.
+          </small>
+          <span class="game-reward">Hasta +25 🌱</span>
+        </button>
+
+        <button
+          class="game-card"
+          type="button"
+          data-game="quiz"
+        >
+          <span class="game-emoji">🏆</span>
+          <span class="game-difficulty">Preguntas</span>
+          <strong>Quiz Bíblico</strong>
+          <small>
+            Pon a prueba lo que sabes con preguntas diferentes.
+          </small>
+          <span class="game-reward">+5 🌱 por acierto</span>
+        </button>
+
+        <button
+          class="game-card"
+          type="button"
+          data-game="heart"
+        >
+          <span class="game-emoji">💗</span>
+          <span class="game-difficulty">Emociones</span>
+          <strong>Mi corazón hoy</strong>
+          <small>
+            Reconoce lo que sientes y descubre una enseñanza.
+          </small>
+          <span class="game-reward">+15 🌱</span>
+        </button>
+
+      </div>
+
+      <div id="gameStage" class="interactive-stage hidden"></div>
+
+    </section>
+
+
+    <!-- ================= MISIONES ================= -->
+    <section class="screen" id="screen-missions">
+
+      <div class="page-hero missions-hero">
+        <span class="page-icon">⭐</span>
+
+        <div>
+          <span class="page-kicker">CRECER JUNTOS</span>
+          <h1>Misiones</h1>
+          <p>
+            Pequeñas acciones que llevan la fe a la vida cotidiana.
+          </p>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <article>
+          <span>🌱</span>
+          <strong id="missionSeedTotal">0</strong>
+          <small>Semillas</small>
+        </article>
+
+        <article>
+          <span>🔥</span>
+          <strong id="streakTotal">0</strong>
+          <small>Días de racha</small>
+        </article>
+
+        <article>
+          <span>⭐</span>
+          <strong id="completedMissionTotal">0</strong>
+          <small>Misiones</small>
+        </article>
+      </div>
+
+      <section class="content-block">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Hoy</span>
+            <h2>Misiones diarias</h2>
+          </div>
+        </div>
+
+        <div id="dailyMissionsList" class="mission-list"></div>
+      </section>
+
+      <section class="content-block">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Esta semana</span>
+            <h2>Misiones familiares</h2>
+          </div>
+        </div>
+
+        <div id="weeklyMissionsList" class="mission-list"></div>
+      </section>
+
+    </section>
+
+
+    <!-- ================= BIBLIA ================= -->
+    <section class="screen" id="screen-bible">
+
+      <div class="page-hero bible-hero">
+        <span class="page-icon">📖</span>
+
+        <div>
+          <span class="page-kicker">DESCUBRIR LA PALABRA</span>
+          <h1>Biblia en Familia</h1>
+          <p>
+            Para leer, conversar y llevar las enseñanzas a vuestra vida.
+          </p>
+        </div>
+      </div>
+
+      <section class="featured-bible-card">
+        <div>
+          <span class="card-kicker">HISTORIA RECOMENDADA</span>
+          <h2 id="featuredBibleTitle">
+            Una enseñanza para compartir
+          </h2>
+
+          <p id="featuredBibleDescription">
+            Descubrid juntos qué puede enseñarnos hoy una historia bíblica.
+          </p>
+
+          <button
+            class="primary-button"
+            id="openFeaturedBible"
+            type="button"
+          >
+            Comenzar
+          </button>
+        </div>
+
+        <div class="featured-illustration">✨📖✨</div>
+      </section>
+
+
+      <div class="bible-options-grid">
+
+        <button
+          class="bible-option"
+          type="button"
+          data-bible-section="map"
+        >
+          <span>🗺️</span>
+          <strong>Mapa de la Biblia</strong>
+          <small>Recorre sus libros de Génesis a Apocalipsis.</small>
+        </button>
+
+        <button
+          class="bible-option"
+          type="button"
+          data-bible-section="stories"
+        >
+          <span>🏕️</span>
+          <strong>Historias que enseñan</strong>
+          <small>Relatos para descubrir y conversar en familia.</small>
+        </button>
+
+        <button
+          class="bible-option"
+          type="button"
+          data-bible-section="parables"
+        >
+          <span>🌾</span>
+          <strong>Parábolas</strong>
+          <small>Las enseñanzas de Jesús llevadas a la vida diaria.</small>
+        </button>
+
+        <button
+          class="bible-option"
+          type="button"
+          data-bible-section="jesus"
+        >
+          <span>✨</span>
+          <strong>Conociendo a Jesús</strong>
+          <small>Milagros, enseñanzas y momentos de su vida.</small>
+        </button>
+
+        <button
+          class="bible-option"
+          type="button"
+          data-bible-section="values"
+        >
+          <span>❤️</span>
+          <strong>Valores para nuestra familia</strong>
+          <small>Perdón, gratitud, servicio, valentía y amor.</small>
+        </button>
+
+        <button
+          class="bible-option"
+          type="button"
+          data-bible-section="learn"
+        >
+          <span>🔎</span>
+          <strong>Comprender la Biblia</strong>
+          <small>Aprende a leerla con contexto y sencillez.</small>
+        </button>
+
+      </div>
+
+      <div
+        id="bibleContentStage"
+        class="interactive-stage hidden"
+      ></div>
+
+    </section>
+
+
+    <!-- ================= PARA MAMÁ ================= -->
+    <section class="screen" id="screen-mom">
+
+      <div class="page-hero mom-hero">
+        <span class="page-icon">💛</span>
+
+        <div>
+          <span class="page-kicker">UN MOMENTO PARA TI</span>
+          <h1>Para Mamá</h1>
+          <p>
+            Un pequeño refugio de Palabra, reflexión y oración.
+          </p>
+        </div>
+      </div>
+
+      <section class="mood-section">
+        <span class="section-kicker">MI CORAZÓN HOY</span>
+        <h2>¿Cómo te sientes?</h2>
+
+        <p class="section-intro">
+          Elige lo que más se acerque a tu corazón y encontraremos
+          un contenido para acompañarte.
+        </p>
+
+        <div class="mood-grid">
+
+          <button type="button" class="mood-button" data-mood="peace">
+            <span>🕊️</span>
+            Necesito paz
+          </button>
+
+          <button type="button" class="mood-button" data-mood="worried">
+            <span>😰</span>
+            Estoy preocupada
+          </button>
+
+          <button type="button" class="mood-button" data-mood="tired">
+            <span>😩</span>
+            Estoy cansada
+          </button>
+
+          <button type="button" class="mood-button" data-mood="fear">
+            <span>🤍</span>
+            Tengo miedo
+          </button>
+
+          <button type="button" class="mood-button" data-mood="hope">
+            <span>✨</span>
+            Necesito esperanza
+          </button>
+
+          <button type="button" class="mood-button" data-mood="trust">
+            <span>🙏</span>
+            Necesito confiar
+          </button>
+
+          <button type="button" class="mood-button" data-mood="sad">
+            <span>🌧️</span>
+            Estoy triste
+          </button>
+
+          <button type="button" class="mood-button" data-mood="grateful">
+            <span>💗</span>
+            Estoy agradecida
+          </button>
+
+        </div>
+      </section>
+
+
+      <div
+        id="momReflectionStage"
+        class="reflection-stage hidden"
+      ></div>
+
+
+      <section class="mom-library">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">También para ti</span>
+            <h2>Tu espacio personal</h2>
+          </div>
+        </div>
+
+        <div class="mom-library-grid">
+
+          <button
+            class="library-card"
+            type="button"
+            data-mom-library="devotional"
+          >
+            <span>☀️</span>
+            <strong>Devocional de hoy</strong>
+            <small>Palabra · reflexión · oración · acción</small>
+          </button>
+
+          <button
+            class="library-card"
+            type="button"
+            data-mom-library="verse"
+          >
+            <span>💌</span>
+            <strong>Versículo para mi corazón</strong>
+            <small>Una Palabra para este momento</small>
+          </button>
+
+          <button
+            class="library-card"
+            type="button"
+            data-mom-library="prayer"
+          >
+            <span>🙏</span>
+            <strong>Momento de oración</strong>
+            <small>Detente, respira y ora</small>
+          </button>
+
+          <button
+            class="library-card"
+            type="button"
+            data-mom-library="favorites"
+          >
+            <span>🔖</span>
+            <strong>Mis guardados</strong>
+            <small>Versículos y reflexiones favoritas</small>
+          </button>
+
+        </div>
+      </section>
+
+    </section>
+
+
+    <!-- ================= FAMILIA ================= -->
+    <section class="screen" id="screen-family">
+
+      <div class="page-hero family-hero">
+        <span class="page-icon">🏡</span>
+
+        <div>
+          <span class="page-kicker">NUESTRO CAMINO</span>
+          <h1>Mi Familia</h1>
+          <p>
+            Celebrad lo aprendido y todo lo que habéis vivido juntos.
+          </p>
+        </div>
+      </div>
+
+
+      <section class="family-summary">
+        <div class="family-level-large">
+          <span id="familyLargeIcon">🌱</span>
+
+          <div>
+            <small>Nivel familiar</small>
+            <h2 id="familyLargeLevel">Semilla</h2>
+            <p id="familyLargeSeeds">0 Semillas reunidas</p>
+          </div>
+        </div>
+
+        <div class="family-stat-grid">
+
+          <article>
+            <span>🎮</span>
+            <strong id="gamesPlayedStat">0</strong>
+            <small>Juegos</small>
+          </article>
+
+          <article>
+            <span>⭐</span>
+            <strong id="missionsStat">0</strong>
+            <small>Misiones</small>
+          </article>
+
+          <article>
+            <span>📖</span>
+            <strong id="storiesStat">0</strong>
+            <small>Historias</small>
+          </article>
+
+          <article>
+            <span>🔥</span>
+            <strong id="familyStreakStat">0</strong>
+            <small>Racha</small>
+          </article>
+
+        </div>
+      </section>
+
+
+      <section class="content-block">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Perfiles</span>
+            <h2>Nuestra familia</h2>
+          </div>
+
+          <button
+            class="text-button"
+            id="addProfileButton"
+            type="button"
+          >
+            + Añadir
+          </button>
+        </div>
+
+        <div id="familyProfiles" class="profiles-grid"></div>
+      </section>
+
+
+      <section class="content-block">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Colección</span>
+            <h2>Tesoros desbloqueados</h2>
+          </div>
+        </div>
+
+        <div id="collectiblesGrid" class="collectibles-grid"></div>
+      </section>
+
+
+      <section class="content-block">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Celebrar juntos</span>
+            <h2>Recompensas familiares</h2>
+          </div>
+        </div>
+
+        <div id="rewardsGrid" class="rewards-grid"></div>
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       NAVEGACIÓN MÓVIL
+  ====================================================== -->
+  <nav class="bottom-nav" aria-label="Navegación principal">
+
+    <button
+      class="nav-item active"
+      type="button"
+      data-route="home"
+    >
+      <span>🏠</span>
+      <small>Inicio</small>
+    </button>
+
+    <button
+      class="nav-item"
+      type="button"
+      data-route="games"
+    >
+      <span>🎮</span>
+      <small>Jugar</small>
+    </button>
+
+    <button
+      class="nav-item"
+      type="button"
+      data-route="missions"
+    >
+      <span>⭐</span>
+      <small>Misiones</small>
+    </button>
+
+    <button
+      class="nav-item"
+      type="button"
+      data-route="bible"
+    >
+      <span>📖</span>
+      <small>Biblia</small>
+    </button>
+
+    <button
+      class="nav-item"
+      type="button"
+      data-route="family"
+    >
+      <span>🏡</span>
+      <small>Familia</small>
+    </button>
+
+  </nav>
+
+
+  <!-- =====================================================
+       MODAL GENERAL
+  ====================================================== -->
+  <div
+    class="modal-backdrop hidden"
+    id="modalBackdrop"
+    aria-hidden="true"
+  >
+    <div
+      class="modal-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <button
+        class="modal-close"
+        id="modalClose"
+        type="button"
+        aria-label="Cerrar"
+      >
+        ×
+      </button>
+
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       NOTIFICACIÓN / FEEDBACK
+  ====================================================== -->
+  <div
+    class="toast hidden"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+  <!-- =====================================================
+       CELEBRACIÓN
+  ====================================================== -->
+  <div
+    class="celebration-layer hidden"
+    id="celebrationLayer"
+    aria-hidden="true"
+  >
+    <div class="celebration-card">
+      <div class="celebration-stars">✨ 🌱 ✨</div>
+      <h2 id="celebrationTitle">¡Muy bien!</h2>
+      <p id="celebrationText">
+        Vuestra familia sigue creciendo.
+      </p>
+
+      <button
+        class="primary-button"
+        id="celebrationClose"
+        type="button"
+      >
+        Continuar
+      </button>
+    </div>
+  </div>
+
+
+  <script src="app.js"></script>
+</body>
+</html>
