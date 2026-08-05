@@ -3464,9 +3464,12 @@ initializeApp();
    GRAN MAPA DE LA BIBLIA
    ========================================================= */
 
+/* =========================================================
+   GRAN MAPA DE LA BIBLIA
+   ========================================================= */
+
 function openBibleMap() {
-  const existing =
-    document.getElementById("bibleMapViewer");
+  const existing = document.getElementById("bibleMapViewer");
 
   if (existing) {
     existing.classList.remove("hidden");
@@ -3488,41 +3491,24 @@ function openBibleMap() {
       </div>
 
       <div class="pdf-viewer-actions">
-
-        document
-  .getElementById("openBibleMapFull")
-  .addEventListener(
-    "click",
-    () => {
-      window.open(
-        "./materiales/gran-mapa-biblia.pdf",
-        "_blank",
-        "noopener"
-      );
-    }
-  );
-
         <button
           id="closeBibleMap"
           class="pdf-action-button"
           type="button"
-          aria-label="Cerrar mapa"
+          aria-label="Volver a Biblia en Familia"
         >
           ✕
         </button>
-
       </div>
 
     </header>
 
     <div class="pdf-viewer-body">
-
       <iframe
         src="./materiales/gran-mapa-biblia.pdf#view=FitH"
         title="El Gran Mapa de la Biblia"
         loading="lazy"
       ></iframe>
-
     </div>
   `;
 
@@ -3531,29 +3517,12 @@ function openBibleMap() {
 
   document
     .getElementById("closeBibleMap")
-    .addEventListener(
-      "click",
-      closeBibleMap
-    );
-
-  document
-    .getElementById("openBibleMapFull")
-    .addEventListener(
-      "click",
-      () => {
-        window.open(
-          "./materiales/gran-mapa-biblia.pdf",
-          "_blank",
-          "noopener"
-        );
-      }
-    );
+    .addEventListener("click", closeBibleMap);
 }
 
 
 function closeBibleMap() {
-  const viewer =
-    document.getElementById("bibleMapViewer");
+  const viewer = document.getElementById("bibleMapViewer");
 
   if (viewer) {
     viewer.classList.add("hidden");
@@ -3565,10 +3534,7 @@ function closeBibleMap() {
 
 document
   .getElementById("openBibleMap")
-  ?.addEventListener(
-    "click",
-    openBibleMap
-  );
+  ?.addEventListener("click", openBibleMap);
 window.addEventListener("popstate", () => {
   const viewer = document.getElementById("bibleMapViewer");
 
