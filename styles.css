@@ -2172,3 +2172,225 @@ button:disabled {
     transition-duration: 0.01ms !important;
   }
 }
+/* =========================================================
+   GRAN MAPA DE LA BIBLIA
+   ========================================================= */
+
+.bible-map-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 24px;
+  align-items: stretch;
+  margin: 24px 0;
+  padding: 22px;
+  background:
+    linear-gradient(
+      135deg,
+      #fffaf0 0%,
+      #f5eee0 100%
+    );
+  border: 1px solid rgba(184, 139, 70, 0.22);
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(45, 55, 48, 0.08);
+}
+
+.bible-map-visual {
+  min-height: 180px;
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      145deg,
+      #214f46,
+      #153d37
+    );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bible-map-visual::before,
+.bible-map-visual::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 50%;
+}
+
+.bible-map-visual::before {
+  width: 160px;
+  height: 160px;
+}
+
+.bible-map-visual::after {
+  width: 110px;
+  height: 110px;
+}
+
+.bible-map-icon {
+  position: relative;
+  z-index: 2;
+  font-size: 58px;
+}
+
+.bible-map-badge {
+  position: relative;
+  z-index: 2;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.14);
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.bible-map-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bible-map-content h2 {
+  margin: 5px 0 8px;
+  color: var(--green-950);
+}
+
+.bible-map-content p {
+  margin: 0 0 14px;
+  color: var(--text-soft);
+  line-height: 1.65;
+}
+
+.bible-map-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 17px;
+}
+
+.bible-map-features span {
+  padding: 7px 10px;
+  background: rgba(255,255,255,.75);
+  border: 1px solid rgba(31, 76, 67, .10);
+  border-radius: 999px;
+  color: var(--green-950);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* VISOR PDF */
+
+.pdf-viewer-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  background: #f4f1e9;
+}
+
+.pdf-viewer-modal.hidden {
+  display: none;
+}
+
+.pdf-viewer-header {
+  min-height: 64px;
+  padding: 10px 18px;
+  background: #173f39;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.pdf-viewer-title {
+  min-width: 0;
+}
+
+.pdf-viewer-title strong {
+  display: block;
+  font-size: 15px;
+}
+
+.pdf-viewer-title small {
+  display: block;
+  margin-top: 2px;
+  opacity: .72;
+  font-size: 11px;
+}
+
+.pdf-viewer-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.pdf-action-button {
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.1);
+  color: white;
+  min-height: 40px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.pdf-action-button:hover {
+  background: rgba(255,255,255,.18);
+}
+
+.pdf-viewer-body {
+  flex: 1;
+  min-height: 0;
+  background: #d8d5ce;
+}
+
+.pdf-viewer-body iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: white;
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 700px) {
+  .bible-map-card {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .bible-map-visual {
+    min-height: 145px;
+  }
+
+  .bible-map-icon {
+    font-size: 52px;
+  }
+
+  .bible-map-features {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pdf-viewer-header {
+    padding: 9px 10px;
+  }
+
+  .pdf-viewer-title small {
+    display: none;
+  }
+
+  .pdf-action-button {
+    padding: 7px 9px;
+    font-size: 12px;
+  }
+}
