@@ -1,0 +1,17 @@
+{
+  "name": "Luz en Familia",
+  "short_name": "Luz Familia",
+  "description": "Una experiencia de fe para crecer, jugar, conversar y conectar en familia.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fbf7ee",
+  "theme_color": "#184a43",
+  "categories": [
+    "education",
+    "family",
+    "lifestyle"
+  ]
+}
