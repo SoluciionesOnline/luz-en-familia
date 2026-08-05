@@ -3489,14 +3489,18 @@ function openBibleMap() {
 
       <div class="pdf-viewer-actions">
 
-        <button
-          id="openBibleMapFull"
-          class="pdf-action-button"
-          type="button"
-          title="Abrir documento"
-        >
-          ⛶ Ver
-        </button>
+        document
+  .getElementById("openBibleMapFull")
+  .addEventListener(
+    "click",
+    () => {
+      window.open(
+        "./materiales/gran-mapa-biblia.pdf",
+        "_blank",
+        "noopener"
+      );
+    }
+  );
 
         <button
           id="closeBibleMap"
@@ -3565,3 +3569,10 @@ document
     "click",
     openBibleMap
   );
+window.addEventListener("popstate", () => {
+  const viewer = document.getElementById("bibleMapViewer");
+
+  if (viewer && !viewer.classList.contains("hidden")) {
+    closeBibleMap();
+  }
+});
