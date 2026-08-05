@@ -3460,3 +3460,108 @@ function initializeApp() {
 
 
 initializeApp();
+/* =========================================================
+   GRAN MAPA DE LA BIBLIA
+   ========================================================= */
+
+function openBibleMap() {
+  const existing =
+    document.getElementById("bibleMapViewer");
+
+  if (existing) {
+    existing.classList.remove("hidden");
+    document.body.style.overflow = "hidden";
+    return;
+  }
+
+  const viewer = document.createElement("div");
+
+  viewer.id = "bibleMapViewer";
+  viewer.className = "pdf-viewer-modal";
+
+  viewer.innerHTML = `
+    <header class="pdf-viewer-header">
+
+      <div class="pdf-viewer-title">
+        <strong>🗺️ El Gran Mapa de la Biblia</strong>
+        <small>De Génesis a Apocalipsis</small>
+      </div>
+
+      <div class="pdf-viewer-actions">
+
+        <button
+          id="openBibleMapFull"
+          class="pdf-action-button"
+          type="button"
+          title="Abrir documento"
+        >
+          ⛶ Ver
+        </button>
+
+        <button
+          id="closeBibleMap"
+          class="pdf-action-button"
+          type="button"
+          aria-label="Cerrar mapa"
+        >
+          ✕
+        </button>
+
+      </div>
+
+    </header>
+
+    <div class="pdf-viewer-body">
+
+      <iframe
+        src="./materiales/gran-mapa-biblia.pdf#view=FitH"
+        title="El Gran Mapa de la Biblia"
+        loading="lazy"
+      ></iframe>
+
+    </div>
+  `;
+
+  document.body.appendChild(viewer);
+  document.body.style.overflow = "hidden";
+
+  document
+    .getElementById("closeBibleMap")
+    .addEventListener(
+      "click",
+      closeBibleMap
+    );
+
+  document
+    .getElementById("openBibleMapFull")
+    .addEventListener(
+      "click",
+      () => {
+        window.open(
+          "./materiales/gran-mapa-biblia.pdf",
+          "_blank",
+          "noopener"
+        );
+      }
+    );
+}
+
+
+function closeBibleMap() {
+  const viewer =
+    document.getElementById("bibleMapViewer");
+
+  if (viewer) {
+    viewer.classList.add("hidden");
+  }
+
+  document.body.style.overflow = "";
+}
+
+
+document
+  .getElementById("openBibleMap")
+  ?.addEventListener(
+    "click",
+    openBibleMap
+  );
