@@ -6198,3 +6198,52 @@ body.coloring-fullscreen-active {
   }
 
 }
+
+
+/* =========================================================
+   COMPATIBILIDAD — FORZAR INTERFAZ CLARA
+   EN NAVEGADORES MÓVILES E IN-APP BROWSERS
+   ========================================================= */
+
+:root {
+  color-scheme: only light;
+}
+
+html {
+  color-scheme: only light !important;
+  background-color: #fffaf0 !important;
+}
+
+body {
+  color-scheme: only light !important;
+  background-color: #fffaf0 !important;
+  color: #243833 !important;
+}
+
+#app {
+  color-scheme: only light !important;
+  background-color: #fffaf0 !important;
+}
+
+main#app {
+  background-color: #fffaf0 !important;
+}
+
+.screen {
+  color-scheme: only light !important;
+}
+
+#screen-home {
+  color-scheme: only light !important;
+  background-color: #fffaf0 !important;
+}
+
+/*
+   Mantener controles nativos en versión clara.
+*/
+input,
+textarea,
+select,
+button {
+  color-scheme: only light !important;
+}
