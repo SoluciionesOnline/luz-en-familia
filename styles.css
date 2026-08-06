@@ -6610,3 +6610,156 @@ button {
     font-size: 21px;
   }
 }
+/* =========================================================
+   JESÚS — IMAGEN FINAL RESPONSIVE
+   ========================================================= */
+
+/* El contenedor ya no usa el tamaño de la cruz temporal */
+.jesus-figure {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  font-size: 0;
+  line-height: 0;
+
+  filter: none;
+}
+
+/* Imagen de Jesús */
+.jesus-welcome-image {
+  display: block;
+
+  width: auto;
+  height: 250px;
+  max-width: 230px;
+
+  object-fit: contain;
+  object-position: center bottom;
+
+  filter: drop-shadow(0 10px 12px rgba(44, 80, 43, 0.16));
+
+  transform: translateY(8px);
+}
+
+/* Ya no necesitamos el halo amarillo */
+.jesus-halo {
+  display: none !important;
+}
+
+
+/* =========================================================
+   ESCRITORIO
+   Jesús + bienvenida lado a lado
+   ========================================================= */
+
+@media (min-width: 601px) {
+
+  .home-jesus-welcome {
+    width: min(94%, 680px);
+    min-height: 270px;
+
+    padding: 15px 24px 8px;
+
+    gap: 18px;
+
+    align-items: flex-end;
+  }
+
+  .home-jesus-character {
+    flex: 0 0 235px;
+
+    width: 235px;
+    height: 265px;
+  }
+
+  .jesus-welcome-image {
+    height: 275px;
+    max-width: 250px;
+  }
+
+  .home-jesus-message {
+    margin-bottom: 28px;
+  }
+}
+
+
+/* =========================================================
+   MÓVIL
+   Jesús arriba y contenido debajo
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .home-jesus-welcome {
+    width: 100%;
+
+    margin: 2px auto 8px;
+    padding: 0 12px 12px;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0;
+  }
+
+  .home-jesus-character {
+    width: 100%;
+    height: 215px;
+
+    margin: 0 auto -18px;
+
+    flex: none;
+
+    overflow: visible;
+  }
+
+  .jesus-welcome-image {
+    height: 225px;
+    max-width: 210px;
+
+    transform: translateY(4px);
+  }
+
+  .home-jesus-message {
+    position: relative;
+    z-index: 5;
+
+    width: min(94%, 350px);
+
+    margin: 0 auto;
+
+    padding: 14px 17px 15px;
+
+    text-align: center;
+  }
+}
+
+
+/* =========================================================
+   TELÉFONOS PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .home-jesus-character {
+    height: 195px;
+    margin-bottom: -15px;
+  }
+
+  .jesus-welcome-image {
+    height: 205px;
+    max-width: 190px;
+  }
+
+  .home-jesus-message {
+    width: 96%;
+    padding: 13px 14px;
+  }
+}
