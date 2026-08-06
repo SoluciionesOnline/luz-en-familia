@@ -1,5 +1,5 @@
 /* Luz en Familia: shell ligero y actualizable. */
-const CACHE_NAME = "luz-en-familia-shell-v1";
+const CACHE_NAME = "luz-en-familia-shell-v2";
 const APP_SHELL = [
   "/",
   "/index.html",
@@ -7,7 +7,8 @@ const APP_SHELL = [
   "/app.js",
   "/manifest.json",
   "/icons/luz-192.png",
-  "/icons/luz-512.png"
+  "/icons/luz-512.png",
+  "/imagesjesus-bienvenida.png"
 ];
 
 self.addEventListener("install", event => {
