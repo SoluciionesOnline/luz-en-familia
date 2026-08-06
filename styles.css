@@ -6247,3 +6247,241 @@ select,
 button {
   color-scheme: only light !important;
 }
+
+
+/* =========================================================
+   LUZ EN FAMILIA — ACCESO DESDE NAVEGADOR INTERNO
+   ========================================================= */
+
+.in-app-browser-notice {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  padding: 22px;
+
+  color-scheme: only light !important;
+
+  background:
+    radial-gradient(
+      circle at 82% 12%,
+      #fff18a 0 5%,
+      transparent 16%
+    ),
+    linear-gradient(
+      180deg,
+      #70d2f4 0%,
+      #bdebf5 45%,
+      #e9f6cc 70%,
+      #8fd05a 100%
+    ) !important;
+}
+
+.in-app-browser-card {
+  width: min(100%, 390px);
+
+  padding: 28px 22px 24px;
+
+  text-align: center;
+
+  color: #294b45 !important;
+
+  background:
+    rgba(255, 253, 240, 0.97) !important;
+
+  border: 2px solid
+    rgba(255, 255, 255, 0.95);
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 18px 45px
+    rgba(45, 87, 76, 0.22);
+}
+
+.in-app-sun {
+  margin-bottom: 5px;
+
+  font-size: 46px;
+  line-height: 1;
+}
+
+.in-app-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin: 4px auto 15px;
+
+  line-height: 0.9;
+}
+
+.in-app-logo span {
+  color: #f6a914 !important;
+
+  font-size: 48px;
+  font-weight: 900;
+
+  letter-spacing: -3px;
+}
+
+.in-app-logo small {
+  margin: 0 7px;
+
+  color: #075ba7 !important;
+
+  font-size: 21px;
+  font-weight: 900;
+}
+
+.in-app-logo strong {
+  flex-basis: 100%;
+
+  margin-top: 5px;
+
+  color: #075ba7 !important;
+
+  font-size: 36px;
+  font-weight: 900;
+
+  letter-spacing: -2px;
+}
+
+.in-app-browser-card h2 {
+  margin: 8px 0 8px;
+
+  color: #245646 !important;
+
+  font-size: 24px;
+}
+
+.in-app-browser-card p {
+  max-width: 310px;
+
+  margin: 0 auto 14px;
+
+  color: #536d64 !important;
+
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.in-app-browser-icon {
+  margin: 8px 0;
+
+  font-size: 42px;
+}
+
+.in-app-instruction {
+  display: block;
+
+  max-width: 300px;
+
+  margin: 0 auto 18px;
+
+  padding: 12px 14px;
+
+  color: #174e78 !important;
+
+  background:
+    #eef8ff !important;
+
+  border: 1px solid #cbe8f5;
+
+  border-radius: 14px;
+
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.in-app-continue {
+  display: block;
+
+  width: 100%;
+  min-height: 50px;
+
+  margin: 0 auto 11px;
+
+  border: 0;
+  border-radius: 15px;
+
+  color: #ffffff !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      #6fc83d,
+      #35a52e
+    ) !important;
+
+  box-shadow:
+    0 6px 0 #248526,
+    0 10px 20px
+    rgba(48, 129, 47, 0.18);
+
+  font-size: 16px;
+  font-weight: 900;
+
+  cursor: pointer;
+}
+
+.in-app-continue:active {
+  transform: translateY(3px);
+
+  box-shadow:
+    0 3px 0 #248526;
+}
+
+.in-app-help {
+  display: block;
+
+  margin-top: 15px;
+
+  color: #72857e !important;
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+
+/* Ajuste para teléfonos pequeños */
+
+@media (max-width: 420px) {
+
+  .in-app-browser-notice {
+    padding: 14px;
+  }
+
+  .in-app-browser-card {
+    padding: 22px 17px 20px;
+
+    border-radius: 23px;
+  }
+
+  .in-app-sun {
+    font-size: 38px;
+  }
+
+  .in-app-logo span {
+    font-size: 42px;
+  }
+
+  .in-app-logo strong {
+    font-size: 31px;
+  }
+
+  .in-app-browser-card h2 {
+    font-size: 21px;
+  }
+
+  .in-app-browser-card p {
+    font-size: 13px;
+  }
+
+}
