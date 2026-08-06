@@ -3542,3 +3542,814 @@ window.addEventListener("popstate", () => {
     closeBibleMap();
   }
 });
+
+/* =========================================================
+   COLOREA LA BIBLIA
+   ========================================================= */
+
+const COLORING_PAGES = [
+  {
+    id: "color-01",
+    title: "La Creación",
+    reference: "Génesis 1",
+    image: "/colorear/01-creacion.png",
+    lesson: "Dios nos regaló un mundo maravilloso. Podemos agradecerlo, disfrutarlo y aprender a cuidarlo."
+  },
+  {
+    id: "color-02",
+    title: "Noé y el arca",
+    reference: "Génesis 6–9",
+    image: "/colorear/02-noe-arca.png",
+    lesson: "Noé nos enseña a confiar en Dios y a seguir adelante incluso cuando una tarea parece muy grande."
+  },
+  {
+    id: "color-03",
+    title: "El arcoíris de la promesa",
+    reference: "Génesis 9:12–17",
+    image: "/colorear/03-arcoiris-promesa.png",
+    lesson: "El arcoíris nos recuerda la alianza de Dios y nos invita a confiar en sus promesas."
+  },
+  {
+    id: "color-04",
+    title: "Abraham y las estrellas",
+    reference: "Génesis 15",
+    image: "/colorear/04-abraham-estrellas.png",
+    lesson: "Abraham aprendió a confiar aunque todavía no podía ver cómo se cumpliría la promesa."
+  },
+  {
+    id: "color-05",
+    title: "Moisés y el Mar Rojo",
+    reference: "Éxodo 14",
+    image: "/colorear/05-moises-mar-rojo.png",
+    lesson: "Cuando el camino parece cerrado, podemos seguir confiando y dar el siguiente paso con valentía."
+  },
+  {
+    id: "color-06",
+    title: "Los Diez Mandamientos",
+    reference: "Éxodo 20",
+    image: "/colorear/06-diez-mandamientos.png",
+    lesson: "Los mandamientos nos ayudan a aprender a amar a Dios y a relacionarnos con los demás."
+  },
+  {
+    id: "color-07",
+    title: "Josué y Jericó",
+    reference: "Josué 6",
+    image: "/colorear/07-josue-jerico.png",
+    lesson: "Josué nos recuerda que la confianza, la perseverancia y la obediencia pueden ayudarnos ante grandes desafíos."
+  },
+  {
+    id: "color-08",
+    title: "David y Goliat",
+    reference: "1 Samuel 17",
+    image: "/colorear/08-david-goliat.png",
+    lesson: "Ser valiente no significa ser el más grande o fuerte. También significa confiar y enfrentarnos a nuestros desafíos."
+  },
+  {
+    id: "color-09",
+    title: "Daniel y los leones",
+    reference: "Daniel 6",
+    image: "/colorear/09-daniel-leones.png",
+    lesson: "Daniel permaneció fiel incluso en un momento difícil. Su historia nos habla de confianza y fidelidad."
+  },
+  {
+    id: "color-10",
+    title: "Jonás y el gran pez",
+    reference: "Jonás 1–4",
+    image: "/colorear/10-jonas-gran-pez.png",
+    lesson: "Jonás descubrió que podemos reconocer nuestros errores, cambiar de dirección y comenzar nuevamente."
+  },
+  {
+    id: "color-11",
+    title: "Jesús enseña",
+    reference: "Mateo 5–7",
+    image: "/colorear/11-jesus-ensena.png",
+    lesson: "Las enseñanzas de Jesús nos muestran una manera de vivir basada en el amor, la misericordia y la confianza."
+  },
+  {
+    id: "color-12",
+    title: "Las parábolas de Jesús",
+    reference: "Los Evangelios",
+    image: "/colorear/12-parabolas-jesus.png",
+    lesson: "Jesús utilizaba historias sencillas para ayudarnos a descubrir grandes enseñanzas para nuestra vida."
+  },
+  {
+    id: "color-13",
+    title: "Jesús y los niños",
+    reference: "Marcos 10:13–16",
+    image: "/colorear/13-jesus-ninos.png",
+    lesson: "Jesús recibió a los niños con amor y mostró que cada uno de ellos es importante."
+  },
+  {
+    id: "color-14",
+    title: "Los panes y los peces",
+    reference: "Juan 6:1–14",
+    image: "/colorear/14-panes-peces.png",
+    lesson: "Cuando compartimos lo que tenemos, incluso algo pequeño puede convertirse en una bendición para muchos."
+  },
+  {
+    id: "color-15",
+    title: "Jesús calma la tormenta",
+    reference: "Marcos 4:35–41",
+    image: "/colorear/15-jesus-calma-tormenta.png",
+    lesson: "En los momentos que parecen una tormenta podemos recordar que no tenemos que atravesarlos solos."
+  },
+  {
+    id: "color-16",
+    title: "Los Reyes Magos",
+    reference: "Mateo 2:1–12",
+    image: "/colorear/16-reyes-magos.png",
+    lesson: "Los Reyes Magos siguieron la estrella con perseverancia hasta encontrar a Jesús."
+  },
+  {
+    id: "color-17",
+    title: "Jesús, el Buen Pastor",
+    reference: "Juan 10:11–16",
+    image: "/colorear/17-buen-pastor.png",
+    lesson: "Jesús se presenta como el Buen Pastor que conoce, acompaña y cuida a cada una de sus ovejas."
+  },
+  {
+    id: "color-18",
+    title: "Entrada de Jesús en Jerusalén",
+    reference: "Mateo 21:1–11",
+    image: "/colorear/18-entrada-jerusalen.png",
+    lesson: "La entrada en Jerusalén nos invita a recibir a Jesús con alegría y a preparar también nuestro corazón."
+  },
+  {
+    id: "color-19",
+    title: "El nacimiento de Jesús",
+    reference: "Lucas 2:1–20",
+    image: "/colorear/19-nacimiento-jesus.png",
+    lesson: "Jesús nació con sencillez y su nacimiento nos recuerda el regalo del amor, la esperanza y la paz."
+  },
+  {
+    id: "color-20",
+    title: "La Resurrección de Jesús",
+    reference: "Mateo 28:1–10",
+    image: "/colorear/20-resurreccion.png",
+    lesson: "La Resurrección anuncia esperanza y vida nueva. Nos recuerda que la historia no termina en la tristeza."
+  }
+];
+
+const COLOR_PALETTE = [
+  "#ef5350",
+  "#ff8a65",
+  "#ffca28",
+  "#9ccc65",
+  "#26a69a",
+  "#42a5f5",
+  "#5c6bc0",
+  "#ab47bc",
+  "#ec407a",
+  "#8d6e63"
+];
+
+let coloringCurrentPage = null;
+let coloringCanvas = null;
+let coloringCtx = null;
+let coloringBaseImage = null;
+let coloringDrawing = false;
+let coloringColor = COLOR_PALETTE[0];
+let coloringBrushSize = 16;
+let coloringEraserMode = false;
+let coloringHistory = [];
+
+
+/* ---------- PROGRESO ---------- */
+
+function ensureColoringState() {
+  if (!Array.isArray(state.completedColoringPages)) {
+    state.completedColoringPages = [];
+  }
+
+  if (!state.coloringProgress || typeof state.coloringProgress !== "object") {
+    state.coloringProgress = {};
+  }
+}
+
+function getCompletedColoringCount() {
+  ensureColoringState();
+  return state.completedColoringPages.length;
+}
+
+function isColoringPageUnlocked(index) {
+  const completed = getCompletedColoringCount();
+
+  if (index < 5) return true;
+  if (index < 10) return completed >= 3;
+  if (index < 15) return completed >= 7;
+
+  return completed >= 12;
+}
+
+function getColoringUnlockMessage(index) {
+  if (index < 10) return "Completa 3 láminas para desbloquear";
+  if (index < 15) return "Completa 7 láminas para desbloquear";
+
+  return "Completa 12 láminas para desbloquear";
+}
+
+
+/* ---------- ABRIR / CERRAR ---------- */
+
+function openColoringBook() {
+  ensureColoringState();
+
+  const stage = document.getElementById("coloringBookStage");
+  const gameStage = document.getElementById("gameStage");
+
+  if (!stage) return;
+
+  if (gameStage) {
+    gameStage.classList.add("hidden");
+  }
+
+  stage.classList.remove("hidden");
+
+  showColoringGallery();
+
+  stage.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+function closeColoringBook() {
+  const stage = document.getElementById("coloringBookStage");
+
+  if (stage) {
+    stage.classList.add("hidden");
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+
+/* ---------- GALERÍA ---------- */
+
+function showColoringGallery() {
+  const gallery = document.getElementById("coloringGallery");
+  const studio = document.getElementById("coloringStudio");
+  const celebration = document.getElementById("coloringCelebration");
+
+  if (!gallery) return;
+
+  studio?.classList.add("hidden");
+  celebration?.classList.add("hidden");
+  gallery.classList.remove("hidden");
+
+  renderColoringGallery();
+}
+
+function renderColoringGallery() {
+  ensureColoringState();
+
+  const gallery = document.getElementById("coloringGallery");
+  const progress = document.getElementById("coloringProgressNumber");
+
+  if (!gallery) return;
+
+  const completed = getCompletedColoringCount();
+
+  if (progress) {
+    progress.textContent = `${completed}/${COLORING_PAGES.length}`;
+  }
+
+  gallery.innerHTML = COLORING_PAGES.map((page, index) => {
+    const unlocked = isColoringPageUnlocked(index);
+    const finished = state.completedColoringPages.includes(page.id);
+
+    return `
+      <article class="coloring-card ${unlocked ? "" : "locked"}">
+
+        <div class="coloring-card-image">
+          <img
+            src="${page.image}"
+            alt="${page.title}"
+            loading="lazy"
+          >
+
+          ${
+            finished
+              ? `<span class="coloring-completed-badge">✓ Completada</span>`
+              : ""
+          }
+
+          ${
+            !unlocked
+              ? `
+                <div class="coloring-lock">
+                  <span>🔒</span>
+                  <small>${getColoringUnlockMessage(index)}</small>
+                </div>
+              `
+              : ""
+          }
+        </div>
+
+        <div class="coloring-card-copy">
+          <small>LÁMINA ${String(index + 1).padStart(2, "0")}</small>
+
+          <h3>${page.title}</h3>
+
+          <p>${page.reference}</p>
+
+          <button
+            type="button"
+            class="${unlocked ? "primary-button" : "secondary-button"}"
+            ${unlocked ? `data-coloring-page="${page.id}"` : "disabled"}
+          >
+            ${finished ? "🎨 Colorear otra vez" : unlocked ? "🎨 Colorear" : "🔒 Bloqueada"}
+          </button>
+        </div>
+
+      </article>
+    `;
+  }).join("");
+
+  gallery
+    .querySelectorAll("[data-coloring-page]")
+    .forEach(button => {
+      button.addEventListener("click", () => {
+        openColoringPage(button.dataset.coloringPage);
+      });
+    });
+}
+
+
+/* ---------- ABRIR UNA LÁMINA ---------- */
+
+function openColoringPage(pageId) {
+  const page = COLORING_PAGES.find(item => item.id === pageId);
+
+  if (!page) return;
+
+  coloringCurrentPage = page;
+
+  const gallery = document.getElementById("coloringGallery");
+  const studio = document.getElementById("coloringStudio");
+  const celebration = document.getElementById("coloringCelebration");
+
+  gallery?.classList.add("hidden");
+  celebration?.classList.add("hidden");
+  studio?.classList.remove("hidden");
+
+  const title = document.getElementById("coloringTitle");
+  const reference = document.getElementById("coloringReference");
+
+  if (title) title.textContent = page.title;
+  if (reference) reference.textContent = page.reference;
+
+  prepareColoringCanvas(page);
+
+  studio?.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+
+/* ---------- CANVAS ---------- */
+
+function prepareColoringCanvas(page) {
+  coloringCanvas = document.getElementById("coloringCanvas");
+
+  if (!coloringCanvas) return;
+
+  coloringCtx = coloringCanvas.getContext("2d", {
+    willReadFrequently: true
+  });
+
+  coloringBaseImage = new Image();
+
+  coloringBaseImage.onload = () => {
+    const maxWidth = 1200;
+    const scale = Math.min(1, maxWidth / coloringBaseImage.naturalWidth);
+
+    coloringCanvas.width =
+      Math.round(coloringBaseImage.naturalWidth * scale);
+
+    coloringCanvas.height =
+      Math.round(coloringBaseImage.naturalHeight * scale);
+
+    coloringCtx.fillStyle = "#ffffff";
+    coloringCtx.fillRect(
+      0,
+      0,
+      coloringCanvas.width,
+      coloringCanvas.height
+    );
+
+    coloringCtx.drawImage(
+      coloringBaseImage,
+      0,
+      0,
+      coloringCanvas.width,
+      coloringCanvas.height
+    );
+
+    const saved = state.coloringProgress?.[page.id];
+
+    if (saved) {
+      const progressImage = new Image();
+
+      progressImage.onload = () => {
+        coloringCtx.drawImage(
+          progressImage,
+          0,
+          0,
+          coloringCanvas.width,
+          coloringCanvas.height
+        );
+
+        resetColoringHistory();
+      };
+
+      progressImage.src = saved;
+    } else {
+      resetColoringHistory();
+    }
+  };
+
+  coloringBaseImage.onerror = () => {
+    console.warn("No se pudo cargar la lámina:", page.image);
+  };
+
+  coloringBaseImage.src = page.image;
+
+  bindColoringCanvasEvents();
+}
+
+
+/* ---------- HISTORIAL ---------- */
+
+function resetColoringHistory() {
+  coloringHistory = [];
+
+  if (!coloringCanvas) return;
+
+  coloringHistory.push(
+    coloringCanvas.toDataURL("image/png")
+  );
+}
+
+function saveColoringSnapshot() {
+  if (!coloringCanvas) return;
+
+  coloringHistory.push(
+    coloringCanvas.toDataURL("image/png")
+  );
+
+  if (coloringHistory.length > 15) {
+    coloringHistory.shift();
+  }
+}
+
+function undoColoring() {
+  if (coloringHistory.length <= 1) return;
+
+  coloringHistory.pop();
+
+  const previous = coloringHistory[coloringHistory.length - 1];
+
+  const image = new Image();
+
+  image.onload = () => {
+    coloringCtx.clearRect(
+      0,
+      0,
+      coloringCanvas.width,
+      coloringCanvas.height
+    );
+
+    coloringCtx.drawImage(
+      image,
+      0,
+      0,
+      coloringCanvas.width,
+      coloringCanvas.height
+    );
+  };
+
+  image.src = previous;
+}
+
+
+/* ---------- DIBUJAR ---------- */
+
+function getColoringPoint(event) {
+  const rect = coloringCanvas.getBoundingClientRect();
+
+  const scaleX = coloringCanvas.width / rect.width;
+  const scaleY = coloringCanvas.height / rect.height;
+
+  return {
+    x: (event.clientX - rect.left) * scaleX,
+    y: (event.clientY - rect.top) * scaleY
+  };
+}
+
+function startColoring(event) {
+  if (!coloringCtx) return;
+
+  event.preventDefault();
+
+  coloringDrawing = true;
+
+  const point = getColoringPoint(event);
+
+  coloringCtx.beginPath();
+  coloringCtx.moveTo(point.x, point.y);
+
+  coloringCtx.lineCap = "round";
+  coloringCtx.lineJoin = "round";
+  coloringCtx.lineWidth = coloringBrushSize;
+
+  coloringCtx.strokeStyle = coloringEraserMode
+    ? "#ffffff"
+    : coloringColor;
+
+  coloringCtx.globalAlpha = coloringEraserMode
+    ? 1
+    : 0.72;
+}
+
+function drawColoring(event) {
+  if (!coloringDrawing || !coloringCtx) return;
+
+  event.preventDefault();
+
+  const point = getColoringPoint(event);
+
+  coloringCtx.lineTo(point.x, point.y);
+  coloringCtx.stroke();
+}
+
+function stopColoring(event) {
+  if (!coloringDrawing) return;
+
+  if (event) {
+    event.preventDefault();
+  }
+
+  coloringDrawing = false;
+
+  if (coloringCtx) {
+    coloringCtx.closePath();
+    coloringCtx.globalAlpha = 1;
+  }
+
+  saveColoringSnapshot();
+  saveCurrentColoringProgress();
+}
+
+function bindColoringCanvasEvents() {
+  if (!coloringCanvas || coloringCanvas.dataset.bound === "true") {
+    return;
+  }
+
+  coloringCanvas.dataset.bound = "true";
+
+  coloringCanvas.addEventListener("pointerdown", startColoring);
+  coloringCanvas.addEventListener("pointermove", drawColoring);
+  coloringCanvas.addEventListener("pointerup", stopColoring);
+  coloringCanvas.addEventListener("pointercancel", stopColoring);
+  coloringCanvas.addEventListener("pointerleave", stopColoring);
+}
+
+
+/* ---------- GUARDAR ---------- */
+
+function saveCurrentColoringProgress() {
+  if (!coloringCanvas || !coloringCurrentPage) return;
+
+  ensureColoringState();
+
+  try {
+    state.coloringProgress[coloringCurrentPage.id] =
+      coloringCanvas.toDataURL("image/jpeg", 0.72);
+
+    saveState();
+  } catch (error) {
+    console.warn(
+      "No se pudo guardar automáticamente la obra.",
+      error
+    );
+  }
+}
+
+
+/* ---------- REINICIAR ---------- */
+
+function resetCurrentColoring() {
+  if (!coloringCanvas || !coloringBaseImage) return;
+
+  const confirmed = window.confirm(
+    "¿Quieres borrar los colores de esta lámina y empezar de nuevo?"
+  );
+
+  if (!confirmed) return;
+
+  coloringCtx.globalAlpha = 1;
+
+  coloringCtx.clearRect(
+    0,
+    0,
+    coloringCanvas.width,
+    coloringCanvas.height
+  );
+
+  coloringCtx.fillStyle = "#ffffff";
+
+  coloringCtx.fillRect(
+    0,
+    0,
+    coloringCanvas.width,
+    coloringCanvas.height
+  );
+
+  coloringCtx.drawImage(
+    coloringBaseImage,
+    0,
+    0,
+    coloringCanvas.width,
+    coloringCanvas.height
+  );
+
+  if (coloringCurrentPage) {
+    delete state.coloringProgress[coloringCurrentPage.id];
+  }
+
+  saveState();
+  resetColoringHistory();
+}
+
+
+/* ---------- PALETA ---------- */
+
+function renderColoringPalette() {
+  const palette = document.getElementById("colorPalette");
+
+  if (!palette) return;
+
+  palette.innerHTML = COLOR_PALETTE.map((color, index) => `
+    <button
+      type="button"
+      class="color-swatch ${index === 0 ? "active" : ""}"
+      data-color="${color}"
+      style="background:${color}"
+      aria-label="Elegir color"
+    ></button>
+  `).join("");
+
+  palette.querySelectorAll(".color-swatch").forEach(button => {
+    button.addEventListener("click", () => {
+      coloringColor = button.dataset.color;
+      coloringEraserMode = false;
+
+      palette
+        .querySelectorAll(".color-swatch")
+        .forEach(item => item.classList.remove("active"));
+
+      button.classList.add("active");
+
+      document
+        .getElementById("coloringEraser")
+        ?.classList.remove("active");
+    });
+  });
+}
+
+
+/* ---------- TERMINAR ---------- */
+
+function finishCurrentColoring() {
+  if (!coloringCurrentPage) return;
+
+  ensureColoringState();
+
+  saveCurrentColoringProgress();
+
+  const alreadyCompleted =
+    state.completedColoringPages.includes(coloringCurrentPage.id);
+
+  if (!alreadyCompleted) {
+    state.completedColoringPages.push(coloringCurrentPage.id);
+    state.seeds += 10;
+
+    saveState();
+
+    /*
+      updateUI() ya pertenece a Luz en Familia.
+      Si existe, actualizamos inmediatamente los contadores.
+    */
+    if (typeof updateUI === "function") {
+      updateUI();
+    }
+  }
+
+  const studio = document.getElementById("coloringStudio");
+  const celebration = document.getElementById("coloringCelebration");
+
+  studio?.classList.add("hidden");
+  celebration?.classList.remove("hidden");
+
+  const reward = document.getElementById("coloringRewardMessage");
+  const lesson = document.getElementById("coloringLessonText");
+
+  if (reward) {
+    reward.textContent = alreadyCompleted
+      ? "Esta obra ya estaba en tu galería. Puedes colorearla todas las veces que quieras."
+      : "¡Has ganado +10 🌱 Semillas y una nueva obra para tu galería!";
+  }
+
+  if (lesson) {
+    lesson.textContent = coloringCurrentPage.lesson;
+  }
+
+  celebration?.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+
+/* ---------- CONTROLES ---------- */
+
+function initializeColoringBook() {
+  ensureColoringState();
+  renderColoringPalette();
+
+  document
+    .getElementById("openColoringBook")
+    ?.addEventListener("click", openColoringBook);
+
+  document
+    .getElementById("closeColoringBook")
+    ?.addEventListener("click", closeColoringBook);
+
+  document
+    .getElementById("backToColoringGallery")
+    ?.addEventListener("click", showColoringGallery);
+
+  document
+    .getElementById("colorAnotherPicture")
+    ?.addEventListener("click", showColoringGallery);
+
+  document
+    .getElementById("returnFromColoring")
+    ?.addEventListener("click", closeColoringBook);
+
+  document
+    .getElementById("coloringUndo")
+    ?.addEventListener("click", undoColoring);
+
+  document
+    .getElementById("coloringReset")
+    ?.addEventListener("click", resetCurrentColoring);
+
+  document
+    .getElementById("finishColoring")
+    ?.addEventListener("click", finishCurrentColoring);
+
+  document
+    .getElementById("coloringEraser")
+    ?.addEventListener("click", event => {
+      coloringEraserMode = true;
+
+      document
+        .querySelectorAll(".color-swatch")
+        .forEach(item => item.classList.remove("active"));
+
+      event.currentTarget.classList.add("active");
+    });
+
+  document
+    .querySelectorAll("[data-brush-size]")
+    .forEach(button => {
+      button.addEventListener("click", () => {
+        coloringBrushSize =
+          Number(button.dataset.brushSize) || 16;
+
+        document
+          .querySelectorAll("[data-brush-size]")
+          .forEach(item => item.classList.remove("active"));
+
+        button.classList.add("active");
+      });
+    });
+}
+
+
+/* ---------- ARRANQUE ---------- */
+
+if (document.readyState === "loading") {
+  document.addEventListener(
+    "DOMContentLoaded",
+    initializeColoringBook
+  );
+} else {
+  initializeColoringBook();
+}
