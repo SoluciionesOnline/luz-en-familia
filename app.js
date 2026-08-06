@@ -1020,9 +1020,40 @@ function renderProgress() {
   setText("seedTotal", state.seeds);
   setText("missionSeedTotal", state.seeds);
 
-  setText("familyLevel", level.name);
+  setText("renderMissions", level.name);
   setText("levelIcon", level.icon);
+  /* ==========================================
+     INICIO VISUAL V2
+     Sincronizar Semillas, nivel y progreso
+     ========================================== */
 
+  setText(
+    "homeSeeds",
+    Number(state.seeds || 0).toLocaleString("es-ES")
+  );
+
+  setText(
+    "homeLevel",
+    level.name
+  );
+
+  setText(
+    "homeProgressLevel",
+    `${level.icon || "⭐"} ${level.name}`
+  );
+
+  setText(
+    "homeProgressSeeds",
+    `${state.seeds || 0} Semillas`
+  );
+
+  const homeLevelProgressBar =
+    document.getElementById("homeLevelProgressBar");
+
+  if (homeLevelProgressBar) {
+    homeLevelProgressBar.style.width =
+      `${Math.max(0, Math.min(100, progress))}%`;
+  }
   setText("familyLargeLevel", level.name);
   setText("familyLargeIcon", level.icon);
 
@@ -1181,7 +1212,8 @@ function renderMissions() {
     "weeklyMissionsList",
     WEEKLY_MISSIONS
   );
-
+   
+  renderHomeDailyMission();
   renderProgress();
 }
 
@@ -4921,4 +4953,136 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initializePwa);
 } else {
   initializePwa();
+}
+
+/* =========================================================
+   INICIO VISUAL V2 — MISIÓN Y NAVEGACIÓN
+   ========================================================= */
+
+function renderHomeDailyMission() {
+  if (!Array.isArray(DAILY_MISSIONS) || !DAILY_MISSIONS.length) {
+    return;
+  }
+
+  /* Elegir una misión real diferente según el día */
+  const now = new Date();
+  const startOfYear = new Date(now.getFullYear(), 0, 0);
+  const dayOfYear = Math.floor((now - startOfYear) / 86400000);
+
+  const mission =
+    DAILY_MISSIONS[dayOfYear % DAILY_MISSIONS.length];
+
+  if (!mission) return;
+
+  /* La app guarda las misiones completadas en un array */
+  const completed =
+    Array.isArray(state.completedMissions) &&
+    state.completedMissions.includes(mission.id);
+
+  /* Título */
+  setText(
+    "homeMissionTitle",
+    `${mission.icon || "🌱"} ${mission.title}`
+  );
+
+  /* Descripción */
+  setText(
+    "homeMissionText",
+    mission.description
+  );
+
+  /* Barra de progreso */
+  const progressBar =
+    document.getElementById("homeMissionProgressBar");
+
+  if (progressBar) {
+    progressBar.style.width =
+      completed ? "100%" : "12%";
+  }
+
+  /* Información de tiempo y recompensa */
+  const progressText =
+    document.getElementById("homeMissionProgressText");
+
+  if (progressText) {
+    progressText.textContent =
+      completed
+        ? `✓ Misión completada · +${mission.seeds} 🌱`
+        : `${mission.time} · Recompensa +${mission.seeds} 🌱`;
+  }
+
+  /* Botón principal */
+  const playButton =
+    document.querySelector("#screen-home .home-play-button");
+
+  if (playButton) {
+    playButton.textContent =
+      completed
+        ? "✓ ¡MISIÓN COMPLETADA!"
+        : "¡COMENZAR!";
+  }
+}
+
+
+/* ---------- NAVEGACIÓN DEL NUEVO INICIO ---------- */
+
+function initializeHomeV2Navigation() {
+  document
+    .querySelectorAll("#screen-home [data-go]")
+    .forEach(button => {
+
+      if (button.dataset.homeNavigationReady === "true") {
+        return;
+      }
+
+      button.dataset.homeNavigationReady = "true";
+
+      button.addEventListener("click", () => {
+        const destination = button.dataset.go;
+
+        /*
+          Reutilizar la navegación existente.
+          No crea un segundo sistema de pantallas.
+        */
+        const existingNavButton =
+          document.querySelector(
+            `.nav-item[data-screen="${destination}"]`
+          ) ||
+          document.querySelector(
+            `[data-screen="${destination}"]`
+          ) ||
+          document.querySelector(
+            `[data-target="${destination}"]`
+          );
+
+        if (existingNavButton) {
+          existingNavButton.click();
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+}
+
+
+/* ---------- ACTUALIZAR PORTADA ---------- */
+
+function renderHomeV2() {
+  renderHomeDailyMission();
+  initializeHomeV2Navigation();
+}
+
+
+/* ---------- INICIALIZACIÓN ---------- */
+
+if (document.readyState === "loading") {
+  document.addEventListener(
+    "DOMContentLoaded",
+    renderHomeV2
+  );
+} else {
+  renderHomeV2();
 }
