@@ -4353,3 +4353,99 @@ if (document.readyState === "loading") {
 } else {
   initializeColoringBook();
 }
+/* =========================================================
+   COLOREA LA BIBLIA — MODO PANTALLA COMPLETA
+   ========================================================= */
+
+function openColoringFullscreen() {
+  const wrapper = document.getElementById("coloringCanvasWrapper");
+  const closeButton = document.getElementById("closeColoringFullscreen");
+
+  if (!wrapper) return;
+
+  wrapper.classList.add("coloring-fullscreen-mode");
+  document.body.classList.add("coloring-fullscreen-active");
+
+  closeButton?.classList.remove("hidden");
+
+  /*
+    Intentamos usar pantalla completa real cuando
+    el navegador lo permite.
+  */
+  if (wrapper.requestFullscreen) {
+    wrapper.requestFullscreen().catch(() => {
+      // El modo CSS seguirá funcionando.
+    });
+  } else if (wrapper.webkitRequestFullscreen) {
+    try {
+      wrapper.webkitRequestFullscreen();
+    } catch (error) {
+      // El modo CSS seguirá funcionando.
+    }
+  }
+}
+
+
+function closeColoringFullscreen() {
+  const wrapper = document.getElementById("coloringCanvasWrapper");
+  const closeButton = document.getElementById("closeColoringFullscreen");
+
+  wrapper?.classList.remove("coloring-fullscreen-mode");
+  document.body.classList.remove("coloring-fullscreen-active");
+
+  closeButton?.classList.add("hidden");
+
+  if (document.fullscreenElement && document.exitFullscreen) {
+    document.exitFullscreen().catch(() => {});
+  } else if (
+    document.webkitFullscreenElement &&
+    document.webkitExitFullscreen
+  ) {
+    try {
+      document.webkitExitFullscreen();
+    } catch (error) {}
+  }
+}
+
+
+function syncColoringFullscreenState() {
+  /*
+    Si el usuario sale usando el botón Atrás,
+    Escape o los controles del navegador,
+    restauramos también nuestra interfaz.
+  */
+
+  if (
+    !document.fullscreenElement &&
+    !document.webkitFullscreenElement
+  ) {
+    const wrapper =
+      document.getElementById("coloringCanvasWrapper");
+
+    const closeButton =
+      document.getElementById("closeColoringFullscreen");
+
+    wrapper?.classList.remove("coloring-fullscreen-mode");
+    document.body.classList.remove("coloring-fullscreen-active");
+    closeButton?.classList.add("hidden");
+  }
+}
+
+
+document
+  .getElementById("openColoringFullscreen")
+  ?.addEventListener("click", openColoringFullscreen);
+
+document
+  .getElementById("closeColoringFullscreen")
+  ?.addEventListener("click", closeColoringFullscreen);
+
+document.addEventListener(
+  "fullscreenchange",
+  syncColoringFullscreenState
+);
+
+document.addEventListener(
+  "webkitfullscreenchange",
+  syncColoringFullscreenState
+);
