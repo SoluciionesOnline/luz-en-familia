@@ -8137,3 +8137,23 @@ button {
     border-radius: 18px !important;
   }
 }
+/* =====================================================
+   FORZAR ESCALA REAL DE JESUS
+   ===================================================== */
+
+#screen-home .jesus-welcome-image {
+  transform: scale(2.2) !important;
+  transform-origin: center bottom !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* MOVIL */
+@media (max-width: 600px) {
+
+  #screen-home .jesus-welcome-image {
+    transform: scale(1.8) !important;
+    transform-origin: center bottom !important;
+  }
+
+}
