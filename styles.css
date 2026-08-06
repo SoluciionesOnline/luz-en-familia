@@ -7608,3 +7608,81 @@ button {
     margin: 2px 0 !important;
   }
 }
+/* =========================================================
+   AJUSTE FINAL TAMAÑO DE JESÚS
+   WEB + MÓVIL
+   ========================================================= */
+
+/* WEB / ESCRITORIO */
+#screen-home .home-jesus-character {
+  flex: 0 0 360px !important;
+  width: 360px !important;
+  height: 390px !important;
+}
+
+#screen-home .jesus-figure {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+}
+
+#screen-home .jesus-welcome-image {
+  display: block !important;
+  width: auto !important;
+  height: 385px !important;
+  max-width: 100% !important;
+
+  object-fit: contain !important;
+  object-position: center bottom !important;
+
+  margin: 0 !important;
+  transform: none !important;
+}
+
+
+/* =========================================================
+   MÓVIL
+   Jesús más grande sin sacar el mensaje de su lado
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  #screen-home .home-jesus-welcome {
+    width: 100% !important;
+    padding: 0 5px !important;
+    gap: 4px !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+
+    align-items: flex-end !important;
+    justify-content: center !important;
+  }
+
+  #screen-home .home-jesus-character {
+    flex: 0 0 55% !important;
+    width: 55% !important;
+    height: 285px !important;
+  }
+
+  #screen-home .jesus-welcome-image {
+    width: 100% !important;
+    height: 280px !important;
+    max-width: none !important;
+
+    object-fit: contain !important;
+    object-position: center bottom !important;
+
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  #screen-home .home-jesus-message {
+    flex: 0 0 43% !important;
+    width: 43% !important;
+    margin: 0 0 30px 0 !important;
+  }
+}
