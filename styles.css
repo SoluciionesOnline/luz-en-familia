@@ -3534,3 +3534,1835 @@ body.coloring-fullscreen-active {
     justify-content: space-between;
   }
 }
+/* =========================================================
+   LUZ EN FAMILIA — INICIO VISUAL V2
+   ========================================================= */
+
+.home-v2 {
+  --home-blue: #0876c9;
+  --home-blue-dark: #075397;
+  --home-green: #69b72e;
+  --home-green-dark: #31863c;
+  --home-gold: #ffb71b;
+  --home-cream: #fff8e7;
+  --home-ink: #173f3a;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.home-v2-hero {
+  position: relative;
+  overflow: hidden;
+
+  margin: -4px -4px 22px;
+  padding: 20px 22px 0;
+
+  border-radius: 0 0 34px 34px;
+
+  background:
+    radial-gradient(
+      circle at 82% 12%,
+      rgba(255, 245, 174, 0.95) 0 6%,
+      transparent 17%
+    ),
+    linear-gradient(
+      180deg,
+      #70cdf1 0%,
+      #bcebf4 48%,
+      #eaf5cc 73%,
+      #a8d66d 100%
+    );
+
+  box-shadow:
+    0 15px 35px rgba(39, 98, 89, 0.14);
+}
+
+
+/* Luz ambiental */
+
+.home-v2-hero::before {
+  content: "";
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  top: -170px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 245, 167, 0.75),
+      rgba(255, 255, 255, 0) 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* Suelo */
+
+.home-v2-hero::after {
+  content: "";
+  position: absolute;
+
+  left: -5%;
+  right: -5%;
+  bottom: 0;
+
+  height: 125px;
+
+  border-radius: 50% 50% 0 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #9fd45e,
+      #65b548
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   NUBES Y DESTELLOS
+   ========================================================= */
+
+.home-v2-sky-decor {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.home-cloud {
+  position: absolute;
+
+  width: 90px;
+  height: 28px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.78);
+
+  filter:
+    drop-shadow(
+      0 4px 7px rgba(255, 255, 255, 0.2)
+    );
+}
+
+.home-cloud::before,
+.home-cloud::after {
+  content: "";
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: inherit;
+}
+
+.home-cloud::before {
+  width: 38px;
+  height: 38px;
+
+  left: 18px;
+  bottom: 5px;
+}
+
+.home-cloud::after {
+  width: 48px;
+  height: 48px;
+
+  right: 12px;
+  bottom: 3px;
+}
+
+.cloud-one {
+  top: 115px;
+  left: 8%;
+}
+
+.cloud-two {
+  top: 155px;
+  right: 10%;
+
+  transform: scale(0.72);
+}
+
+.home-sparkle {
+  position: absolute;
+
+  color: #ffe14d;
+
+  font-size: 25px;
+
+  text-shadow:
+    0 0 10px rgba(255, 218, 54, 0.8);
+}
+
+.sparkle-one {
+  top: 82px;
+  left: 4%;
+}
+
+.sparkle-two {
+  top: 190px;
+  left: 42%;
+}
+
+.sparkle-three {
+  top: 74px;
+  right: 4%;
+}
+
+
+/* =========================================================
+   SALUDO + SEMILLAS
+   ========================================================= */
+
+.home-v2-top {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  max-width: 1120px;
+  margin: 0 auto 18px;
+}
+
+.home-v2-greeting {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 7px 13px 7px 8px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.75);
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.72);
+
+  box-shadow:
+    0 6px 18px rgba(22, 79, 110, 0.12);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.home-avatar {
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 3px solid white;
+  border-radius: 50%;
+
+  background: #ffd45e;
+
+  font-size: 23px;
+}
+
+.home-v2-greeting small {
+  display: block;
+
+  color: #54808c;
+
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+}
+
+.home-v2-greeting strong {
+  display: block;
+
+  color: var(--home-blue-dark);
+
+  font-size: 15px;
+}
+
+.home-v2-stats {
+  display: flex;
+  gap: 8px;
+}
+
+.home-stat {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  min-width: 105px;
+  padding: 9px 12px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.85);
+
+  border-radius: 16px;
+
+  background:
+    rgba(255, 255, 255, 0.84);
+
+  box-shadow:
+    0 6px 18px rgba(23, 73, 91, 0.12);
+}
+
+.home-stat > span {
+  font-size: 25px;
+}
+
+.home-stat strong {
+  display: block;
+
+  color: #163f3a;
+
+  font-size: 17px;
+  line-height: 1;
+}
+
+.home-stat small {
+  color: #667a74;
+
+  font-size: 9px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   HERO CENTRAL
+   ========================================================= */
+
+.home-v2-main {
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(320px, 1.05fr);
+
+  align-items: center;
+  gap: 35px;
+
+  max-width: 1120px;
+  min-height: 445px;
+
+  margin: auto;
+  padding: 20px 20px 95px;
+}
+
+
+/* =========================================================
+   LOGO / MARCA
+   ========================================================= */
+
+.home-v2-brand {
+  position: relative;
+  z-index: 4;
+
+  max-width: 480px;
+
+  text-align: center;
+}
+
+.home-faith-symbol {
+  position: relative;
+
+  width: 145px;
+  height: 105px;
+
+  margin: 0 auto -4px;
+}
+
+.faith-cross {
+  position: absolute;
+  z-index: 2;
+
+  left: 50%;
+  top: 0;
+
+  transform: translateX(-50%);
+
+  color: #ffc41e;
+
+  font-size: 83px;
+  line-height: 1;
+
+  filter:
+    drop-shadow(
+      0 5px 2px rgba(188, 123, 8, 0.18)
+    );
+}
+
+.faith-book {
+  position: absolute;
+  z-index: 3;
+
+  left: 50%;
+  bottom: 0;
+
+  transform: translateX(-50%);
+
+  font-size: 62px;
+
+  filter:
+    drop-shadow(
+      0 4px 3px rgba(12, 78, 132, 0.20)
+    );
+}
+
+.faith-ray {
+  position: absolute;
+
+  color: #ffdf37;
+
+  font-size: 23px;
+}
+
+.ray-1 {
+  left: 10px;
+  top: 24px;
+}
+
+.ray-2 {
+  right: 12px;
+  top: 17px;
+}
+
+.ray-3 {
+  right: 2px;
+  bottom: 20px;
+}
+
+
+.home-logo-title {
+  position: relative;
+
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+
+  line-height: 0.82;
+
+  transform: rotate(-1deg);
+}
+
+.logo-luz {
+  grid-column: 1;
+
+  color: #ffae16;
+
+  font-size:
+    clamp(66px, 8vw, 104px);
+
+  font-weight: 1000;
+
+  letter-spacing: -6px;
+
+  -webkit-text-stroke:
+    3px rgba(255, 255, 255, 0.95);
+
+  paint-order: stroke fill;
+
+  text-shadow:
+    0 5px 0 #e88a0a,
+    0 9px 13px rgba(61, 94, 92, 0.18);
+}
+
+.logo-en {
+  grid-column: 2;
+
+  margin-left: 9px;
+
+  color: #0757a0;
+
+  font-size:
+    clamp(30px, 4vw, 46px);
+
+  font-weight: 1000;
+
+  -webkit-text-stroke:
+    2px rgba(255, 255, 255, 0.9);
+
+  paint-order: stroke fill;
+}
+
+.logo-familia {
+  grid-column: 1 / -1;
+
+  margin-top: 10px;
+
+  color: #075ba8;
+
+  font-size:
+    clamp(52px, 7vw, 84px);
+
+  font-weight: 1000;
+
+  letter-spacing: -4px;
+
+  -webkit-text-stroke:
+    3px rgba(255, 255, 255, 0.96);
+
+  paint-order: stroke fill;
+
+  text-shadow:
+    0 5px 0 #03487e,
+    0 9px 14px rgba(20, 73, 100, 0.20);
+}
+
+.home-logo-ribbon {
+  display: inline-block;
+
+  margin-top: 16px;
+  padding: 9px 18px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #075ca6,
+      #06437d
+    );
+
+  color: white;
+
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+
+  box-shadow:
+    0 6px 0 rgba(3, 58, 105, 0.12);
+}
+
+.home-logo-ribbon b {
+  margin: 0 5px;
+
+  color: #ffd845;
+}
+
+.home-v2-description {
+  max-width: 390px;
+
+  margin: 18px auto 0;
+
+  color: #234d49;
+
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+
+  text-shadow:
+    0 1px rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================================
+   ESCENA ILUSTRADA
+   ========================================================= */
+
+.home-v2-scene {
+  position: relative;
+
+  min-height: 390px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.home-landscape {
+  position: absolute;
+  inset: 0 0 70px;
+
+  overflow: hidden;
+
+  border:
+    3px solid rgba(255, 255, 255, 0.72);
+
+  border-radius: 45% 45% 26px 26px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #69c9ef 0%,
+      #b8ebf4 54%,
+      #95d663 55%,
+      #5db34a 100%
+    );
+
+  box-shadow:
+    0 14px 30px rgba(26, 94, 89, 0.18);
+}
+
+.home-sun {
+  position: absolute;
+
+  top: 25px;
+  right: 40px;
+
+  width: 66px;
+  height: 66px;
+
+  border-radius: 50%;
+
+  background:
+    #ffe672;
+
+  box-shadow:
+    0 0 35px rgba(255, 224, 83, 0.85);
+}
+
+.home-hill {
+  position: absolute;
+
+  width: 110%;
+  height: 170px;
+
+  left: -5%;
+  bottom: -85px;
+
+  border-radius: 50% 50% 0 0;
+}
+
+.hill-back {
+  bottom: -55px;
+
+  background: #83ca56;
+
+  transform: rotate(4deg);
+}
+
+.hill-front {
+  bottom: -95px;
+
+  background: #54a944;
+
+  transform: rotate(-4deg);
+}
+
+.home-church {
+  position: absolute;
+  z-index: 3;
+
+  left: 50%;
+  bottom: 42px;
+
+  width: 96px;
+  height: 115px;
+
+  transform: translateX(-50%);
+}
+
+.church-cross {
+  position: absolute;
+
+  top: -33px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #a65c20;
+
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.church-roof {
+  position: absolute;
+
+  top: 0;
+  left: 7px;
+
+  width: 82px;
+  height: 55px;
+
+  background: #bd682c;
+
+  clip-path:
+    polygon(
+      50% 0,
+      100% 100%,
+      0 100%
+    );
+}
+
+.church-body {
+  position: absolute;
+
+  left: 19px;
+  bottom: 0;
+
+  width: 58px;
+  height: 73px;
+
+  border:
+    3px solid #d99442;
+
+  border-radius: 3px;
+
+  background: #ffe29a;
+}
+
+.church-door {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 20px;
+  height: 35px;
+
+  transform: translateX(-50%);
+
+  border-radius: 12px 12px 0 0;
+
+  background: #8c542e;
+}
+
+.home-tree {
+  position: absolute;
+  z-index: 4;
+
+  font-size: 55px;
+
+  filter:
+    drop-shadow(
+      0 5px 3px rgba(40, 91, 43, 0.15)
+    );
+}
+
+.tree-one {
+  left: 8%;
+  bottom: 20px;
+}
+
+.tree-two {
+  right: 8%;
+  bottom: 20px;
+}
+
+.home-flower {
+  position: absolute;
+  z-index: 5;
+
+  bottom: 14px;
+
+  font-size: 23px;
+}
+
+.flower-one {
+  left: 30%;
+}
+
+.flower-two {
+  right: 27%;
+}
+
+
+/* =========================================================
+   MISIÓN
+   ========================================================= */
+
+.home-daily-mission {
+  position: relative;
+  z-index: 7;
+
+  width: min(92%, 390px);
+
+  margin-bottom: 0;
+  padding: 18px;
+
+  border:
+    2px solid rgba(235, 185, 69, 0.38);
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 252, 224, 0.98),
+      rgba(255, 243, 190, 0.98)
+    );
+
+  box-shadow:
+    0 12px 28px rgba(80, 90, 50, 0.20);
+}
+
+.mission-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.mission-title-row small {
+  color: #b37c1b;
+
+  font-size: 9px;
+  font-weight: 1000;
+  letter-spacing: 0.8px;
+}
+
+.mission-title-row h2 {
+  margin: 3px 0 0;
+
+  color: #234d3d;
+
+  font-size: 18px;
+}
+
+.mission-gift {
+  font-size: 30px;
+}
+
+.home-daily-mission p {
+  margin: 9px 0 12px;
+
+  color: #59665d;
+
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.home-mission-progress {
+  margin-bottom: 12px;
+}
+
+.home-mission-progress-track {
+  overflow: hidden;
+
+  height: 8px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(61, 126, 68, 0.14);
+}
+
+.home-mission-progress-track span {
+  display: block;
+
+  width: 10%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #74bd35,
+      #45a63e
+    );
+
+  transition: width 0.3s ease;
+}
+
+.home-mission-progress small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #778077;
+
+  font-size: 9px;
+}
+
+.home-play-button {
+  width: 100%;
+  min-height: 48px;
+
+  border:
+    2px solid rgba(41, 135, 49, 0.4);
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #78c943,
+      #45a832
+    );
+
+  color: white;
+
+  font-size: 18px;
+  font-weight: 1000;
+
+  text-shadow:
+    0 2px rgba(32, 103, 34, 0.25);
+
+  box-shadow:
+    inset 0 2px rgba(255, 255, 255, 0.25),
+    0 5px 0 #318a2e,
+    0 9px 14px rgba(42, 102, 47, 0.18);
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   CUATRO ACCESOS
+   ========================================================= */
+
+.home-feature-strip {
+  position: relative;
+  z-index: 8;
+
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 10px;
+
+  max-width: 850px;
+
+  margin: -62px auto 0;
+  padding: 13px;
+
+  border:
+    1px solid rgba(227, 194, 105, 0.45);
+
+  border-radius: 25px 25px 0 0;
+
+  background:
+    rgba(255, 250, 228, 0.97);
+
+  box-shadow:
+    0 -5px 25px rgba(76, 101, 70, 0.10);
+}
+
+.home-feature {
+  min-height: 100px;
+
+  border: 0;
+  border-radius: 18px;
+
+  background:
+    rgba(255, 255, 255, 0.58);
+
+  color: #284c47;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.home-feature:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 8px 18px rgba(56, 96, 76, 0.13);
+}
+
+.home-feature span {
+  display: grid;
+  place-items: center;
+
+  width: 48px;
+  height: 48px;
+
+  margin: 0 auto 7px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  font-size: 27px;
+
+  box-shadow:
+    0 5px 12px rgba(61, 96, 73, 0.12);
+}
+
+.home-feature strong {
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.feature-bible span {
+  background: #e4f5c7;
+}
+
+.feature-games span {
+  background: #fff0b7;
+}
+
+.feature-family span {
+  background: #e7dcff;
+}
+
+.feature-rewards span {
+  background: #d9eefc;
+}
+
+
+/* =========================================================
+   JUEGOS DESTACADOS
+   ========================================================= */
+
+.home-games-showcase {
+  margin: 20px 0;
+  padding: 27px 18px 25px;
+
+  border:
+    1px solid rgba(216, 193, 130, 0.35);
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffdf4,
+      #fff8e7
+    );
+
+  box-shadow:
+    0 10px 30px rgba(77, 91, 62, 0.07);
+}
+
+.home-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  margin-bottom: 20px;
+
+  text-align: center;
+}
+
+.home-section-heading > span {
+  font-size: 23px;
+}
+
+.home-section-heading h2 {
+  margin: 0;
+
+  color: #075ba8;
+
+  font-size:
+    clamp(23px, 4vw, 34px);
+
+  font-weight: 1000;
+
+  letter-spacing: -1px;
+}
+
+.home-section-heading p {
+  margin: 4px 0 0;
+
+  color: #576c65;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* Carrusel */
+
+.home-games-scroll {
+  display: grid;
+  grid-template-columns:
+    repeat(6, minmax(145px, 1fr));
+
+  gap: 10px;
+}
+
+.home-game-preview {
+  position: relative;
+
+  min-height: 245px;
+  padding: 17px 12px 14px;
+
+  overflow: hidden;
+
+  border:
+    3px solid rgba(255, 255, 255, 0.72);
+
+  border-radius: 20px;
+
+  color: white;
+
+  text-align: center;
+
+  box-shadow:
+    0 8px 18px rgba(43, 69, 65, 0.13);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease;
+}
+
+.home-game-preview:hover {
+  transform:
+    translateY(-5px)
+    rotate(-0.5deg);
+}
+
+.home-game-preview::after {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  right: -50px;
+  bottom: -45px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+}
+
+.preview-emoji {
+  display: grid;
+  place-items: center;
+
+  width: 70px;
+  height: 70px;
+
+  margin: 5px auto 14px;
+
+  border-radius: 22px;
+
+  background:
+    rgba(255, 255, 255, 0.88);
+
+  font-size: 38px;
+
+  box-shadow:
+    0 6px 15px rgba(0, 0, 0, 0.10);
+}
+
+.home-game-preview strong {
+  display: block;
+
+  min-height: 37px;
+
+  font-size: 13px;
+  line-height: 1.15;
+}
+
+.home-game-preview small {
+  display: block;
+
+  margin: 10px 0;
+
+  color:
+    rgba(255, 255, 255, 0.93);
+
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.preview-action {
+  position: absolute;
+
+  left: 12px;
+  right: 12px;
+  bottom: 13px;
+
+  padding: 7px;
+
+  border-radius: 10px;
+
+  background:
+    rgba(255, 255, 255, 0.20);
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.game-purple {
+  background:
+    linear-gradient(
+      160deg,
+      #8867d6,
+      #6948b4
+    );
+}
+
+.game-green {
+  background:
+    linear-gradient(
+      160deg,
+      #83b93d,
+      #4e8c29
+    );
+}
+
+.game-gold {
+  background:
+    linear-gradient(
+      160deg,
+      #f5b331,
+      #d68b13
+    );
+}
+
+.game-blue {
+  background:
+    linear-gradient(
+      160deg,
+      #19a7c7,
+      #087ca5
+    );
+}
+
+.game-pink {
+  background:
+    linear-gradient(
+      160deg,
+      #ef7088,
+      #d95075
+    );
+}
+
+.game-teal {
+  background:
+    linear-gradient(
+      160deg,
+      #32b8ad,
+      #168b8c
+    );
+}
+
+
+/* =========================================================
+   TARJETAS INFERIORES
+   ========================================================= */
+
+.home-dashboard {
+  display: grid;
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 11px;
+
+  margin-bottom: 22px;
+}
+
+.home-info-card {
+  min-height: 210px;
+  padding: 17px 14px;
+
+  border:
+    1px solid rgba(220, 199, 143, 0.36);
+
+  border-radius: 21px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fffdf5,
+      #fff8e8
+    );
+
+  color: #40554f;
+
+  text-align: left;
+
+  box-shadow:
+    0 8px 22px rgba(68, 89, 67, 0.07);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.home-info-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 25px rgba(68, 89, 67, 0.12);
+}
+
+.info-card-icon {
+  display: grid;
+  place-items: center;
+
+  width: 58px;
+  height: 58px;
+
+  margin-bottom: 13px;
+
+  border-radius: 18px;
+
+  background: #eff7d9;
+
+  font-size: 32px;
+}
+
+.home-info-card small {
+  color: #4d8638;
+
+  font-size: 9px;
+  font-weight: 1000;
+  letter-spacing: 0.6px;
+}
+
+.home-info-card h3 {
+  margin: 5px 0 7px;
+
+  color: #294c44;
+
+  font-size: 15px;
+}
+
+.home-info-card p {
+  margin: 0 0 12px;
+
+  color: #697771;
+
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.home-info-card strong {
+  color: #2871a6;
+
+  font-size: 10px;
+}
+
+.mission-card .info-card-icon {
+  background: #fff0c8;
+}
+
+.coloring-card .info-card-icon {
+  background: #e8dcff;
+}
+
+.family-card .info-card-icon {
+  background: #dceffb;
+}
+
+.devotional-card .info-card-icon {
+  background: #ffe5c7;
+}
+
+
+/* Mini progreso */
+
+.mini-progress {
+  overflow: hidden;
+
+  height: 8px;
+
+  margin: 12px 0 6px;
+
+  border-radius: 999px;
+
+  background: #eee6cc;
+}
+
+.mini-progress span {
+  display: block;
+
+  width: 10%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #78bc38,
+      #f0b32d
+    );
+
+  transition: width 0.3s ease;
+}
+
+
+/* =========================================================
+   INSTALAR PWA
+   ========================================================= */
+
+.home-install-zone {
+  margin: 10px 0 22px;
+
+  text-align: center;
+}
+
+.home-install-button {
+  min-height: 48px;
+
+  padding: 10px 22px;
+
+  border: 0;
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #126bb0,
+      #075294
+    );
+
+  color: white;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 6px 16px rgba(7, 82, 148, 0.18);
+
+  cursor: pointer;
+}
+
+.home-install-button.hidden,
+.home-ios-install.hidden {
+  display: none;
+}
+
+.home-ios-install {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  max-width: 390px;
+
+  padding: 11px 15px;
+
+  border-radius: 16px;
+
+  background: #edf6ff;
+
+  color: #315f7c;
+
+  text-align: left;
+}
+
+.home-ios-install span {
+  font-size: 26px;
+}
+
+.home-ios-install p {
+  margin: 0;
+
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.home-ios-install strong {
+  display: block;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .home-v2-main {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    padding-bottom: 95px;
+  }
+
+  .home-v2-brand {
+    max-width: 600px;
+
+    margin: auto;
+  }
+
+  .home-v2-scene {
+    width: min(100%, 570px);
+
+    margin: auto;
+  }
+
+  .home-games-scroll {
+    display: flex;
+
+    overflow-x: auto;
+
+    padding: 4px 3px 15px;
+
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .home-games-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .home-game-preview {
+    flex:
+      0 0
+      min(42vw, 180px);
+
+    scroll-snap-align: start;
+  }
+
+  .home-dashboard {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .home-v2-hero {
+    margin:
+      -8px -8px 16px;
+
+    padding:
+      12px 10px 0;
+
+    border-radius:
+      0 0 27px 27px;
+  }
+
+
+  /* Saludo */
+
+  .home-v2-top {
+    align-items: stretch;
+    flex-direction: column;
+
+    margin-bottom: 8px;
+  }
+
+  .home-v2-greeting {
+    width: fit-content;
+
+    padding-right: 15px;
+  }
+
+  .home-v2-stats {
+    width: 100%;
+  }
+
+  .home-stat {
+    flex: 1;
+
+    min-width: 0;
+  }
+
+
+  /* Logo */
+
+  .home-v2-main {
+    min-height: auto;
+
+    gap: 16px;
+
+    padding:
+      6px 2px 87px;
+  }
+
+  .home-faith-symbol {
+    width: 105px;
+    height: 78px;
+  }
+
+  .faith-cross {
+    font-size: 61px;
+  }
+
+  .faith-book {
+    font-size: 45px;
+  }
+
+  .logo-luz {
+    font-size: 61px;
+
+    letter-spacing: -4px;
+
+    -webkit-text-stroke-width:
+      2px;
+  }
+
+  .logo-en {
+    margin-left: 6px;
+
+    font-size: 29px;
+  }
+
+  .logo-familia {
+    margin-top: 8px;
+
+    font-size: 48px;
+
+    letter-spacing: -3px;
+
+    -webkit-text-stroke-width:
+      2px;
+  }
+
+  .home-logo-ribbon {
+    max-width: 95%;
+
+    margin-top: 13px;
+    padding: 8px 11px;
+
+    font-size: 8px;
+  }
+
+  .home-v2-description {
+    max-width: 330px;
+
+    margin-top: 13px;
+
+    padding: 0 8px;
+
+    font-size: 12px;
+  }
+
+
+  /* Escena */
+
+  .home-v2-scene {
+    min-height: 350px;
+  }
+
+  .home-landscape {
+    inset:
+      0 3px 68px;
+
+    border-radius:
+      32% 32% 23px 23px;
+  }
+
+  .home-tree {
+    font-size: 43px;
+  }
+
+  .home-daily-mission {
+    width: calc(100% - 22px);
+
+    padding: 15px;
+  }
+
+
+  /* Accesos */
+
+  .home-feature-strip {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+
+    gap: 4px;
+
+    width: calc(100% - 8px);
+
+    margin-top: -59px;
+    padding: 7px 5px;
+
+    border-radius:
+      19px 19px 0 0;
+  }
+
+  .home-feature {
+    min-height: 87px;
+
+    padding: 5px 2px;
+
+    border-radius: 13px;
+  }
+
+  .home-feature span {
+    width: 39px;
+    height: 39px;
+
+    margin-bottom: 5px;
+
+    font-size: 22px;
+  }
+
+  .home-feature strong {
+    font-size: 9px;
+  }
+
+
+  /* Juegos */
+
+  .home-games-showcase {
+    margin:
+      12px -3px 16px;
+
+    padding:
+      22px 10px 16px;
+
+    border-radius: 22px;
+  }
+
+  .home-section-heading {
+    gap: 5px;
+  }
+
+  .home-section-heading > span {
+    font-size: 16px;
+  }
+
+  .home-section-heading h2 {
+    font-size: 24px;
+  }
+
+  .home-section-heading p {
+    font-size: 10px;
+  }
+
+  .home-game-preview {
+    flex:
+      0 0
+      min(55vw, 180px);
+
+    min-height: 230px;
+  }
+
+
+  /* Dashboard */
+
+  .home-dashboard {
+    display: flex;
+
+    overflow-x: auto;
+
+    gap: 9px;
+
+    margin-right: -5px;
+    padding:
+      2px 5px 14px 1px;
+
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .home-dashboard::-webkit-scrollbar {
+    display: none;
+  }
+
+  .home-info-card {
+    flex:
+      0 0
+      min(70vw, 240px);
+
+    min-height: 190px;
+
+    scroll-snap-align: start;
+  }
+
+}
+
+
+/* =========================================================
+   TELÉFONOS PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .logo-luz {
+    font-size: 54px;
+  }
+
+  .logo-familia {
+    font-size: 42px;
+  }
+
+  .home-feature strong {
+    font-size: 8px;
+  }
+
+  .home-stat {
+    padding:
+      8px 9px;
+  }
+
+  .home-stat > span {
+    font-size: 21px;
+  }
+
+}
+
+
+/* =========================================================
+   INTERACCIONES
+   ========================================================= */
+
+.home-play-button:active,
+.home-feature:active,
+.home-game-preview:active,
+.home-info-card:active {
+  transform:
+    translateY(2px)
+    scale(0.98);
+}
+
+
+/* Entrada suave */
+
+@keyframes homeVisualEnter {
+
+  from {
+    opacity: 0;
+    transform:
+      translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+
+}
+
+.home-v2-brand,
+.home-v2-scene {
+  animation:
+    homeVisualEnter
+    0.55s ease both;
+}
+
+.home-v2-scene {
+  animation-delay: 0.08s;
+}
+
+
+/* Respeto a accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .home-v2 *,
+  .home-v2 *::before,
+  .home-v2 *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+}
