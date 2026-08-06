@@ -3126,3 +3126,172 @@ body.coloring-fullscreen-active {
     max-width: calc(100vw - 12px);
   }
 }
+/* =========================================================
+   COLOREA LA BIBLIA — BARRA FLOTANTE
+   ========================================================= */
+
+.coloring-floating-tools {
+  position: absolute;
+
+  z-index: 10003;
+
+  left: 50%;
+  bottom:
+    max(
+      14px,
+      env(safe-area-inset-bottom)
+    );
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  max-width: calc(100vw - 20px);
+
+  padding: 9px 12px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  border:
+    1px solid rgba(23, 63, 58, 0.12);
+
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.20);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.coloring-floating-tools::-webkit-scrollbar {
+  display: none;
+}
+
+.coloring-floating-tools.hidden {
+  display: none;
+}
+
+
+/* PALETA */
+
+.floating-color-palette {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.floating-color {
+  flex: 0 0 auto;
+
+  width: 29px;
+  height: 29px;
+
+  padding: 0;
+
+  border: 3px solid white;
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 1px rgba(23, 63, 58, 0.20);
+
+  cursor: pointer;
+}
+
+.floating-color.active {
+  transform: scale(1.12);
+
+  box-shadow:
+    0 0 0 3px #173f3a,
+    0 0 0 5px white;
+}
+
+
+/* BOTONES */
+
+.floating-tool-button {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 11px;
+
+  background: #edf4f1;
+  color: #173f3a;
+
+  font-size: 17px;
+
+  cursor: pointer;
+}
+
+.floating-tool-button.active {
+  background: #173f3a;
+  color: white;
+}
+
+.floating-divider {
+  flex: 0 0 auto;
+
+  width: 1px;
+  height: 27px;
+
+  margin: 0 2px;
+
+  background:
+    rgba(23, 63, 58, 0.15);
+}
+
+
+/* ---------- MÓVIL ---------- */
+
+@media (max-width: 700px) {
+
+  .coloring-floating-tools {
+    width: calc(100vw - 16px);
+
+    justify-content: flex-start;
+
+    padding: 9px 10px;
+
+    border-radius: 18px;
+  }
+
+  .floating-color {
+    width: 27px;
+    height: 27px;
+  }
+
+  .floating-tool-button {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  /*
+    Dejamos espacio inferior para que
+    la barra no tape demasiado el dibujo.
+  */
+
+  .coloring-canvas-wrapper.coloring-fullscreen-mode {
+    padding-bottom:
+      max(
+        72px,
+        calc(
+          env(safe-area-inset-bottom) + 65px
+        )
+      );
+  }
+
+}
