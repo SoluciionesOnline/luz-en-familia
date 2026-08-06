@@ -7307,3 +7307,291 @@ button {
     transform: none !important;
   }
 }
+/* =========================================================
+   PORTADA APROBADA - LUZ EN FAMILIA
+   Fondo limpio + sol + césped
+   Jesús y bienvenida lado a lado
+   ========================================================= */
+
+#screen-home .home-v2-hero {
+  position: relative !important;
+  overflow: hidden !important;
+
+  background:
+    radial-gradient(
+      circle at 88% 12%,
+      rgba(255, 238, 120, 0.95) 0,
+      rgba(255, 230, 90, 0.55) 7%,
+      rgba(255, 230, 90, 0.15) 16%,
+      transparent 27%
+    ),
+    linear-gradient(
+      180deg,
+      #75d4f3 0%,
+      #bcebf7 52%,
+      #fff9d9 78%,
+      #d8ef8a 100%
+    ) !important;
+
+  border-radius: 0 0 30px 30px !important;
+}
+
+
+/* Quitar paisaje anterior y decoraciones que estorban */
+.home-v2-hero::before {
+  content: none !important;
+}
+
+.home-v2-hero::after {
+  content: "" !important;
+  display: block !important;
+
+  position: absolute !important;
+  left: -5% !important;
+  right: -5% !important;
+  bottom: 0 !important;
+
+  width: 110% !important;
+  height: 105px !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      #a9dc55 0%,
+      #72c53e 55%,
+      #55ad35 100%
+    ) !important;
+
+  border-radius: 50% 50% 0 0 / 35% 35% 0 0 !important;
+
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+
+/* Eliminar iglesia y recuadro pequeño del paisaje */
+.home-church,
+.home-v2-church,
+.hero-church,
+.landscape-church,
+.church,
+.home-landscape-card,
+.home-v2-landscape-card,
+.landscape-card {
+  display: none !important;
+}
+
+
+/* Todo el contenido por encima del césped */
+.home-v2-main,
+.home-v2-top,
+.home-v2-brand,
+.home-jesus-welcome,
+.home-feature-strip {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+
+/* =========================================================
+   JESÚS + MENSAJE
+   ========================================================= */
+
+.home-jesus-welcome {
+  width: min(94%, 690px) !important;
+
+  margin: 8px auto 0 !important;
+  padding: 0 !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+
+  gap: 14px !important;
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+
+.home-jesus-character {
+  flex: 0 0 290px !important;
+
+  width: 290px !important;
+  height: 300px !important;
+
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+
+.jesus-figure {
+  width: 100% !important;
+  height: 100% !important;
+
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+
+  background: transparent !important;
+}
+
+
+.jesus-welcome-image {
+  display: block !important;
+
+  width: auto !important;
+  height: 300px !important;
+  max-width: 290px !important;
+
+  object-fit: contain !important;
+  object-position: center bottom !important;
+
+  transform: none !important;
+
+  filter:
+    drop-shadow(0 10px 10px rgba(31, 83, 45, 0.14)) !important;
+}
+
+
+/* =========================================================
+   MENSAJE AL LADO DE JESÚS
+   ========================================================= */
+
+.home-jesus-message {
+  flex: 0 0 255px !important;
+
+  width: 255px !important;
+
+  margin: 0 0 35px 0 !important;
+  padding: 19px 18px !important;
+
+  text-align: center !important;
+
+  background: rgba(255, 252, 241, 0.96) !important;
+
+  border:
+    1px solid rgba(218, 177, 83, 0.35) !important;
+
+  border-radius: 25px !important;
+
+  box-shadow:
+    0 10px 24px rgba(32, 74, 44, 0.12) !important;
+
+  color: #153f38 !important;
+
+  pointer-events: none !important;
+}
+
+
+.home-jesus-message small {
+  color: #c56c08 !important;
+  font-weight: 900 !important;
+}
+
+
+.home-jesus-message h2 {
+  color: #164b3b !important;
+
+  font-size: 25px !important;
+  line-height: 1.05 !important;
+
+  margin: 5px 0 !important;
+}
+
+
+.home-jesus-message p {
+  color: #294b45 !important;
+
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+}
+
+
+/* =========================================================
+   MÓVIL
+   Jesús y mensaje siguen AL LADO
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  #screen-home .home-v2-hero {
+    border-radius: 0 0 25px 25px !important;
+  }
+
+
+  .home-v2-hero::after {
+    height: 90px !important;
+  }
+
+
+  .home-jesus-welcome {
+    width: 96% !important;
+
+    margin: 6px auto 0 !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+
+    align-items: flex-end !important;
+    justify-content: center !important;
+
+    gap: 4px !important;
+  }
+
+
+  .home-jesus-character {
+    flex: 0 0 48% !important;
+
+    width: 48% !important;
+    height: 215px !important;
+  }
+
+
+  .jesus-welcome-image {
+    height: 220px !important;
+    max-width: 100% !important;
+  }
+
+
+  .home-jesus-message {
+    flex: 0 0 48% !important;
+
+    width: 48% !important;
+
+    margin: 0 0 25px 0 !important;
+    padding: 12px 8px !important;
+
+    border-radius: 18px !important;
+  }
+
+
+  .home-jesus-message small {
+    font-size: 7px !important;
+  }
+
+
+  .home-jesus-message h2 {
+    font-size: 18px !important;
+  }
+
+
+  .home-jesus-message p {
+    font-size: 9.5px !important;
+    line-height: 1.35 !important;
+  }
+
+
+  .jesus-message-heart,
+  .jesus-message-love {
+    font-size: 14px !important;
+    margin: 3px 0 !important;
+  }
+}
