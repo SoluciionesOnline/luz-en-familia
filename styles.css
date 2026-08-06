@@ -8205,3 +8205,44 @@ button {
   }
 
 }
+.home-parables-showcase {
+  margin-top: 24px;
+  padding: 24px;
+  background: #fffdf4;
+  border-radius: 28px;
+}
+
+.parables-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.parable-card {
+  background: linear-gradient(
+    135deg,
+    #ffefba,
+    #ffffff
+  );
+
+  padding: 20px;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  text-decoration: none;
+
+  color: #2d3748;
+
+  font-weight: bold;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+.parable-card:hover {
+  transform: translateY(-4px);
+}
