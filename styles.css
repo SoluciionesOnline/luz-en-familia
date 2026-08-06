@@ -3473,3 +3473,64 @@ body.coloring-fullscreen-active {
     gap: 14px;
   }
 }
+
+
+/* =========================================================
+   PWA — INSTALACIÓN
+   ========================================================= */
+
+.pwa-install-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  margin: 22px 0 0;
+  padding: 17px 20px;
+  border: 1px solid rgba(184, 139, 70, 0.28);
+  border-radius: 22px;
+  background: linear-gradient(135deg, #fffaf0, #f6edda);
+  box-shadow: 0 8px 24px rgba(23, 63, 58, 0.06);
+}
+
+.pwa-install-card.hidden {
+  display: none;
+}
+
+.pwa-install-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 15px;
+  background: #173f3a;
+  color: #f3c75f;
+  font-size: 25px;
+}
+
+.pwa-install-copy strong {
+  color: #173f3a;
+}
+
+.pwa-install-copy p {
+  margin: 4px 0 0;
+  color: #64716d;
+  font-size: 13px;
+}
+
+.pwa-install-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 700px) {
+  .pwa-install-card {
+    grid-template-columns: auto 1fr;
+    padding: 16px;
+  }
+
+  .pwa-install-actions {
+    grid-column: 1 / -1;
+    justify-content: space-between;
+  }
+}

@@ -1,17 +1,31 @@
 {
   "name": "Luz en Familia",
-  "short_name": "Luz Familia",
-  "description": "Una experiencia de fe para crecer, jugar, conversar y conectar en familia.",
+  "short_name": "Luz",
+  "description": "Una aplicación cristiana para jugar, aprender y crecer juntos en familia.",
   "lang": "es",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#fbf7ee",
-  "theme_color": "#184a43",
+  "theme_color": "#173f3a",
   "categories": [
     "education",
     "family",
     "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "/icons/luz-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/luz-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
   ]
 }

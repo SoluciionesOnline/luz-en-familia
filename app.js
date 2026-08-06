@@ -4830,3 +4830,95 @@ if (document.readyState === "loading") {
   initializeFloatingColoringTools();
 
 }
+
+
+/* =========================================================
+   PWA — INSTALACIÓN Y ACTUALIZACIONES
+   ========================================================= */
+
+let deferredInstallPrompt = null;
+
+function isStandaloneApp() {
+  return window.matchMedia?.("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true;
+}
+
+function isIosDevice() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+}
+
+function showPwaInstallCard(mode) {
+  const card = document.getElementById("pwaInstallCard");
+  const title = document.getElementById("pwaInstallTitle");
+  const text = document.getElementById("pwaInstallText");
+  const button = document.getElementById("pwaInstallButton");
+
+  if (!card || isStandaloneApp() || sessionStorage.getItem("luzEnFamiliaInstallDismissed")) {
+    return;
+  }
+
+  if (mode === "ios") {
+    if (title) title.textContent = "Instalar en iPhone o iPad";
+    if (text) text.textContent = "Toca Compartir y después «Añadir a pantalla de inicio».";
+    if (button) button.hidden = true;
+  } else {
+    if (title) title.textContent = "Lleva Luz en Familia contigo";
+    if (text) text.textContent = "Instálala para abrirla como una aplicación desde tu teléfono.";
+    if (button) button.hidden = false;
+  }
+
+  card.classList.remove("hidden");
+}
+
+function hidePwaInstallCard() {
+  document.getElementById("pwaInstallCard")?.classList.add("hidden");
+}
+
+function initializePwa() {
+  const installButton = document.getElementById("pwaInstallButton");
+  const dismissButton = document.getElementById("pwaInstallDismiss");
+
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/service-worker.js").catch(error => {
+        console.warn("No se pudo activar el modo sin conexión.", error);
+      });
+    });
+  }
+
+  window.addEventListener("beforeinstallprompt", event => {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+    showPwaInstallCard("prompt");
+  });
+
+  window.addEventListener("appinstalled", () => {
+    deferredInstallPrompt = null;
+    hidePwaInstallCard();
+  });
+
+  installButton?.addEventListener("click", async () => {
+    if (!deferredInstallPrompt) return;
+
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt = null;
+    hidePwaInstallCard();
+  });
+
+  dismissButton?.addEventListener("click", () => {
+    sessionStorage.setItem("luzEnFamiliaInstallDismissed", "true");
+    hidePwaInstallCard();
+  });
+
+  if (isIosDevice() && !isStandaloneApp()) {
+    showPwaInstallCard("ios");
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializePwa);
+} else {
+  initializePwa();
+}
