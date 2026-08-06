@@ -5864,3 +5864,337 @@ body.coloring-fullscreen-active {
   }
 
 }
+/* =========================================================
+   INICIO MÓVIL — FORZAR TEMA CLARO
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  /* Fondo completo del Inicio */
+  html,
+  body {
+    background: #fffaf0;
+  }
+
+  #screen-home,
+  #screen-home.home-v2 {
+    color-scheme: light !important;
+
+    background:
+      linear-gradient(
+        180deg,
+        #fffaf0 0%,
+        #fffdf7 45%,
+        #fff8e8 100%
+      ) !important;
+
+    color: #294b45 !important;
+  }
+
+
+  /* HERO: cielo claro como en escritorio */
+  #screen-home .home-v2-hero {
+    background:
+      radial-gradient(
+        circle at 83% 12%,
+        rgba(255, 238, 119, .95) 0 5%,
+        transparent 16%
+      ),
+      linear-gradient(
+        180deg,
+        #6fd0f3 0%,
+        #b9eaf5 45%,
+        #e6f5c8 72%,
+        #8dce53 100%
+      ) !important;
+
+    color: #294b45 !important;
+  }
+
+
+  /* Eliminar cualquier capa oscura heredada */
+  #screen-home .home-v2-hero::before {
+    opacity: .65 !important;
+  }
+
+
+  /* Saludo */
+  #screen-home .home-v2-greeting {
+    background:
+      rgba(255,255,255,.92) !important;
+
+    border-color:
+      rgba(255,255,255,.95) !important;
+
+    color: #164f78 !important;
+
+    box-shadow:
+      0 6px 18px rgba(35,101,128,.15) !important;
+  }
+
+  #screen-home .home-v2-greeting strong {
+    color: #075a94 !important;
+  }
+
+  #screen-home .home-v2-greeting small {
+    color: #5a8591 !important;
+  }
+
+
+  /* Semillas / nivel */
+  #screen-home .home-stat {
+    background:
+      rgba(255,255,255,.94) !important;
+
+    border-color: white !important;
+
+    color: #234d45 !important;
+
+    box-shadow:
+      0 5px 14px rgba(42,99,111,.13) !important;
+  }
+
+  #screen-home .home-stat strong {
+    color: #234d45 !important;
+  }
+
+  #screen-home .home-stat small {
+    color: #6c7d78 !important;
+  }
+
+
+  /* Descripción del logo */
+  #screen-home .home-v2-description {
+    color: #244d48 !important;
+
+    text-shadow:
+      0 1px 1px rgba(255,255,255,.8) !important;
+  }
+
+
+  /* Paisaje */
+  #screen-home .home-landscape {
+    background:
+      linear-gradient(
+        180deg,
+        #71cef2 0%,
+        #c3edf4 48%,
+        #a7dc69 49%,
+        #62b94a 100%
+      ) !important;
+
+    border-color:
+      rgba(255,255,255,.85) !important;
+  }
+
+
+  /* Misión clara */
+  #screen-home .home-daily-mission {
+    background:
+      linear-gradient(
+        180deg,
+        #fffce5 0%,
+        #fff1b9 100%
+      ) !important;
+
+    border-color:
+      #efc35d !important;
+
+    color: #304c3e !important;
+
+    box-shadow:
+      0 10px 25px rgba(76,97,51,.20) !important;
+  }
+
+  #screen-home .home-daily-mission h2 {
+    color: #294d3d !important;
+  }
+
+  #screen-home .home-daily-mission p {
+    color: #5d6c63 !important;
+  }
+
+  #screen-home .home-daily-mission small {
+    color: #997019 !important;
+  }
+
+
+  /* Accesos rápidos */
+  #screen-home .home-feature-strip {
+    background:
+      rgba(255,250,229,.98) !important;
+
+    border-color:
+      #ead79f !important;
+
+    box-shadow:
+      0 7px 20px rgba(80,103,63,.12) !important;
+  }
+
+  #screen-home .home-feature {
+    background:
+      rgba(255,255,255,.72) !important;
+
+    color: #294c46 !important;
+  }
+
+  #screen-home .home-feature strong {
+    color: #294c46 !important;
+  }
+
+
+  /* SECCIÓN JUEGOS: fondo crema */
+  #screen-home .home-games-showcase {
+    background:
+      linear-gradient(
+        180deg,
+        #fffef8 0%,
+        #fff7e6 100%
+      ) !important;
+
+    border-color:
+      #eadcb8 !important;
+
+    box-shadow:
+      0 8px 22px rgba(72,93,64,.08) !important;
+  }
+
+  #screen-home .home-section-heading h2 {
+    color: #075da8 !important;
+  }
+
+  #screen-home .home-section-heading p {
+    color: #596e67 !important;
+  }
+
+
+  /*
+    Las tarjetas de juegos SÍ conservan sus colores.
+    Queremos color, no oscuridad general.
+  */
+
+  #screen-home .home-game-preview {
+    color: #fff !important;
+
+    box-shadow:
+      0 8px 18px rgba(50,78,70,.16) !important;
+  }
+
+  #screen-home .game-purple {
+    background:
+      linear-gradient(160deg,#956ddd,#6c48ba) !important;
+  }
+
+  #screen-home .game-green {
+    background:
+      linear-gradient(160deg,#88c343,#51942b) !important;
+  }
+
+  #screen-home .game-gold {
+    background:
+      linear-gradient(160deg,#f7bb37,#dc9015) !important;
+  }
+
+  #screen-home .game-blue {
+    background:
+      linear-gradient(160deg,#24afd0,#087fa8) !important;
+  }
+
+  #screen-home .game-pink {
+    background:
+      linear-gradient(160deg,#f17b94,#d95277) !important;
+  }
+
+  #screen-home .game-teal {
+    background:
+      linear-gradient(160deg,#3bc1b6,#178e8f) !important;
+  }
+
+
+  /* TARJETAS INFERIORES */
+  #screen-home .home-dashboard {
+    background: transparent !important;
+  }
+
+  #screen-home .home-info-card {
+    background:
+      linear-gradient(
+        145deg,
+        #ffffff,
+        #fff5dd
+      ) !important;
+
+    border-color:
+      #eadfbd !important;
+
+    color: #40564f !important;
+
+    box-shadow:
+      0 7px 18px rgba(65,91,70,.10) !important;
+  }
+
+  #screen-home .home-info-card:nth-child(2) {
+    background:
+      linear-gradient(
+        145deg,
+        #fffdf3,
+        #fff0c8
+      ) !important;
+  }
+
+  #screen-home .home-info-card:nth-child(3) {
+    background:
+      linear-gradient(
+        145deg,
+        #fbf6ff,
+        #eadfff
+      ) !important;
+  }
+
+  #screen-home .home-info-card:nth-child(4) {
+    background:
+      linear-gradient(
+        145deg,
+        #f2fbff,
+        #dcefff
+      ) !important;
+  }
+
+  #screen-home .home-info-card:nth-child(5) {
+    background:
+      linear-gradient(
+        145deg,
+        #fffaf0,
+        #ffe9bb
+      ) !important;
+  }
+
+  #screen-home .home-info-card small {
+    color: #4c873b !important;
+  }
+
+  #screen-home .home-info-card h3 {
+    color: #294c44 !important;
+  }
+
+  #screen-home .home-info-card p {
+    color: #697972 !important;
+  }
+
+  #screen-home .home-info-card strong {
+    color: #1972a9 !important;
+  }
+
+
+  /* Barra de progreso */
+  #screen-home .mini-progress {
+    background: #eee5ca !important;
+  }
+
+
+  /* Zona PWA */
+  #screen-home .home-install-zone {
+    background: transparent !important;
+  }
+
+}
