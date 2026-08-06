@@ -5086,3 +5086,98 @@ if (document.readyState === "loading") {
 } else {
   renderHomeV2();
 }
+/* =========================================================
+   ACCESO DESDE WHATSAPP / NAVEGADORES INTERNOS
+   ========================================================= */
+
+function initializeInAppBrowserNotice() {
+  const ua = navigator.userAgent || navigator.vendor || "";
+
+  /*
+    Detectamos navegadores internos comunes.
+    No afecta a Chrome, Safari ni a la PWA instalada.
+  */
+  const isInAppBrowser =
+    /FBAN|FBAV|Instagram|Messenger|Line|Twitter|WhatsApp/i.test(ua);
+
+  const isStandalone =
+    window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true;
+
+  if (!isInAppBrowser || isStandalone) {
+    return;
+  }
+
+  /* Evitar crear el aviso más de una vez */
+  if (document.getElementById("inAppBrowserNotice")) {
+    return;
+  }
+
+  const notice = document.createElement("div");
+  notice.id = "inAppBrowserNotice";
+  notice.className = "in-app-browser-notice";
+
+  notice.innerHTML = `
+    <div class="in-app-browser-card">
+
+      <div class="in-app-sun">☀️</div>
+
+      <div class="in-app-logo">
+        <span>LUZ</span>
+        <small>en</small>
+        <strong>FAMILIA</strong>
+      </div>
+
+      <h2>¡Bienvenidos!</h2>
+
+      <p>
+        Para disfrutar Luz en Familia con todos sus
+        colores y funciones, ábrela en el navegador
+        de tu teléfono.
+      </p>
+
+      <div class="in-app-browser-icon">🌈</div>
+
+      <strong class="in-app-instruction">
+        Toca el menú ⋮ y selecciona
+        “Abrir en navegador”
+      </strong>
+
+      <button
+        type="button"
+        class="in-app-continue"
+        id="inAppContinueButton"
+      >
+        Continuar aquí
+      </button>
+
+      <small class="in-app-help">
+        Recomendamos Chrome en Android o Safari en iPhone.
+      </small>
+
+    </div>
+  `;
+
+  document.body.appendChild(notice);
+
+  const continueButton =
+    document.getElementById("inAppContinueButton");
+
+  if (continueButton) {
+    continueButton.addEventListener("click", () => {
+      notice.remove();
+    });
+  }
+}
+
+
+/* Inicializar aviso de navegador interno */
+
+if (document.readyState === "loading") {
+  document.addEventListener(
+    "DOMContentLoaded",
+    initializeInAppBrowserNotice
+  );
+} else {
+  initializeInAppBrowserNotice();
+}
