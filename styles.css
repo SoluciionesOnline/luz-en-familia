@@ -8157,3 +8157,30 @@ button {
   }
 
 }
+/* =====================================================
+   AJUSTE FINAL DE POSICIÓN — JESÚS + BIENVENIDA
+   NO CAMBIA TAMAÑOS
+   ===================================================== */
+
+/* WEB */
+#screen-home .home-jesus-character {
+  transform: translate(-20px, 120px) !important;
+}
+
+#screen-home .home-jesus-message {
+  transform: translate(-70px, 90px) !important;
+}
+
+
+/* MÓVIL */
+@media (max-width: 600px) {
+
+  #screen-home .home-jesus-character {
+    transform: translate(10px, 90px) !important;
+  }
+
+  #screen-home .home-jesus-message {
+    transform: translate(-20px, 90px) !important;
+  }
+
+}
