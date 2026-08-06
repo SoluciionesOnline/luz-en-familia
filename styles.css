@@ -8191,3 +8191,17 @@ button {
     margin-top: -350px !important;
   }
 }
+/* =====================================================
+   MOVIL — RECORTAR FRANJA AZUL REAL
+   Mover la escena completa hacia arriba
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+  #screen-home .home-v2-scene {
+    position: relative !important;
+    top: -200px !important;
+    margin-bottom: -200px !important;
+  }
+
+}
