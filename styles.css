@@ -8184,3 +8184,11 @@ button {
   }
 
 }
+/* MÓVIL — reducir espacio entre título y Jesús */
+@media (max-width: 600px) {
+
+  #screen-home .home-jesus-welcome {
+    margin-top: -90px !important;
+  }
+
+}
