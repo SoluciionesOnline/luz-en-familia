@@ -616,12 +616,29 @@
 
 
     <!-- LIENZO -->
+   <div class="coloring-fullscreen-bar">
+  <button
+    id="openColoringFullscreen"
+    class="secondary-button"
+    type="button"
+  >
+    ⛶ Pantalla completa
+  </button>
+</div>
     <div class="coloring-canvas-shell">
 
       <div
-        id="coloringCanvasWrapper"
-        class="coloring-canvas-wrapper"
-      >
+  id="coloringCanvasWrapper"
+  class="coloring-canvas-wrapper"
+>
+  <button
+    id="closeColoringFullscreen"
+    class="coloring-fullscreen-close hidden"
+    type="button"
+    aria-label="Salir de pantalla completa"
+  >
+    ✕
+  </button>
         <canvas
           id="coloringCanvas"
           aria-label="Lámina bíblica para colorear"
