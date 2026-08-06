@@ -5097,8 +5097,31 @@ function initializeInAppBrowserNotice() {
     Detectamos navegadores internos comunes.
     No afecta a Chrome, Safari ni a la PWA instalada.
   */
-  const isInAppBrowser =
-    /FBAN|FBAV|Instagram|Messenger|Line|Twitter|WhatsApp/i.test(ua);
+  const isAndroid = /Android/i.test(ua);
+
+const isRegularChrome =
+  /Chrome\/|CriOS\//i.test(ua) &&
+  !/; wv\)|\bwv\b|Version\/4\.0/i.test(ua);
+
+const isRegularSafari =
+  /Safari\//i.test(ua) &&
+  !/CriOS|FxiOS|EdgiOS|Instagram|FBAN|FBAV/i.test(ua);
+
+const isAndroidWebView =
+  isAndroid &&
+  (
+    /\bwv\b/i.test(ua) ||
+    /; wv\)/i.test(ua) ||
+    /Version\/4\.0.*Chrome/i.test(ua)
+  );
+
+const isKnownInAppBrowser =
+  /FBAN|FBAV|Instagram|Messenger|Line|Twitter|WhatsApp/i.test(ua);
+
+const isInAppBrowser =
+  isKnownInAppBrowser ||
+  isAndroidWebView ||
+  (isAndroid && !isRegularChrome && !isRegularSafari);
 
   const isStandalone =
     window.matchMedia("(display-mode: standalone)").matches ||
