@@ -4449,3 +4449,206 @@ document.addEventListener(
   "webkitfullscreenchange",
   syncColoringFullscreenState
 );
+/* =========================================================
+   COLOREA LA BIBLIA — HERRAMIENTAS FLOTANTES
+   ========================================================= */
+
+function renderFloatingColorPalette() {
+  const palette =
+    document.getElementById("floatingColorPalette");
+
+  if (!palette) return;
+
+  palette.innerHTML = COLOR_PALETTE.map((color, index) => `
+    <button
+      type="button"
+      class="floating-color ${index === 0 ? "active" : ""}"
+      data-floating-color="${color}"
+      style="background:${color}"
+      aria-label="Elegir color"
+    ></button>
+  `).join("");
+
+  palette
+    .querySelectorAll("[data-floating-color]")
+    .forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        coloringColor = button.dataset.floatingColor;
+        coloringEraserMode = false;
+
+        document
+          .querySelectorAll(".floating-color")
+          .forEach(item => item.classList.remove("active"));
+
+        button.classList.add("active");
+
+        document
+          .getElementById("floatingEraser")
+          ?.classList.remove("active");
+
+
+        /* Sincronizar también la paleta normal */
+
+        document
+          .querySelectorAll(".color-swatch")
+          .forEach(item => {
+
+            item.classList.toggle(
+              "active",
+              item.dataset.color === coloringColor
+            );
+
+          });
+
+      });
+
+    });
+}
+
+
+function initializeFloatingColoringTools() {
+
+  renderFloatingColorPalette();
+
+
+  /* TAMAÑOS DEL PINCEL */
+
+  document
+    .querySelectorAll("[data-floating-brush]")
+    .forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        coloringBrushSize =
+          Number(button.dataset.floatingBrush) || 16;
+
+        document
+          .querySelectorAll("[data-floating-brush]")
+          .forEach(item => item.classList.remove("active"));
+
+        button.classList.add("active");
+
+
+        /* Sincronizar botones normales */
+
+        document
+          .querySelectorAll("[data-brush-size]")
+          .forEach(item => {
+
+            item.classList.toggle(
+              "active",
+              Number(item.dataset.brushSize) === coloringBrushSize
+            );
+
+          });
+
+      });
+
+    });
+
+
+  /* BORRADOR */
+
+  document
+    .getElementById("floatingEraser")
+    ?.addEventListener("click", event => {
+
+      coloringEraserMode = true;
+
+      document
+        .querySelectorAll(".floating-color")
+        .forEach(item => item.classList.remove("active"));
+
+      document
+        .querySelectorAll(".color-swatch")
+        .forEach(item => item.classList.remove("active"));
+
+      event.currentTarget.classList.add("active");
+
+      document
+        .getElementById("coloringEraser")
+        ?.classList.add("active");
+
+    });
+
+
+  /* DESHACER */
+
+  document
+    .getElementById("floatingUndo")
+    ?.addEventListener(
+      "click",
+      undoColoring
+    );
+}
+
+
+function showFloatingColoringTools() {
+
+  document
+    .getElementById("coloringFloatingTools")
+    ?.classList.remove("hidden");
+
+}
+
+
+function hideFloatingColoringTools() {
+
+  document
+    .getElementById("coloringFloatingTools")
+    ?.classList.add("hidden");
+
+}
+
+
+/*
+   Nos conectamos a los botones fullscreen
+   que ya existen.
+*/
+
+document
+  .getElementById("openColoringFullscreen")
+  ?.addEventListener(
+    "click",
+    showFloatingColoringTools
+  );
+
+document
+  .getElementById("closeColoringFullscreen")
+  ?.addEventListener(
+    "click",
+    hideFloatingColoringTools
+  );
+
+
+document.addEventListener(
+  "fullscreenchange",
+  () => {
+
+    if (
+      !document.fullscreenElement &&
+      !document
+        .getElementById("coloringCanvasWrapper")
+        ?.classList.contains("coloring-fullscreen-mode")
+    ) {
+      hideFloatingColoringTools();
+    }
+
+  }
+);
+
+
+if (document.readyState === "loading") {
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    initializeFloatingColoringTools
+  );
+
+} else {
+
+  initializeFloatingColoringTools();
+
+}
