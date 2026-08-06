@@ -8164,7 +8164,7 @@ button {
 
 /* WEB */
 #screen-home .home-jesus-character {
-  transform: translate(-20px, 120px) !important;
+  transform: translate(-20px, 190px) !important;
 }
 
 #screen-home .home-jesus-message {
@@ -8176,8 +8176,8 @@ button {
 @media (max-width: 600px) {
 
   #screen-home .home-jesus-character {
-    transform: translate(10px, 90px) !important;
-  }
+  transform: translate(-20px, 150px) !important;
+}
 
   #screen-home .home-jesus-message {
     transform: translate(-20px, 90px) !important;
