@@ -496,10 +496,15 @@
       </p>
     </div>
 
-    <div class="coloring-progress">
+    <button
+      id="openMyColoringGallery"
+      class="coloring-progress coloring-progress-button"
+      type="button"
+      aria-label="Abrir Mi Galería"
+    >
       <strong id="coloringProgressNumber">0/20</strong>
-      <small>Mi Galería</small>
-    </div>
+      <small>🖼️ Mi Galería</small>
+    </button>
   </div>
 
 
@@ -508,6 +513,13 @@
     id="coloringGallery"
     class="coloring-gallery"
   ></div>
+
+  <!-- MI GALERÍA -->
+  <section
+    id="coloringMyGallery"
+    class="coloring-my-gallery hidden"
+    aria-live="polite"
+  ></section>
 
 
   <!-- ESTUDIO DE COLOREADO -->

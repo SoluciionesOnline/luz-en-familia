@@ -687,6 +687,51 @@ function saveState() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
+/*
+  Las imágenes del coloreado se guardan por separado dentro del mismo estado,
+  pero con una copia ligera. Si la cuota se llena, la obra actual queda a salvo
+  durante esta sesión y la app libera borradores antiguos antes de reintentar.
+*/
+function saveColoringState() {
+  try {
+    saveState();
+    sessionStorage.removeItem("luzEnFamiliaColoringUnsaved");
+    return true;
+  } catch (error) {
+    const currentId = coloringCurrentPage?.id;
+    const progressEntries = Object.entries(state.coloringProgress || {})
+      .filter(([id]) => id !== currentId && !state.completedColoringPages.includes(id));
+
+    while (progressEntries.length) {
+      const [id] = progressEntries.shift();
+      delete state.coloringProgress[id];
+
+      try {
+        saveState();
+        sessionStorage.removeItem("luzEnFamiliaColoringUnsaved");
+        return true;
+      } catch (retryError) {
+        // Seguimos liberando únicamente borradores no terminados.
+      }
+    }
+
+    try {
+      sessionStorage.setItem(
+        "luzEnFamiliaColoringUnsaved",
+        JSON.stringify({
+          pageId: currentId,
+          progress: currentId ? state.coloringProgress[currentId] : null
+        })
+      );
+    } catch (sessionError) {
+      // El dibujo sigue disponible mientras esta pestaña permanezca abierta.
+    }
+
+    console.warn("No se pudo guardar permanentemente la obra por falta de espacio.", error);
+    return false;
+  }
+}
+
 
 /* =========================================================
    FECHA / ROTACIÓN
@@ -3793,11 +3838,13 @@ function showColoringGallery() {
   const gallery = document.getElementById("coloringGallery");
   const studio = document.getElementById("coloringStudio");
   const celebration = document.getElementById("coloringCelebration");
+  const myGallery = document.getElementById("coloringMyGallery");
 
   if (!gallery) return;
 
   studio?.classList.add("hidden");
   celebration?.classList.add("hidden");
+  myGallery?.classList.add("hidden");
   gallery.classList.remove("hidden");
 
   renderColoringGallery();
@@ -3879,6 +3926,106 @@ function renderColoringGallery() {
 }
 
 
+
+function getColoringRecognition(completed) {
+  if (completed >= 20) return { icon: "✨", title: "Maestro de Luz", next: "¡Has completado toda la colección!" };
+  if (completed >= 15) return { icon: "⭐", title: "Explorador de la Biblia", next: `Faltan ${20 - completed} obra${20 - completed === 1 ? "" : "s"} para Maestro de Luz.` };
+  if (completed >= 10) return { icon: "📖", title: "Artista de la Palabra", next: `Faltan ${15 - completed} obra${15 - completed === 1 ? "" : "s"} para Explorador de la Biblia.` };
+  if (completed >= 5) return { icon: "🎨", title: "Pequeño Artista", next: `Faltan ${10 - completed} obra${10 - completed === 1 ? "" : "s"} para Artista de la Palabra.` };
+  return { icon: "🌱", title: "Tu aventura artística comienza", next: `Faltan ${5 - completed} obra${5 - completed === 1 ? "" : "s"} para Pequeño Artista.` };
+}
+
+function showMyColoringGallery() {
+  ensureColoringState();
+
+  const catalog = document.getElementById("coloringGallery");
+  const studio = document.getElementById("coloringStudio");
+  const celebration = document.getElementById("coloringCelebration");
+  const gallery = document.getElementById("coloringMyGallery");
+
+  if (!gallery) return;
+
+  catalog?.classList.add("hidden");
+  studio?.classList.add("hidden");
+  celebration?.classList.add("hidden");
+  gallery.classList.remove("hidden");
+
+  renderMyColoringGallery();
+  gallery.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function renderMyColoringGallery() {
+  const gallery = document.getElementById("coloringMyGallery");
+  if (!gallery) return;
+
+  const completedPages = COLORING_PAGES.filter(page =>
+    state.completedColoringPages.includes(page.id)
+  );
+  const completed = completedPages.length;
+  const recognition = getColoringRecognition(completed);
+
+  const recognitionMarkup = `
+    <article class="coloring-recognition">
+      <span class="coloring-recognition-icon">${recognition.icon}</span>
+      <div>
+        <small>RECONOCIMIENTO ARTÍSTICO</small>
+        <h3>${recognition.title}</h3>
+        <p>${completed}/${COLORING_PAGES.length} obras terminadas. ${recognition.next}</p>
+      </div>
+    </article>
+  `;
+
+  if (!completed) {
+    gallery.innerHTML = `
+      <div class="coloring-gallery-heading">
+        <button type="button" class="secondary-button" data-back-to-coloring>← Ver láminas</button>
+        <div><span class="section-kicker">MI GALERÍA</span><h2>🖼️ Mis obras</h2></div>
+      </div>
+      ${recognitionMarkup}
+      <article class="coloring-empty-gallery">
+        <span>🎨</span>
+        <h3>Tu galería está esperando su primera obra</h3>
+        <p>Elige una lámina, dale color y termina tu creación.</p>
+        <button type="button" class="primary-button" data-back-to-coloring>Elegir una lámina</button>
+      </article>
+    `;
+  } else {
+    gallery.innerHTML = `
+      <div class="coloring-gallery-heading">
+        <button type="button" class="secondary-button" data-back-to-coloring>← Ver láminas</button>
+        <div><span class="section-kicker">MI GALERÍA</span><h2>🖼️ Mis obras</h2></div>
+      </div>
+      ${recognitionMarkup}
+      <div class="my-coloring-grid">
+        ${completedPages.map(page => {
+          const pageNumber = COLORING_PAGES.indexOf(page) + 1;
+          const artwork = getSavedColoringImage(state.coloringProgress?.[page.id]) || page.image;
+          return `
+            <article class="my-coloring-card">
+              <div class="my-coloring-image">
+                <img src="${artwork}" alt="Obra terminada: ${page.title}">
+                <span>✓ Terminada</span>
+              </div>
+              <div class="my-coloring-copy">
+                <small>LÁMINA ${String(pageNumber).padStart(2, "0")}</small>
+                <h3>${page.title}</h3>
+                <p>${page.reference}</p>
+                <button type="button" class="primary-button" data-recolor-page="${page.id}">🎨 Volver a colorear</button>
+              </div>
+            </article>
+          `;
+        }).join("")}
+      </div>
+    `;
+  }
+
+  gallery.querySelectorAll("[data-back-to-coloring]").forEach(button =>
+    button.addEventListener("click", showColoringGallery)
+  );
+  gallery.querySelectorAll("[data-recolor-page]").forEach(button =>
+    button.addEventListener("click", () => openColoringPage(button.dataset.recolorPage))
+  );
+}
 /* ---------- ABRIR UNA LÁMINA ---------- */
 
 function openColoringPage(pageId) {
@@ -3891,9 +4038,11 @@ function openColoringPage(pageId) {
   const gallery = document.getElementById("coloringGallery");
   const studio = document.getElementById("coloringStudio");
   const celebration = document.getElementById("coloringCelebration");
+  const myGallery = document.getElementById("coloringMyGallery");
 
   gallery?.classList.add("hidden");
   celebration?.classList.add("hidden");
+  myGallery?.classList.add("hidden");
   studio?.classList.remove("hidden");
 
   const title = document.getElementById("coloringTitle");
@@ -3950,7 +4099,7 @@ function prepareColoringCanvas(page) {
       coloringCanvas.height
     );
 
-    const saved = state.coloringProgress?.[page.id];
+    const saved = getSavedColoringImage(state.coloringProgress?.[page.id]);
 
     if (saved) {
       const progressImage = new Image();
@@ -3967,6 +4116,7 @@ function prepareColoringCanvas(page) {
         resetColoringHistory();
       };
 
+      progressImage.onerror = resetColoringHistory;
       progressImage.src = saved;
     } else {
       resetColoringHistory();
@@ -3985,24 +4135,49 @@ function prepareColoringCanvas(page) {
 
 /* ---------- HISTORIAL ---------- */
 
+function getSavedColoringImage(progress) {
+  if (typeof progress === "string") return progress; // Progreso anterior (v1).
+
+  if (progress && typeof progress === "object") {
+    return progress.image || progress.dataUrl || null;
+  }
+
+  return null;
+}
+
+function createColoringPreview() {
+  if (!coloringCanvas) return null;
+
+  const maxDimension = 800;
+  const scale = Math.min(
+    1,
+    maxDimension / Math.max(coloringCanvas.width, coloringCanvas.height)
+  );
+  const preview = document.createElement("canvas");
+
+  preview.width = Math.max(1, Math.round(coloringCanvas.width * scale));
+  preview.height = Math.max(1, Math.round(coloringCanvas.height * scale));
+
+  const previewContext = preview.getContext("2d");
+  previewContext.drawImage(coloringCanvas, 0, 0, preview.width, preview.height);
+
+  return preview.toDataURL("image/jpeg", 0.68);
+}
+
 function resetColoringHistory() {
   coloringHistory = [];
 
   if (!coloringCanvas) return;
 
-  coloringHistory.push(
-    coloringCanvas.toDataURL("image/png")
-  );
+  coloringHistory.push(coloringCanvas.toDataURL("image/jpeg", 0.62));
 }
 
 function saveColoringSnapshot() {
   if (!coloringCanvas) return;
 
-  coloringHistory.push(
-    coloringCanvas.toDataURL("image/png")
-  );
+  coloringHistory.push(coloringCanvas.toDataURL("image/jpeg", 0.62));
 
-  if (coloringHistory.length > 15) {
+  if (coloringHistory.length > 8) {
     coloringHistory.shift();
   }
 }
@@ -4123,21 +4298,20 @@ function bindColoringCanvasEvents() {
 /* ---------- GUARDAR ---------- */
 
 function saveCurrentColoringProgress() {
-  if (!coloringCanvas || !coloringCurrentPage) return;
+  if (!coloringCanvas || !coloringCurrentPage) return false;
 
   ensureColoringState();
 
-  try {
-    state.coloringProgress[coloringCurrentPage.id] =
-      coloringCanvas.toDataURL("image/jpeg", 0.72);
+  const image = createColoringPreview();
+  if (!image) return false;
 
-    saveState();
-  } catch (error) {
-    console.warn(
-      "No se pudo guardar automáticamente la obra.",
-      error
-    );
-  }
+  state.coloringProgress[coloringCurrentPage.id] = {
+    version: 2,
+    image,
+    updatedAt: Date.now()
+  };
+
+  return saveColoringState();
 }
 
 
@@ -4182,7 +4356,7 @@ function resetCurrentColoring() {
     delete state.coloringProgress[coloringCurrentPage.id];
   }
 
-  saveState();
+  saveColoringState();
   resetColoringHistory();
 }
 
@@ -4293,6 +4467,10 @@ function initializeColoringBook() {
   document
     .getElementById("backToColoringGallery")
     ?.addEventListener("click", showColoringGallery);
+
+  document
+    .getElementById("openMyColoringGallery")
+    ?.addEventListener("click", showMyColoringGallery);
 
   document
     .getElementById("colorAnotherPicture")
