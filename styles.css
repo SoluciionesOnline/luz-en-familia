@@ -7615,25 +7615,26 @@ button {
 
 /* WEB / ESCRITORIO */
 #screen-home .home-jesus-character {
-  flex: 0 0 360px !important;
-  width: 360px !important;
-  height: 390px !important;
+  flex: 0 0 480px !important;
+  width: 480px !important;
+  height: 520px !important;
 }
 
 #screen-home .jesus-figure {
-  width: 100% !important;
-  height: 100% !important;
+  width: 480px !important;
+  height: 520px !important;
+}
   display: flex !important;
   align-items: flex-end !important;
   justify-content: center !important;
 }
 
 #screen-home .jesus-welcome-image {
-  display: block !important;
   width: auto !important;
-  height: 385px !important;
-  max-width: 100% !important;
-
+  height: 520px !important;
+  max-width: none !important;
+  max-height: none !important;
+}
   object-fit: contain !important;
   object-position: center bottom !important;
 
@@ -7663,10 +7664,10 @@ button {
   }
 
   #screen-home .home-jesus-character {
-    flex: 0 0 55% !important;
-    width: 55% !important;
-    height: 285px !important;
-  }
+  flex: 0 0 60% !important;
+  width: 60% !important;
+  height: 360px !important;
+}
 
   #screen-home .jesus-welcome-image {
     width: 100% !important;
@@ -7739,9 +7740,9 @@ button {
 }
 
 #screen-home .jesus-figure {
-  width: 390px !important;
-  height: 400px !important;
-
+  width: 100% !important;
+  height: 360px !important;
+}
   display: flex !important;
   justify-content: center !important;
   align-items: flex-end !important;
@@ -7808,9 +7809,13 @@ button {
   }
 
   #screen-home .jesus-welcome-image {
-    width: 330px !important;
-    height: 350px !important;
-  }
+  width: 100% !important;
+  height: 360px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center bottom !important;
+}
 
   #screen-home .home-jesus-message {
     flex-basis: 230px !important;
