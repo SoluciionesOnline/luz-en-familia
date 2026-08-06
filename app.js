@@ -5086,3 +5086,61 @@ if (document.readyState === "loading") {
 } else {
   renderHomeV2();
 }
+/* =====================================================
+   NAVEGACIÓN PORTADA - CORRECCIÓN FINAL
+   Conecta todos los botones data-go con sus pantallas
+===================================================== */
+
+document.addEventListener("click", function (event) {
+
+    const button = event.target.closest("#screen-home [data-go]");
+
+    if (!button) return;
+
+    event.preventDefault();
+
+    const destination = button.dataset.go;
+
+    if (!destination) return;
+
+    const targetScreen = document.getElementById(
+        "screen-" + destination
+    );
+
+    if (!targetScreen) {
+        console.warn("Pantalla no encontrada:", destination);
+        return;
+    }
+
+    /* Ocultar todas las pantallas */
+    document.querySelectorAll(".screen").forEach(function (screen) {
+        screen.classList.remove("active");
+    });
+
+    /* Mostrar pantalla seleccionada */
+    targetScreen.classList.add("active");
+
+    /* Actualizar menú inferior */
+    document.querySelectorAll(".nav-item").forEach(function (item) {
+        item.classList.toggle(
+            "active",
+            item.dataset.route === destination
+        );
+    });
+
+    /* Actualizar contenido de la pantalla cuando corresponda */
+    if (destination === "missions" && typeof renderMissions === "function") {
+        renderMissions();
+    }
+
+    if (destination === "family" && typeof renderFamily === "function") {
+        renderFamily();
+    }
+
+    /* Subir al inicio */
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
