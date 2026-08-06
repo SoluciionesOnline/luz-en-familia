@@ -7934,3 +7934,201 @@ button {
     padding: 11px 7px !important;
   }
 }
+/* =========================================================
+   CORRECCION DEFINITIVA PORTADA
+   JESUS GRANDE + BIENVENIDA DENTRO DEL APP
+   ========================================================= */
+
+/* Evita que la escena corte a Jesús o al mensaje */
+#screen-home .home-v2-scene {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+/* Zona central: Jesús + mensaje */
+#screen-home .home-jesus-welcome {
+  width: 72% !important;
+  max-width: 760px !important;
+  min-height: 360px !important;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+
+  align-items: flex-end !important;
+  justify-content: center !important;
+
+  gap: 28px !important;
+
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+
+/* =========================
+   JESÚS — GRANDE
+   ========================= */
+
+#screen-home .home-jesus-character {
+  flex: 0 0 380px !important;
+  width: 380px !important;
+  height: 390px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+
+  overflow: visible !important;
+}
+
+#screen-home .jesus-figure {
+  width: 380px !important;
+  height: 390px !important;
+
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+
+  overflow: visible !important;
+}
+
+#screen-home .jesus-welcome-image {
+  display: block !important;
+
+  width: auto !important;
+  height: 390px !important;
+
+  max-width: none !important;
+  max-height: none !important;
+
+  object-fit: contain !important;
+  object-position: center bottom !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  transform: none !important;
+}
+
+
+/* =========================
+   MENSAJE DE BIENVENIDA
+   ========================= */
+
+#screen-home .home-jesus-message {
+  position: relative !important;
+
+  flex: 0 0 230px !important;
+  width: 230px !important;
+  max-width: 230px !important;
+
+  margin: 0 0 55px 0 !important;
+  padding: 20px 16px !important;
+
+  box-sizing: border-box !important;
+
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+
+  transform: none !important;
+
+  border-radius: 22px !important;
+}
+
+
+/* =========================================================
+   MOVIL
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  #screen-home .home-v2-scene {
+    width: 100% !important;
+    padding: 0 12px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  #screen-home .home-jesus-welcome {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    min-height: 300px !important;
+
+    margin: 0 auto !important;
+    padding: 0 8px !important;
+
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+
+    align-items: flex-end !important;
+    justify-content: center !important;
+
+    gap: 8px !important;
+
+    overflow: visible !important;
+  }
+
+  /* Jesús grande en móvil */
+  #screen-home .home-jesus-character {
+    flex: 0 0 58% !important;
+    width: 58% !important;
+    height: 300px !important;
+
+    overflow: visible !important;
+  }
+
+  #screen-home .jesus-figure {
+    width: 100% !important;
+    height: 300px !important;
+
+    overflow: visible !important;
+  }
+
+  #screen-home .jesus-welcome-image {
+    width: 100% !important;
+    height: 300px !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: contain !important;
+    object-position: center bottom !important;
+
+    transform: none !important;
+  }
+
+  /* Bienvenida dentro de la pantalla */
+  #screen-home .home-jesus-message {
+    position: relative !important;
+
+    flex: 0 0 38% !important;
+    width: 38% !important;
+    max-width: 38% !important;
+
+    margin: 0 0 38px 0 !important;
+    padding: 12px 8px !important;
+
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+
+    transform: none !important;
+
+    box-sizing: border-box !important;
+    border-radius: 18px !important;
+  }
+}
