@@ -472,6 +472,240 @@
       </div>
 
       <div id="gameStage" class="interactive-stage hidden"></div>
+      <!-- =====================================================
+     COLOREA LA BIBLIA
+====================================================== -->
+
+<section id="coloringBookStage" class="coloring-book-stage hidden">
+
+  <div class="coloring-header">
+    <button
+      id="closeColoringBook"
+      class="coloring-back"
+      type="button"
+    >
+      ← Volver a Juegos
+    </button>
+
+    <div>
+      <span class="section-kicker">CREAR Y APRENDER</span>
+      <h2>🎨 Colorea la Biblia</h2>
+      <p>
+        Elige una historia, dale color y descubre
+        lo que podemos aprender de ella.
+      </p>
+    </div>
+
+    <div class="coloring-progress">
+      <strong id="coloringProgressNumber">0/20</strong>
+      <small>Mi Galería</small>
+    </div>
+  </div>
+
+
+  <!-- CATÁLOGO DE LÁMINAS -->
+  <div
+    id="coloringGallery"
+    class="coloring-gallery"
+  ></div>
+
+
+  <!-- ESTUDIO DE COLOREADO -->
+  <section
+    id="coloringStudio"
+    class="coloring-studio hidden"
+  >
+
+    <div class="coloring-studio-header">
+
+      <button
+        id="backToColoringGallery"
+        class="secondary-button"
+        type="button"
+      >
+        ← Ver láminas
+      </button>
+
+      <div>
+        <span class="section-kicker">MI OBRA</span>
+
+        <h2 id="coloringTitle">
+          Colorea la Biblia
+        </h2>
+
+        <p id="coloringReference"></p>
+      </div>
+
+    </div>
+
+
+    <!-- HERRAMIENTAS -->
+    <div class="coloring-toolbar">
+
+      <div class="coloring-tool-group">
+        <small>Colores</small>
+
+        <div
+          id="colorPalette"
+          class="color-palette"
+        ></div>
+      </div>
+
+
+      <div class="coloring-tool-group">
+        <small>Pincel</small>
+
+        <div class="brush-sizes">
+
+          <button
+            type="button"
+            class="brush-size"
+            data-brush-size="8"
+            aria-label="Pincel pequeño"
+          >
+            •
+          </button>
+
+          <button
+            type="button"
+            class="brush-size active"
+            data-brush-size="16"
+            aria-label="Pincel mediano"
+          >
+            ●
+          </button>
+
+          <button
+            type="button"
+            class="brush-size"
+            data-brush-size="28"
+            aria-label="Pincel grande"
+          >
+            ⬤
+          </button>
+
+        </div>
+      </div>
+
+
+      <button
+        id="coloringEraser"
+        class="secondary-button"
+        type="button"
+      >
+        🧽 Borrar
+      </button>
+
+      <button
+        id="coloringUndo"
+        class="secondary-button"
+        type="button"
+      >
+        ↩️ Deshacer
+      </button>
+
+      <button
+        id="coloringReset"
+        class="secondary-button"
+        type="button"
+      >
+        🔄 Reiniciar
+      </button>
+
+    </div>
+
+
+    <!-- LIENZO -->
+    <div class="coloring-canvas-shell">
+
+      <div
+        id="coloringCanvasWrapper"
+        class="coloring-canvas-wrapper"
+      >
+        <canvas
+          id="coloringCanvas"
+          aria-label="Lámina bíblica para colorear"
+        ></canvas>
+      </div>
+
+    </div>
+
+
+    <div class="coloring-studio-footer">
+
+      <div>
+        <span>💡</span>
+        <p>
+          Puedes pintar con el dedo, ratón o lápiz
+          de tu tablet.
+        </p>
+      </div>
+
+      <button
+        id="finishColoring"
+        class="primary-button"
+        type="button"
+      >
+        ✨ Terminé mi obra
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- CELEBRACIÓN -->
+  <section
+    id="coloringCelebration"
+    class="coloring-celebration hidden"
+  >
+
+    <div class="celebration-icon">🎉</div>
+
+    <span class="section-kicker">
+      ¡OBRA TERMINADA!
+    </span>
+
+    <h2>
+      ¡Qué bonita quedó tu obra!
+    </h2>
+
+    <p id="coloringRewardMessage">
+      Has ganado +10 🌱 Semillas.
+    </p>
+
+    <article class="coloring-lesson">
+      <span>💛</span>
+
+      <div>
+        <small>LO QUE APRENDEMOS</small>
+        <p id="coloringLessonText"></p>
+      </div>
+    </article>
+
+    <div class="celebration-actions">
+
+      <button
+        id="colorAnotherPicture"
+        class="primary-button"
+        type="button"
+      >
+        🎨 Colorear otra
+      </button>
+
+      <button
+        id="returnFromColoring"
+        class="secondary-button"
+        type="button"
+      >
+        Volver a Juegos
+      </button>
+
+    </div>
+
+  </section>
+
+</section>
 <!-- =====================================================
      COLOREA LA BIBLIA
 ====================================================== -->
