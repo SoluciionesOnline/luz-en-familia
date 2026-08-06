@@ -7031,3 +7031,238 @@ button {
     font-size: 11.5px;
   }
 }
+/* =========================================================
+   PORTADA FINAL V3
+   Corrección visual PC + móvil
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. BIENVENIDA MÁS INTEGRADA
+   --------------------------------------------------------- */
+
+.home-jesus-welcome {
+  position: relative;
+  z-index: 10;
+
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+
+/* Jesús sin caja propia */
+.home-jesus-character,
+.jesus-figure {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   2. OCULTAR LA IGLESIA DECORATIVA DEL PAISAJE
+   --------------------------------------------------------- */
+
+/* La iglesia compite visualmente con Jesús */
+.home-church,
+.home-v2-church,
+.hero-church,
+.landscape-church,
+.church {
+  display: none !important;
+}
+
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  /* ---------------------------------------------
+     HERO un poco más compacto
+     --------------------------------------------- */
+
+  .home-v2-hero {
+    padding-bottom: 12px !important;
+  }
+
+
+  /* ---------------------------------------------
+     Jesús
+     --------------------------------------------- */
+
+  .home-jesus-welcome {
+    width: 100% !important;
+
+    margin: 0 auto !important;
+    padding: 0 12px 8px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    gap: 0 !important;
+  }
+
+  .home-jesus-character {
+    width: 100% !important;
+    height: 205px !important;
+
+    margin: 0 auto !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+
+    flex: none !important;
+  }
+
+  .jesus-figure {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .jesus-welcome-image {
+    width: auto !important;
+    height: 215px !important;
+    max-width: 190px !important;
+
+    object-fit: contain !important;
+
+    transform: none !important;
+  }
+
+
+  /* ---------------------------------------------
+     Mensaje: más pequeño y cercano a Jesús
+     --------------------------------------------- */
+
+  .home-jesus-message {
+    width: min(88%, 310px) !important;
+
+    margin: -10px auto 8px !important;
+    padding: 12px 16px 13px !important;
+
+    border-radius: 20px !important;
+
+    background: rgba(255, 252, 239, 0.94) !important;
+
+    box-shadow:
+      0 8px 20px rgba(38, 76, 47, 0.10) !important;
+
+    pointer-events: none !important;
+  }
+
+  .home-jesus-message small {
+    font-size: 8px !important;
+    margin-bottom: 3px !important;
+  }
+
+  .home-jesus-message h2 {
+    font-size: 21px !important;
+    margin: 0 0 2px !important;
+  }
+
+  .home-jesus-message p {
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+
+    margin: 3px 0 !important;
+  }
+
+  .jesus-message-heart,
+  .jesus-message-love {
+    font-size: 16px !important;
+    margin: 3px 0 !important;
+  }
+
+
+  /* =====================================================
+     ACCESOS: 2 x 2 EN MÓVIL
+     ===================================================== */
+
+  .home-feature-strip {
+    width: calc(100% - 24px) !important;
+
+    margin: 8px auto 14px !important;
+    padding: 8px !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 8px !important;
+
+    overflow: visible !important;
+  }
+
+  .home-feature {
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+
+    min-height: 92px !important;
+  }
+
+
+  /* =====================================================
+     JUEGOS BÍBLICOS
+     VERTICAL, NO CARRUSEL HORIZONTAL
+     ===================================================== */
+
+  .games-grid {
+    width: 100% !important;
+
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+
+    gap: 10px !important;
+
+    overflow: visible !important;
+    overflow-x: visible !important;
+
+    scroll-snap-type: none !important;
+
+    padding: 8px 12px 18px !important;
+  }
+
+  .game-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    scroll-snap-align: none !important;
+  }
+
+
+  /* Si algún contenedor padre está forzando el carrusel */
+  #screen-home .games-grid {
+    flex-wrap: wrap !important;
+    transform: none !important;
+  }
+}
+
+
+/* =========================================================
+   TELÉFONOS MUY PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .home-jesus-character {
+    height: 190px !important;
+  }
+
+  .jesus-welcome-image {
+    height: 200px !important;
+    max-width: 180px !important;
+  }
+
+  .home-jesus-message {
+    width: 90% !important;
+  }
+}
