@@ -7266,3 +7266,44 @@ button {
     width: 90% !important;
   }
 }
+/* =========================================================
+   JUEGOS BÍBLICOS - MÓVIL VERTICAL DEFINITIVO
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  #screen-games .games-grid,
+  .games-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    gap: 12px !important;
+
+    padding: 10px 14px 22px !important;
+    margin: 0 !important;
+
+    overflow: visible !important;
+    overflow-x: hidden !important;
+
+    scroll-snap-type: none !important;
+  }
+
+  #screen-games .game-card,
+  .games-grid > .game-card {
+    display: block !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+    flex: none !important;
+
+    scroll-snap-align: none !important;
+    transform: none !important;
+  }
+}
