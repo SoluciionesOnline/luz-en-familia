@@ -1683,27 +1683,92 @@ function openMomReflection(mood) {
   });
 }
 
+function getDailyKey() {
 
+    const today = new Date();
+
+    return `${today.getFullYear()}-${
+        today.getMonth() + 1
+    }-${today.getDate()}`;
+}
+
+function getNextContent(type, list) {
+
+    const key = `mom-${type}-${getDailyKey()}`;
+
+    let index = Number(
+        localStorage.getItem(key)
+    ) || 0;
+
+    const item = list[index];
+
+    index++;
+
+    if (index >= list.length) {
+        index = 0;
+    }
+
+    localStorage.setItem(key, index);
+
+    return item;
+}
 function openMomLibrary(type) {
-  if (type === "devotional") {
-    const moods = Object.keys(MOM_CONTENT);
-    const mood = moods[
-      Math.floor(Math.random() * moods.length)
-    ];
 
-    openMomReflection(mood);
-    return;
-  }
+    const allContent = Object.values(MOM_CONTENT).flat();
 
-  if (type === "verse") {
-    const all = Object.values(MOM_CONTENT).flat();
+    if (type === "devotional") {
 
-    const content = chooseLeastSeen(
-      all,
-      Math.floor(Math.random() * 50)
-    );
+        const devotionals = allContent.map(item => ({
+            title: item.title,
+            reflection: item.reflection,
+            action: item.action
+        }));
 
-    if (!content) return;
+        const content = getNextContent(
+            "devotional",
+            devotionals
+        );
+
+        openMomReflection(content);
+
+        return;
+    }
+
+    if (type === "verse") {
+
+        const verses = allContent.map(item => ({
+            title: item.title,
+            verse: item.verse
+        }));
+
+        const content = getNextContent(
+            "verse",
+            verses
+        );
+
+        openMomVerse(content);
+
+        return;
+    }
+
+    if (type === "prayer") {
+
+        const prayers = allContent.map(item => ({
+            title: item.title,
+            prayer: item.prayer
+        }));
+
+        const content = getNextContent(
+            "prayer",
+            prayers
+        );
+
+        openMomPrayer(content);
+
+        return;
+    }
+
+}
 
     markContentSeen(content.id);
 
