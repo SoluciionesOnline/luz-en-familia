@@ -1106,119 +1106,107 @@ forgiveness: [
 ],
 
 wisdom: [
-
   {
     id: "mom-wisdom-1",
+
     title: "Sabiduría para decidir",
-    verse: "«Si alguno necesita sabiduría, pídasela a Dios.» – Santiago 1:5",
-    reflection: "Dios siempre da dirección a quienes la buscan.",
-    prayer: "Señor, guía mis decisiones.",
-    action: "Escribe una decisión importante y ora por ella."
+
+    verse: "Santiago 1:5 – Si alguno tiene falta de sabiduría, pídala a Dios, y le será dada.",
+
+    reflection:
+      "No tienes que resolverlo todo solo. Dios promete dar dirección a quienes la buscan con humildad.",
+
+    prayer:
+      "Señor, dame claridad para tomar decisiones sabias.",
+
+    action:
+      "Escribe una decisión importante y preséntala a Dios."
   },
 
   {
     id: "mom-wisdom-2",
-    title: "Escuchar a Dios",
-    verse: "«Tus palabras son lámpara a mis pies.» – Salmo 119:105",
-    reflection: "La Palabra ilumina incluso los caminos más oscuros.",
-    prayer: "Abre mis oídos para escuchar tu voz.",
-    action: "Lee un salmo hoy."
+
+    title: "Confía en el camino",
+
+    verse: "Proverbios 3:5-6 – Confía en el Señor con todo tu corazón y él dirigirá tus sendas.",
+
+    reflection:
+      "A veces no entendemos el camino completo, pero Dios sí ve lo que hay delante.",
+
+    prayer:
+      "Padre, ayúdame a confiar en tu dirección.",
+
+    action:
+      "Entrega hoy una preocupación que has intentado controlar."
   },
 
   {
     id: "mom-wisdom-3",
-    title: "Paciencia para aprender",
-    verse: "«El corazón entendido adquiere sabiduría.» – Proverbios 18:15",
-    reflection: "Cada experiencia trae una enseñanza.",
-    prayer: "Enséñame a aprender de cada día.",
-    action: "Anota algo que hayas aprendido esta semana."
+
+    title: "Luz para avanzar",
+
+    verse: "Jeremías 33:3 – Clama a mí, y yo te responderé y te enseñaré cosas grandes.",
+
+    reflection:
+      "Dios puede mostrarte caminos nuevos cuando buscas su voz.",
+
+    prayer:
+      "Abre mis ojos para comprender tu voluntad.",
+
+    action:
+      "Dedica cinco minutos al silencio y la oración."
   },
 
   {
     id: "mom-wisdom-4",
-    title: "Consejo verdadero",
-    verse: "«Confía en el Señor.» – Proverbios 3:5",
-    reflection: "La sabiduría comienza con la confianza.",
-    prayer: "Dame discernimiento para actuar.",
-    action: "Piensa antes de tomar una decisión."
+
+    title: "Paz interior",
+
+    verse: "Salmos 46:10 – Estad quietos y conoced que yo soy Dios.",
+
+    reflection:
+      "La sabiduría también consiste en detenerse y escuchar antes de actuar.",
+
+    prayer:
+      "Calma mi mente y enséñame a esperar en ti.",
+
+    action:
+      "Haz una pausa durante el día para agradecer."
   },
 
   {
     id: "mom-wisdom-5",
-    title: "Mente tranquila",
-    verse: "«El temor del Señor es el principio de la sabiduría.» – Proverbios 9:10",
-    reflection: "La paz ayuda a tomar mejores decisiones.",
-    prayer: "Calma mis pensamientos.",
-    action: "Dedica cinco minutos al silencio."
+
+    title: "Fortaleza segura",
+
+    verse: "Proverbios 18:10 – Torre fuerte es el nombre del Señor.",
+
+    reflection:
+      "Cuando no sabes qué hacer, puedes refugiarte en Dios.",
+
+    prayer:
+      "Sé mi refugio y mi guía.",
+
+    action:
+      "Escribe aquello que hoy te preocupa."
   },
 
   {
     id: "mom-wisdom-6",
+
     title: "Paso a paso",
-    verse: "«El Señor dirigirá tus sendas.» – Proverbios 3:6",
-    reflection: "No necesitas conocer todo el camino para avanzar.",
-    prayer: "Guía mis pasos hoy.",
-    action: "Confía a Dios una preocupación."
+
+    verse: "Salmos 37:5 – Encomienda al Señor tu camino, confía en él y él actuará.",
+
+    reflection:
+      "No necesitas conocer el final del camino para dar el siguiente paso.",
+
+    prayer:
+      "Guía mis pasos y ayúdame a confiar.",
+
+    action:
+      "Da hoy un pequeño paso hacia una meta importante."
   }
-
-],
-
-love: [
-
-  {
-    id: "mom-love-1",
-    title: "Dios es amor",
-    verse: "«Dios es amor.» – 1 Juan 4:8",
-    reflection: "El amor de Dios nunca falla.",
-    prayer: "Gracias por amarme cada día.",
-    action: "Haz un gesto de cariño."
-  },
-
-  {
-    id: "mom-love-2",
-    title: "Amar a los demás",
-    verse: "«Ámense unos a otros.» – Juan 13:34",
-    reflection: "El amor transforma los corazones.",
-    prayer: "Enséñame a amar mejor.",
-    action: "Llama a alguien que extrañes."
-  },
-
-  {
-    id: "mom-love-3",
-    title: "Amor paciente",
-    verse: "«El amor es paciente y bondadoso.» – 1 Corintios 13:4",
-    reflection: "El amor verdadero sabe esperar.",
-    prayer: "Dame paciencia para amar.",
-    action: "Ten un gesto amable con alguien."
-  },
-
-  {
-    id: "mom-love-4",
-    title: "Amor que sostiene",
-    verse: "«Nada nos separará del amor de Dios.» – Romanos 8:39",
-    reflection: "Nunca estás sola.",
-    prayer: "Gracias por permanecer conmigo.",
-    action: "Recuerda tres personas que amas."
-  },
-
-  {
-    id: "mom-love-5",
-    title: "Compartir alegría",
-    verse: "«Hagan todo con amor.» – 1 Corintios 16:14",
-    reflection: "Cada pequeño gesto cuenta.",
-    prayer: "Llena mi corazón de amor.",
-    action: "Escribe un mensaje bonito a alguien."
-  },
-
-  {
-    id: "mom-love-6",
-    title: "Corazón agradecido",
-    verse: "«Permanezcan en mi amor.» – Juan 15:9",
-    reflection: "El amor de Dios renueva el alma.",
-    prayer: "Permite que viva en tu amor.",
-    action: "Agradece una muestra de cariño recibida."
-  }
-
 ],
 
 strength: [
@@ -1333,63 +1321,6 @@ patience: [
     reflection: "Cada espera tiene un propósito.",
     prayer: "Ayúdame a perseverar.",
     action: "Piensa en algo bueno que haya surgido de una espera."
-  }
-
-],
-family: [
-
-  {
-    id: "mom-family-1",
-    title: "Un hogar bendecido",
-    verse: "«Yo y mi casa serviremos al Señor.» – Josué 24:15",
-    reflection: "La familia crece cuando camina unida.",
-    prayer: "Bendice nuestro hogar y nuestras relaciones.",
-    action: "Abraza a un miembro de tu familia."
-  },
-
-  {
-    id: "mom-family-2",
-    title: "Amor en casa",
-    verse: "«Sobre todo, vístanse de amor.» – Colosenses 3:14",
-    reflection: "El amor fortalece la unión familiar.",
-    prayer: "Enséñanos a amarnos cada día más.",
-    action: "Agradece algo bueno de tu familia."
-  },
-
-  {
-    id: "mom-family-3",
-    title: "Tiempo juntos",
-    verse: "«¡Qué bueno es vivir unidos!» – Salmo 133:1",
-    reflection: "Los momentos compartidos crean recuerdos eternos.",
-    prayer: "Gracias por las personas que amo.",
-    action: "Comparte una comida o una conversación."
-  },
-
-  {
-    id: "mom-family-4",
-    title: "Paciencia y comprensión",
-    verse: "«Sean bondadosos unos con otros.» – Efesios 4:32",
-    reflection: "La comprensión fortalece la convivencia.",
-    prayer: "Ayúdame a escuchar con amor.",
-    action: "Ten un gesto amable con alguien en casa."
-  },
-
-  {
-    id: "mom-family-5",
-    title: "Protección divina",
-    verse: "«El Señor cuidará tu salida y tu entrada.» – Salmo 121:8",
-    reflection: "Dios acompaña a tu familia cada día.",
-    prayer: "Protege a las personas que amo.",
-    action: "Ora por cada miembro de tu hogar."
-  },
-
-  {
-    id: "mom-family-6",
-    title: "Gratitud familiar",
-    verse: "«Den gracias en toda circunstancia.» – 1 Tesalonicenses 5:18",
-    reflection: "La gratitud transforma el ambiente del hogar.",
-    prayer: "Gracias por mi familia.",
-    action: "Escribe tres cosas que amas de tu hogar."
   }
 
 ],
@@ -1741,215 +1672,120 @@ hope2: [
 
 ],
 
-protection: [
+love: [
 
   {
-    id: "mom-protection-1",
-    title: "Bajo sus alas",
-    verse: "«Él te cubrirá con sus plumas.» – Salmo 91:4",
-    reflection: "Dios cuida de ti y de tu familia cada día.",
-    prayer: "Protege mi hogar y a las personas que amo.",
-    action: "Ora por un ser querido."
+    id: "mom-love-1",
+    title: "Dios es amor",
+    verse: "«Dios es amor.» – 1 Juan 4:8",
+    reflection: "El amor de Dios nunca falla.",
+    prayer: "Gracias por amarme cada día.",
+    action: "Haz un gesto de cariño."
   },
 
   {
-    id: "mom-protection-2",
-    title: "Dios es refugio",
-    verse: "«Dios es nuestro refugio y fortaleza.» – Salmo 46:1",
-    reflection: "Siempre puedes encontrar descanso en Él.",
-    prayer: "Sé mi refugio en los momentos difíciles.",
-    action: "Entrega una preocupación a Dios."
+    id: "mom-love-2",
+    title: "Amar a los demás",
+    verse: "«Ámense unos a otros.» – Juan 13:34",
+    reflection: "El amor transforma los corazones.",
+    prayer: "Enséñame a amar mejor.",
+    action: "Llama a alguien que extrañes."
   },
 
   {
-    id: "mom-protection-3",
-    title: "Caminar sin miedo",
-    verse: "«No temas, porque yo estoy contigo.» – Isaías 41:10",
-    reflection: "No estás sola en el camino.",
-    prayer: "Acompáñame y protégeme hoy.",
-    action: "Recuerda una ocasión en la que Dios te ayudó."
+    id: "mom-love-3",
+    title: "Amor paciente",
+    verse: "«El amor es paciente y bondadoso.» – 1 Corintios 13:4",
+    reflection: "El amor verdadero sabe esperar.",
+    prayer: "Dame paciencia para amar.",
+    action: "Ten un gesto amable con alguien."
   },
 
   {
-    id: "mom-protection-4",
-    title: "Guardados por Dios",
-    verse: "«El Señor cuidará tu salida y tu entrada.» – Salmo 121:8",
-    reflection: "Dios vela por cada paso que das.",
-    prayer: "Gracias por cuidar de mi familia.",
-    action: "Ora por la protección de tu hogar."
+    id: "mom-love-4",
+    title: "Amor que sostiene",
+    verse: "«Nada nos separará del amor de Dios.» – Romanos 8:39",
+    reflection: "Nunca estás sola.",
+    prayer: "Gracias por permanecer conmigo.",
+    action: "Recuerda tres personas que amas."
   },
 
   {
-    id: "mom-protection-5",
-    title: "Fortaleza y paz",
-    verse: "«El Señor es mi roca y mi salvación.» – Salmo 62:6",
-    reflection: "Su presencia trae tranquilidad al corazón.",
-    prayer: "Dame paz y seguridad.",
-    action: "Respira profundamente y descansa."
+    id: "mom-love-5",
+    title: "Compartir alegría",
+    verse: "«Hagan todo con amor.» – 1 Corintios 16:14",
+    reflection: "Cada pequeño gesto cuenta.",
+    prayer: "Llena mi corazón de amor.",
+    action: "Escribe un mensaje bonito a alguien."
   },
 
   {
-    id: "mom-protection-6",
-    title: "Siempre acompañado",
-    verse: "«El ángel del Señor acampa alrededor de quienes le temen.» – Salmo 34:7",
-    reflection: "Nunca caminas solo; Dios te acompaña.",
-    prayer: "Gracias por protegerme cada día.",
-    action: "Piensa en tres cosas por las que te sientes protegido."
+    id: "mom-love-6",
+    title: "Corazón agradecido",
+    verse: "«Permanezcan en mi amor.» – Juan 15:9",
+    reflection: "El amor de Dios renueva el alma.",
+    prayer: "Permite que viva en tu amor.",
+    action: "Agradece una muestra de cariño recibida."
   }
 
 ],
 
-wisdom: [
-    {
-        id: "mom-wisdom-1",
-        title: "Sabiduría para decidir",
-        verse: "Si alguno necesita sabiduría, pídasela a Dios. — Santiago 1:5",
-
-        reflection:
-            "No tienes que resolverlo todo sola. Dios puede darte claridad y dirección.",
-
-        prayer:
-            "Señor, ilumina mis decisiones y guíame por el camino correcto.",
-
-        action:
-            "Escribe una decisión importante y preséntasela a Dios."
-    }
-],
-
-love: [
-    {
-        id: "mom-love-1",
-        title: "El amor nunca falla",
-        verse: "El amor es paciente y bondadoso. — 1 Corintios 13:4",
-
-        reflection:
-            "El amor de Dios permanece incluso en los momentos más difíciles.",
-
-        prayer:
-            "Padre, enséñame a amar con paciencia y generosidad.",
-
-        action:
-            "Haz hoy un gesto de amor hacia alguien."
-    }
-],
-
-strength: [
-    {
-        id: "mom-strength-1",
-        title: "Fuerzas renovadas",
-        verse: "Los que esperan en el Señor renovarán sus fuerzas. — Isaías 40:31",
-
-        reflection:
-            "Dios puede renovar tu energía cuando te sientes agotada.",
-
-        prayer:
-            "Señor, dame fuerzas para continuar este día.",
-
-        action:
-            "Tómate unos minutos para descansar y respirar."
-    }
-],
-
-patience: [
-    {
-        id: "mom-patience-1",
-        title: "Aprender a esperar",
-        verse: "Todo tiene su tiempo. — Eclesiastés 3:1",
-
-        reflection:
-            "Hay procesos que necesitan tiempo para florecer.",
-
-        prayer:
-            "Dios, dame paciencia para esperar tus tiempos.",
-
-        action:
-            "Piensa en algo bueno que esté creciendo lentamente en tu vida."
-    }
-],
-
 family: [
-    {
-        id: "mom-family-1",
-        title: "Un hogar bendecido",
-        verse: "Yo y mi casa serviremos al Señor. — Josué 24:15",
 
-        reflection:
-            "Cada pequeño gesto de amor fortalece a la familia.",
+  {
+    id: "mom-family-1",
+    title: "Un hogar bendecido",
+    verse: "«Yo y mi casa serviremos al Señor.» – Josué 24:15",
+    reflection: "La familia crece cuando camina unida.",
+    prayer: "Bendice nuestro hogar y nuestras relaciones.",
+    action: "Abraza a un miembro de tu familia."
+  },
 
-        prayer:
-            "Bendice a mi hogar y a las personas que amo.",
+  {
+    id: "mom-family-2",
+    title: "Amor en casa",
+    verse: "«Sobre todo, vístanse de amor.» – Colosenses 3:14",
+    reflection: "El amor fortalece la unión familiar.",
+    prayer: "Enséñanos a amarnos cada día más.",
+    action: "Agradece algo bueno de tu familia."
+  },
 
-        action:
-            "Agradece hoy por un miembro de tu familia."
-    }
-],
+  {
+    id: "mom-family-3",
+    title: "Tiempo juntos",
+    verse: "«¡Qué bueno es vivir unidos!» – Salmo 133:1",
+    reflection: "Los momentos compartidos crean recuerdos eternos.",
+    prayer: "Gracias por las personas que amo.",
+    action: "Comparte una comida o una conversación."
+  },
 
-rest: [
-    {
-        id: "mom-rest-1",
-        title: "Descansar en Dios",
-        verse: "Vengan a mí y yo les daré descanso. — Mateo 11:28",
+  {
+    id: "mom-family-4",
+    title: "Paciencia y comprensión",
+    verse: "«Sean bondadosos unos con otros.» – Efesios 4:32",
+    reflection: "La comprensión fortalece la convivencia.",
+    prayer: "Ayúdame a escuchar con amor.",
+    action: "Ten un gesto amable con alguien en casa."
+  },
 
-        reflection:
-            "Dios también quiere cuidar tu corazón y tu descanso.",
+  {
+    id: "mom-family-5",
+    title: "Protección divina",
+    verse: "«El Señor cuidará tu salida y tu entrada.» – Salmo 121:8",
+    reflection: "Dios acompaña a tu familia cada día.",
+    prayer: "Protege a las personas que amo.",
+    action: "Ora por cada miembro de tu hogar."
+  },
 
-        prayer:
-            "Señor, dame serenidad y paz interior.",
+  {
+    id: "mom-family-6",
+    title: "Gratitud familiar",
+    verse: "«Den gracias en toda circunstancia.» – 1 Tesalonicenses 5:18",
+    reflection: "La gratitud transforma el ambiente del hogar.",
+    prayer: "Gracias por mi familia.",
+    action: "Escribe tres cosas que amas de tu hogar."
+  }
 
-        action:
-            "Regálate cinco minutos de silencio."
-    }
-],
-
-blessing: [
-    {
-        id: "mom-blessing-1",
-        title: "Lluvia de bendiciones",
-        verse: "El Señor te bendiga y te proteja. — Números 6:24",
-
-        reflection:
-            "Las bendiciones de Dios se manifiestan en los pequeños detalles.",
-
-        prayer:
-            "Gracias por todas las bendiciones recibidas.",
-
-        action:
-            "Anota tres bendiciones que hayas recibido hoy."
-    }
-],
-
-purpose: [
-    {
-        id: "mom-purpose-1",
-        title: "Un propósito especial",
-        verse: "Porque yo sé los planes que tengo para ustedes. — Jeremías 29:11",
-
-        reflection:
-            "Tu vida tiene un propósito valioso delante de Dios.",
-
-        prayer:
-            "Ayúdame a descubrir el propósito que tienes para mí.",
-
-        action:
-            "Escribe un sueño que quieras cumplir."
-    }
-],
-
-courage: [
-    {
-        id: "mom-courage-1",
-        title: "Valentía para avanzar",
-        verse: "Sé fuerte y valiente. — Josué 1:9",
-
-        reflection:
-            "No estás sola; Dios camina contigo.",
-
-        prayer:
-            "Dame valor para enfrentar mis desafíos.",
-
-        action:
-            "Haz hoy algo que has estado posponiendo por miedo."
-    }
 ],
 
 gratitude: [
@@ -1969,38 +1805,108 @@ gratitude: [
     }
 ],
 
-hope2: [
-    {
-        id: "mom-hope2-1",
-        title: "Siempre hay esperanza",
-        verse: "Que el Dios de la esperanza los llene de alegría. — Romanos 15:13",
-
-        reflection:
-            "Incluso en los días difíciles, la esperanza permanece.",
-
-        prayer:
-            "Llena mi corazón de esperanza y confianza.",
-
-        action:
-            "Piensa en algo bueno que esperas para el futuro."
-    }
-],
-
 protection: [
-    {
-        id: "mom-protection-1",
-        title: "Bajo su protección",
-        verse: "Él te cubrirá con sus plumas. — Salmo 91:4",
+  {
+    id: "mom-protection-1",
 
-        reflection:
-            "Dios cuida de ti y de tu familia cada día.",
+    title: "Mi refugio",
 
-        prayer:
-            "Protege mi hogar y a las personas que amo.",
+    verse: "Salmos 91:2 – Diré al Señor: Refugio mío y castillo mío; mi Dios, en quien confío.",
 
-        action:
-            "Dedica un momento para orar por tu familia."
-    }
+    reflection:
+      "Dios es un refugio seguro en medio de cualquier tormenta.",
+
+    prayer:
+      "Protégeme y cuida a mi familia.",
+
+    action:
+      "Dedica un momento a orar por las personas que amas."
+  },
+
+  {
+    id: "mom-protection-2",
+
+    title: "Guardado del mal",
+
+    verse: "Salmos 121:7 – El Señor te guardará de todo mal; él guardará tu alma.",
+
+    reflection:
+      "La protección de Dios acompaña cada paso de tu vida.",
+
+    prayer:
+      "Señor, guía mis caminos y mis decisiones.",
+
+    action:
+      "Piensa en una ocasión en la que sentiste el cuidado de Dios."
+  },
+
+  {
+    id: "mom-protection-3",
+
+    title: "No estarás sola",
+
+    verse: "Isaías 43:2 – Cuando pases por las aguas, yo estaré contigo.",
+
+    reflection:
+      "Las dificultades no desaparecen, pero Dios promete acompañarte.",
+
+    prayer:
+      "Quédate conmigo en cada prueba.",
+
+    action:
+      "Escribe un temor y entrégaselo a Dios."
+  },
+
+  {
+    id: "mom-protection-4",
+
+    title: "Sin temor",
+
+    verse: "Salmos 23:4 – Aunque ande en valle de sombra de muerte, no temeré mal alguno.",
+
+    reflection:
+      "La presencia de Dios trae paz incluso en los momentos oscuros.",
+
+    prayer:
+      "Señor, ayúdame a descansar en tu protección.",
+
+    action:
+      "Recuerda una experiencia difícil que hayas superado."
+  },
+
+  {
+    id: "mom-protection-5",
+
+    title: "Amparo y fortaleza",
+
+    verse: "Salmos 46:1 – Dios es nuestro amparo y fortaleza.",
+
+    reflection:
+      "Cuando te sientas débil, recuerda que Dios es tu fortaleza.",
+
+    prayer:
+      "Sé mi refugio en este día.",
+
+    action:
+      "Anota aquello que hoy te preocupa."
+  },
+
+  {
+    id: "mom-protection-6",
+
+    title: "Refugio seguro",
+
+    verse: "Salmos 32:7 – Tú eres mi refugio; me guardarás de la angustia.",
+
+    reflection:
+      "En Dios siempre encontrarás descanso y protección.",
+
+    prayer:
+      "Gracias por sostenerme en todo momento.",
+
+    action:
+      "Dedica cinco minutos al silencio y la oración."
+  }
 ],
 };
 /* =========================================================
