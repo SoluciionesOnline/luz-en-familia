@@ -1716,61 +1716,58 @@ function openMomLibrary(type) {
 
     const allContent = Object.values(MOM_CONTENT).flat();
 
-    if (type === "devotional") {
+   if (type === "devotional") {
 
-        const devotionals = allContent.map(item => ({
-            title: item.title,
-            reflection: item.reflection,
-            action: item.action
-        }));
+    const devotionals = allContent.map(item => ({
+        id: item.id,
+        title: item.title,
+        reflection: item.reflection,
+        action: item.action
+    }));
 
-        const content = getNextContent(
-            "devotional",
-            devotionals
-        );
+    const content = getNextContent(
+        "devotional",
+        devotionals
+    );
 
-        openMomReflection(content);
+    openMomReflection(content);
 
-        return;
-    }
-
+    return;
+}
     if (type === "verse") {
 
-        const verses = allContent.map(item => ({
-            title: item.title,
-            verse: item.verse
-        }));
+    const verses = allContent.map(item => ({
+        id: item.id,
+        title: item.title,
+        verse: item.verse
+    }));
 
-        const content = getNextContent(
-            "verse",
-            verses
-        );
+    const content = getNextContent(
+        "verse",
+        verses
+    );
 
-        openMomVerse(content);
+    openMomVerse(content);
 
-        return;
-    }
-
+    return;
+}
     if (type === "prayer") {
 
-        const prayers = allContent.map(item => ({
-            title: item.title,
-            prayer: item.prayer
-        }));
+    const prayers = allContent.map(item => ({
+        id: item.id,
+        title: item.title,
+        prayer: item.prayer
+    }));
 
-        const content = getNextContent(
-            "prayer",
-            prayers
-        );
+    const content = getNextContent(
+        "prayer",
+        prayers
+    );
 
-        openMomPrayer(content);
+    openMomPrayer(content);
 
-        return;
-    }
-
+    return;
 }
-
-    markContentSeen(content.id);
 
     openModal(`
       <span class="card-kicker">
@@ -1801,40 +1798,23 @@ function openMomLibrary(type) {
   }
 
   if (type === "prayer") {
-    const all = Object.values(MOM_CONTENT).flat();
 
-    const content = chooseLeastSeen(
-      all,
-      Math.floor(Math.random() * 30)
+    const prayers = allContent.map(item => ({
+        id: item.id,
+        title: item.title,
+        prayer: item.prayer
+    }));
+
+    const content = getNextContent(
+        "prayer",
+        prayers
     );
 
-    if (!content) return;
-
-    openModal(`
-      <div style="text-align:center;">
-        <div style="font-size:48px;margin-bottom:12px;">
-          🙏
-        </div>
-
-        <span class="card-kicker">
-          MOMENTO DE ORACIÓN
-        </span>
-
-        <h2>${content.title}</h2>
-
-        <div class="reflection-verse">
-          ${content.prayer}
-        </div>
-
-        <p style="color:var(--text-soft);">
-          Quédate unos instantes en silencio antes de continuar.
-        </p>
-      </div>
-    `);
+    openMomPrayer(content);
 
     return;
-  }
-
+}`
+   
   if (type === "favorites") {
     renderFavoritesModal();
   }
