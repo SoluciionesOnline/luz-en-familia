@@ -187,18 +187,92 @@ const WEEKLY_MISSIONS = [
 
 const MOM_CONTENT = {
   peace: [
+
     {
-      id: "mom-peace-1",
-      title: "Un momento para descansar",
-      verse: "«La paz les dejo; mi paz les doy.» — Juan 14:27",
-      reflection:
-        "No todo tiene que resolverse hoy. Hay momentos en los que el corazón necesita dejar de correr y recordar que puede descansar en Dios.",
-      prayer:
-        "Señor, aquieta mis pensamientos y ayúdame a recibir tu paz en medio de todo lo que hoy ocupa mi corazón.",
-      action:
-        "Regálate dos minutos de silencio. Respira despacio y entrega a Dios aquello que no puedes controlar."
-    }
-  ],
+        
+    id: "peace-1",
+
+    title: "La paz de Dios",
+
+    verse: "Filipenses 4:7 – La paz de Dios, que sobrepasa todo entendimiento, guardará vuestros corazones",
+
+    reflection: "La paz de Dios no depende de las circunstancias. Incluso en los días difíciles, Él puede traer calma a tu corazón.",
+
+    prayer: "Señor, llena mi corazón de tu paz y ayúdame a descansar en ti.",
+
+    action: "Dedica cinco minutos a respirar profundamente y entregar tus preocupaciones a Dios."
+},
+    {
+    id: "peace-2",
+
+    title: "Mi paz os doy",
+
+    verse: "Juan 14:27 – La paz os dejo, mi paz os doy; no se turbe vuestro corazón",
+
+    reflection: "Jesús promete una paz diferente a la del mundo, una paz que permanece incluso en medio de la tormenta.",
+
+    prayer: "Padre, ayúdame a recordar que estás conmigo en cada situación.",
+
+    action: "Escribe tres cosas por las que puedes dar gracias hoy."
+},
+
+    {
+    id: "peace-3",
+
+    title: "Descansa en Dios",
+
+    verse: "Mateo 11:28 – Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar",
+
+    reflection: "No tienes que cargar solo con todas tus preocupaciones. Dios quiere darte descanso.",
+
+    prayer: "Señor, hoy deposito mis cargas en tus manos.",
+
+    action: "Haz una pausa de cinco minutos y guarda silencio."
+},
+
+    {
+    id: "peace-4",
+
+    title: "Confía en el Señor",
+
+    verse: "Salmos 46:10 – Estad quietos y conoced que yo soy Dios",
+
+    reflection: "A veces, la mejor respuesta es detenerse y recordar quién tiene el control.",
+
+    prayer: "Dios, enséñame a confiar en ti incluso cuando no entiendo lo que sucede.",
+
+    action: "Piensa en una preocupación y entrégasela a Dios."
+},
+
+    {
+    id: "peace-5",
+
+    title: "Paz perfecta",
+
+    verse: "Isaías 26:3 – Tú guardarás en completa paz a aquel cuyo pensamiento en ti persevera",
+
+    reflection: "Cuando diriges tus pensamientos hacia Dios, encuentras estabilidad y serenidad.",
+
+    prayer: "Señor, ayúdame a mantener mi mente enfocada en ti.",
+
+    action: "Anota una promesa de Dios que quieras recordar hoy."
+},
+
+    {
+    id: "peace-6",
+
+    title: "Dormir confiado",
+
+    verse: "Salmos 4:8 – En paz me acostaré y asimismo dormiré",
+
+    reflection: "Dios cuida de ti incluso mientras descansas.",
+
+    prayer: "Padre, gracias porque velas por mí día y noche.",
+
+    action: "Antes de dormir, agradece tres bendiciones del día."
+}
+
+],
 
   worried: [
     {
@@ -211,7 +285,77 @@ const MOM_CONTENT = {
         "Dios mío, tú conoces lo que me preocupa. Dame sabiduría para hacer lo que me corresponde y confianza para entregarte lo demás.",
       action:
         "Escribe una preocupación. Debajo, separa lo que puedes hacer hoy de aquello que necesitas entregar."
-    }
+    },
+
+{
+    id: "mom-worry-2",
+
+    title: "Dios tiene el control",
+
+    verse: "Mateo 6:34 – No os afanéis por el mañana, porque el día de mañana traerá su propio afán.",
+
+    reflection: "No necesitas resolver todo hoy. Dios te dará fuerzas para cada día.",
+
+    prayer: "Señor, ayúdame a confiar en ti y a vivir un día a la vez.",
+
+    action: "Anota una preocupación y déjala en manos de Dios."
+},
+
+{
+    id: "mom-worry-3",
+
+    title: "Entrega tus cargas",
+
+    verse: "Salmos 55:22 – Echa sobre el Señor tu carga, y él te sustentará.",
+
+    reflection: "Dios no quiere que cargues solo con tus problemas.",
+
+    prayer: "Padre, hoy entrego mis preocupaciones a tus manos.",
+
+    action: "Haz una lista de las cosas que no puedes controlar."
+},
+
+{
+    id: "mom-worry-4",
+
+    title: "No temas",
+
+    verse: "Isaías 41:10 – No temas, porque yo estoy contigo.",
+
+    reflection: "Aunque el camino parezca difícil, Dios camina contigo.",
+
+    prayer: "Señor, dame paz y fortaleza en medio de mis miedos.",
+
+    action: "Recuerda tres momentos en los que Dios te ayudó."
+},
+
+{
+    id: "mom-worry-5",
+
+    title: "Dios cuida de ti",
+
+    verse: "1 Pedro 5:7 – Echando toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.",
+
+    reflection: "Tus preocupaciones son importantes para Dios.",
+
+    prayer: "Padre, gracias porque cuidas de mí cada día.",
+
+    action: "Respira profundamente durante un minuto y ora."
+},
+
+{
+    id: "mom-worry-6",
+
+    title: "Espera en el Señor",
+
+    verse: "Salmos 27:14 – Espera en el Señor; esfuérzate y aliéntese tu corazón.",
+
+    reflection: "La espera puede ser difícil, pero Dios sigue obrando.",
+
+    prayer: "Señor, dame paciencia para esperar tu tiempo perfecto.",
+
+    action: "Escribe una bendición que hayas recibido recientemente."
+}
   ],
 
   tired: [
@@ -225,7 +369,77 @@ const MOM_CONTENT = {
         "Jesús, hoy vengo cansada. Renueva mis fuerzas y enséñame a descansar sin sentir que debo hacerlo todo.",
       action:
         "Elige hoy una cosa que puedas simplificar, posponer o pedir que alguien te ayude a realizar."
-    }
+    },
+
+{
+    id: "mom-tired-2",
+
+    title: "Renueva mis fuerzas",
+
+    verse: "Isaías 40:31 – Los que esperan en el Señor renovarán sus fuerzas.",
+
+    reflection: "Aunque hoy te sientas agotada, Dios puede darte nuevas fuerzas para continuar.",
+
+    prayer: "Señor, renueva mi corazón y mis fuerzas para afrontar este día.",
+
+    action: "Descansa diez minutos y agradece por algo bueno que te haya ocurrido."
+},
+
+{
+    id: "mom-tired-3",
+
+    title: "Descanso para el alma",
+
+    verse: "Mateo 11:28 – Venid a mí todos los que estáis cansados y cargados.",
+
+    reflection: "Dios conoce tu cansancio y quiere darte descanso verdadero.",
+
+    prayer: "Padre, ayúdame a descansar en tu presencia.",
+
+    action: "Apaga el teléfono durante cinco minutos y respira profundamente."
+},
+
+{
+    id: "mom-tired-4",
+
+    title: "Dios te sostiene",
+
+    verse: "Isaías 41:13 – Yo soy el Señor tu Dios que te sostiene de tu mano.",
+
+    reflection: "No tienes que hacerlo todo sola; Dios camina contigo.",
+
+    prayer: "Señor, sostén mi vida cuando mis fuerzas no sean suficientes.",
+
+    action: "Pide ayuda en una tarea que te esté agotando."
+},
+
+{
+    id: "mom-tired-5",
+
+    title: "Nueva fortaleza",
+
+    verse: "Salmos 46:1 – Dios es nuestro amparo y fortaleza.",
+
+    reflection: "En medio del cansancio, Dios sigue siendo tu refugio.",
+
+    prayer: "Padre, dame fuerzas para terminar este día con esperanza.",
+
+    action: "Haz una pausa y bebe un vaso de agua lentamente."
+},
+
+{
+    id: "mom-tired-6",
+
+    title: "Descansa en paz",
+
+    verse: "Salmos 4:8 – En paz me acostaré y asimismo dormiré.",
+
+    reflection: "Dios cuida de ti incluso mientras descansas.",
+
+    prayer: "Gracias, Señor, porque puedo descansar en tus manos.",
+
+    action: "Antes de dormir, recuerda tres bendiciones del día."
+}
   ],
 
   fear: [
@@ -239,7 +453,77 @@ const MOM_CONTENT = {
         "Señor, acompáñame en aquello que hoy me da miedo. Dame claridad para avanzar paso a paso.",
       action:
         "Nombra aquello que te da miedo y piensa solamente en el siguiente paso, no en todo el camino."
-    }
+    },
+
+{
+    id: "mom-fear-2",
+
+    title: "Dios está contigo",
+
+    verse: "Isaías 41:10 – No temas, porque yo estoy contigo; no desmayes, yo soy tu Dios.",
+
+    reflection: "Aunque no sepas qué ocurrirá mañana, Dios ya está allí esperándote.",
+
+    prayer: "Señor, ayúdame a recordar que nunca camino solo.",
+
+    action: "Escribe el miedo que más te preocupa y ora por él."
+},
+
+{
+    id: "mom-fear-3",
+
+    title: "Fortaleza en la tormenta",
+
+    verse: "Salmos 27:1 – El Señor es mi luz y mi salvación; ¿a quién temeré?",
+
+    reflection: "Cuando Dios ilumina tu camino, el miedo pierde fuerza.",
+
+    prayer: "Padre, llena mi corazón de valor y confianza.",
+
+    action: "Recuerda tres momentos en los que Dios te protegió."
+},
+
+{
+    id: "mom-fear-4",
+
+    title: "No tengas miedo",
+
+    verse: "Deuteronomio 31:8 – El Señor irá delante de ti; no te dejará ni te desamparará.",
+
+    reflection: "Dios nunca abandona a quienes confían en Él.",
+
+    prayer: "Señor, ayúdame a avanzar aun cuando tenga dudas.",
+
+    action: "Da hoy un pequeño paso hacia algo que te dé miedo."
+},
+
+{
+    id: "mom-fear-5",
+
+    title: "Confianza plena",
+
+    verse: "Salmos 56:3 – En el día que temo, yo en ti confío.",
+
+    reflection: "La confianza en Dios no elimina el miedo, pero te da fuerzas para enfrentarlo.",
+
+    prayer: "Padre, aumenta mi fe cuando aparezcan los temores.",
+
+    action: "Respira profundamente durante un minuto y repite: 'Dios está conmigo'."
+},
+
+{
+    id: "mom-fear-6",
+
+    title: "Espíritu de poder",
+
+    verse: "2 Timoteo 1:7 – Dios no nos ha dado espíritu de cobardía, sino de poder, amor y dominio propio.",
+
+    reflection: "Dios te ha dado fortaleza para superar cualquier obstáculo.",
+
+    prayer: "Señor, llena mi vida de valentía y esperanza.",
+
+    action: "Anota una fortaleza personal que Dios te haya dado."
+}
   ],
 
   hope: [
@@ -253,7 +537,77 @@ const MOM_CONTENT = {
         "Dios de esperanza, ayúdame a mirar este día con nuevos ojos y a reconocer las pequeñas luces que todavía están presentes.",
       action:
         "Escribe una cosa buena que todavía esperas y una pequeña señal de esperanza que ya puedas reconocer hoy."
-    }
+    },
+
+{
+    id: "mom-hope-2",
+
+    title: "Un nuevo comienzo",
+
+    verse: "Lamentaciones 3:22-23 – Nuevas son cada mañana sus misericordias.",
+
+    reflection: "Cada día trae una nueva oportunidad para volver a empezar con la ayuda de Dios.",
+
+    prayer: "Señor, gracias por darme una nueva oportunidad hoy.",
+
+    action: "Escribe algo bueno que esperas para esta semana."
+},
+
+{
+    id: "mom-hope-3",
+
+    title: "Dios tiene planes",
+
+    verse: "Jeremías 29:11 – Porque yo sé los planes que tengo para vosotros.",
+
+    reflection: "Aunque no entiendas el camino, Dios sigue guiando tu historia.",
+
+    prayer: "Padre, ayúdame a confiar en tus planes.",
+
+    action: "Anota tres sueños que pongas en manos de Dios."
+},
+
+{
+    id: "mom-hope-4",
+
+    title: "Espera con paciencia",
+
+    verse: "Salmos 27:14 – Espera en el Señor; esfuérzate y aliéntese tu corazón.",
+
+    reflection: "La espera no significa que Dios se haya olvidado de ti.",
+
+    prayer: "Señor, dame paciencia para esperar tu tiempo perfecto.",
+
+    action: "Recuerda una bendición que llegó en el momento indicado."
+},
+
+{
+    id: "mom-hope-5",
+
+    title: "Gozo y paz",
+
+    verse: "Romanos 15:13 – El Dios de esperanza os llene de todo gozo y paz.",
+
+    reflection: "La esperanza trae paz incluso en los momentos difíciles.",
+
+    prayer: "Padre, llena mi corazón de alegría y esperanza.",
+
+    action: "Comparte una palabra de ánimo con alguien."
+},
+
+{
+    id: "mom-hope-6",
+
+    title: "Confía en el mañana",
+
+    verse: "Salmos 31:24 – Esforzaos todos los que esperáis en el Señor.",
+
+    reflection: "Dios fortalece a quienes esperan en Él.",
+
+    prayer: "Señor, renueva mi esperanza cada día.",
+
+    action: "Escribe tres motivos para seguir adelante."
+}
   ],
 
   trust: [
@@ -267,7 +621,76 @@ const MOM_CONTENT = {
         "Señor, ayúdame a confiar incluso cuando no entiendo todo el camino.",
       action:
         "Piensa en una decisión o situación que estés intentando controlar completamente y entrégala en oración."
-    }
+    },
+{
+  id: "mom-trust-2",
+
+  title: "Dios dirige tu camino",
+
+  verse: "«Reconócelo en todos tus caminos, y él enderezará tus veredas.» — Proverbios 3:6",
+
+  reflection: "Aunque hoy no veas todas las respuestas, Dios sigue guiando tus pasos.",
+
+  prayer: "Padre, ayúdame a confiar en tu dirección.",
+
+  action: "Entrega a Dios una decisión importante."
+},
+
+{
+  id: "mom-trust-3",
+
+  title: "Esperar con calma",
+
+  verse: "«Espera en el Señor; esfuérzate.» — Salmos 27:14",
+
+  reflection: "La confianza también significa aprender a esperar el momento correcto.",
+
+  prayer: "Señor, dame paciencia para confiar en tus tiempos.",
+
+  action: "Escribe algo que hoy necesitas entregar a Dios."
+},
+
+{
+  id: "mom-trust-4",
+
+  title: "Un refugio seguro",
+
+  verse: "«Dios es nuestro amparo y fortaleza.» — Salmos 46:1",
+
+  reflection: "Cuando todo parece incierto, Dios sigue siendo un refugio seguro.",
+
+  prayer: "Padre, gracias porque puedo descansar en ti.",
+
+  action: "Recuerda una ocasión en la que Dios te ayudó."
+},
+
+{
+  id: "mom-trust-5",
+
+  title: "No estás solo",
+
+  verse: "«No te dejaré ni te desampararé.» — Hebreos 13:5",
+
+  reflection: "Dios permanece contigo incluso en los momentos difíciles.",
+
+  prayer: "Señor, ayúdame a recordar que nunca camino solo.",
+
+  action: "Anota tres bendiciones de este día."
+},
+
+{
+  id: "mom-trust-6",
+
+  title: "Confianza renovada",
+
+  verse: "«El Señor es mi fortaleza y mi escudo.» — Salmos 28:7",
+
+  reflection: "La confianza crece cuando recuerdas todo lo que Dios ya ha hecho.",
+
+  prayer: "Gracias, Señor, porque puedo confiar en ti.",
+
+  action: "Escribe una razón por la que confías en Dios."
+}
   ],
 
   sad: [
@@ -281,7 +704,91 @@ const MOM_CONTENT = {
         "Señor, hoy mi corazón pesa. Quédate cerca de mí y ayúdame a atravesar este momento con esperanza.",
       action:
         "No intentes solucionar inmediatamente lo que sientes. Date unos minutos para reconocerlo y hablarlo con Dios."
-    }
+    },
+{
+  id: "mom-sad-2",
+
+  title: "No estás solo",
+
+  verse: "«Dios es nuestro amparo y fortaleza.» — Salmos 46:1",
+
+  reflection:
+    "Aunque hoy te sientas solo, Dios permanece a tu lado y sostiene tu corazón.",
+
+  prayer:
+    "Padre, acompáñame en este momento y ayúdame a sentir tu presencia.",
+
+  action:
+    "Llama o escribe a alguien de confianza."
+},
+
+{
+  id: "mom-sad-3",
+
+  title: "Hay esperanza",
+
+  verse: "«El llanto puede durar una noche, pero la alegría llega en la mañana.» — Salmos 30:5",
+
+  reflection:
+    "La tristeza no durará para siempre. Dios sigue obrando incluso cuando no lo ves.",
+
+  prayer:
+    "Señor, dame esperanza para seguir adelante.",
+
+  action:
+    "Escribe tres cosas buenas que todavía permanecen en tu vida."
+},
+
+{
+  id: "mom-sad-4",
+
+  title: "Dios restaura",
+
+  verse: "«Él sana a los quebrantados de corazón.» — Salmos 147:3",
+
+  reflection:
+    "Dios puede restaurar poco a poco aquello que hoy te duele.",
+
+  prayer:
+    "Padre, sana mi corazón y lléname de paz.",
+
+  action:
+    "Dedica cinco minutos para orar en silencio."
+},
+
+{
+  id: "mom-sad-5",
+
+  title: "Tus lágrimas importan",
+
+  verse: "«Bienaventurados los que lloran, porque ellos serán consolados.» — Mateo 5:4",
+
+  reflection:
+    "Dios conoce cada una de tus lágrimas y promete consuelo.",
+
+  prayer:
+    "Señor, gracias porque escuchas mi dolor.",
+
+  action:
+    "Escribe lo que sientes en este momento."
+},
+
+{
+  id: "mom-sad-6",
+
+  title: "Un nuevo amanecer",
+
+  verse: "«Las misericordias del Señor son nuevas cada mañana.» — Lamentaciones 3:22-23",
+
+  reflection:
+    "Cada día es una nueva oportunidad para recibir la gracia de Dios.",
+
+  prayer:
+    "Gracias, Padre, por renovar mis fuerzas.",
+
+  action:
+    "Piensa en algo que te gustaría hacer mañana."
+}
   ],
 
   grateful: [
@@ -295,7 +802,91 @@ const MOM_CONTENT = {
         "Gracias, Señor, por las personas, oportunidades y pequeños regalos que has puesto hoy en mi camino.",
       action:
         "Anota tres cosas concretas por las que hoy quieras dar gracias."
-    }
+    },
+{
+  id: "mom-grateful-2",
+
+  title: "Las pequeñas bendiciones",
+
+  verse: "«Toda buena dádiva y todo don perfecto descienden de lo alto.» — Santiago 1:17",
+
+  reflection:
+    "A veces los regalos más grandes de Dios están en los detalles cotidianos.",
+
+  prayer:
+    "Padre, abre mis ojos para reconocer tus bendiciones.",
+
+  action:
+    "Escribe tres cosas sencillas por las que estás agradecido."
+},
+
+{
+  id: "mom-grateful-3",
+
+  title: "Un corazón agradecido",
+
+  verse: "«Dad gracias en todo.» — 1 Tesalonicenses 5:18",
+
+  reflection:
+    "La gratitud transforma nuestra manera de ver las circunstancias.",
+
+  prayer:
+    "Gracias, Señor, por acompañarme en cada momento.",
+
+  action:
+    "Agradece hoy a una persona importante para ti."
+},
+
+{
+  id: "mom-grateful-4",
+
+  title: "Recordar el bien",
+
+  verse: "«Bendice, alma mía, al Señor, y no olvides ninguno de sus beneficios.» — Salmos 103:2",
+
+  reflection:
+    "Recordar lo que Dios ha hecho fortalece nuestra fe.",
+
+  prayer:
+    "Padre, ayúdame a recordar tus bondades.",
+
+  action:
+    "Anota una bendición que hayas recibido este mes."
+},
+
+{
+  id: "mom-grateful-5",
+
+  title: "Cada día es un regalo",
+
+  verse: "«Este es el día que hizo el Señor.» — Salmos 118:24",
+
+  reflection:
+    "Cada nuevo día trae oportunidades para agradecer.",
+
+  prayer:
+    "Gracias, Señor, por el regalo de este día.",
+
+  action:
+    "Sonríe y comparte una palabra amable con alguien."
+},
+
+{
+  id: "mom-grateful-6",
+
+  title: "Dios provee",
+
+  verse: "«Mi Dios suplirá todo lo que os falta.» — Filipenses 4:19",
+
+  reflection:
+    "Incluso en medio de las dificultades, Dios continúa proveyendo.",
+
+  prayer:
+    "Gracias, Padre, porque nunca me abandonas.",
+
+  action:
+    "Escribe algo que Dios haya provisto en tu vida."
+}
   ],
 joy: [
     {
@@ -312,21 +903,90 @@ joy: [
         action:
             "Escribe tres cosas que te hicieron sonreír hoy."
     },
+{
+  id: "mom-joy-2",
 
-    {
-        id: "mom-joy-2",
-        title: "Una sonrisa nueva",
-        verse: "Este es el día que hizo el Señor.",
+  title: "Una sonrisa nueva",
 
-        reflection:
-            "Cada día es una oportunidad para comenzar nuevamente.",
+  verse: "«Este es el día que hizo el Señor.» — Salmos 118:24",
 
-        prayer:
-            "Gracias por este nuevo día.",
+  reflection:
+    "Cada día es una oportunidad para comenzar nuevamente con alegría.",
 
-        action:
-            "Sonríe y comparte una palabra amable."
-    }
+  prayer:
+    "Gracias, Señor, por este nuevo día.",
+
+  action:
+    "Sonríe y comparte una palabra amable."
+},
+
+{
+  id: "mom-joy-3",
+
+  title: "Alegría en la esperanza",
+
+  verse: "«Gozaos en la esperanza.» — Romanos 12:12",
+
+  reflection:
+    "La alegría no depende de que todo salga bien, sino de confiar en Dios.",
+
+  prayer:
+    "Padre, llena mi corazón de esperanza.",
+
+  action:
+    "Escribe tres cosas que te hagan sonreír."
+},
+
+{
+  id: "mom-joy-4",
+
+  title: "Un corazón agradecido",
+
+  verse: "«Servid al Señor con alegría.» — Salmos 100:2",
+
+  reflection:
+    "La alegría crece cuando reconocemos las bendiciones de cada día.",
+
+  prayer:
+    "Señor, ayúdame a disfrutar las pequeñas cosas.",
+
+  action:
+    "Da gracias por algo que hayas vivido hoy."
+},
+
+{
+  id: "mom-joy-5",
+
+  title: "La alegría permanece",
+
+  verse: "«El llanto puede durar una noche, pero la alegría llega en la mañana.» — Salmos 30:5",
+
+  reflection:
+    "Aunque existan dificultades, Dios siempre trae nuevos motivos para sonreír.",
+
+  prayer:
+    "Gracias, Padre, porque renuevas mi alegría.",
+
+  action:
+    "Recuerda un momento feliz de tu vida."
+},
+
+{
+  id: "mom-joy-6",
+
+  title: "Celebra la vida",
+
+  verse: "«Regocijaos siempre en el Señor.» — Filipenses 4:4",
+
+  reflection:
+    "La alegría es un regalo que Dios pone en el corazón.",
+
+  prayer:
+    "Señor, enséñame a vivir con alegría.",
+
+  action:
+    "Haz hoy algo que disfrutes mucho."
+}
 ],
 
 faith: [
