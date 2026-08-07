@@ -3338,7 +3338,17 @@ function openMomLibrary(type) {
         devotionals
     );
 
-    openMomReflection(content);
+    openModal(`
+  <span class="card-kicker">
+    UN MOMENTO PARA TI
+  </span>
+
+  <h2>${content.title}</h2>
+
+  <p>${content.reflection}</p>
+
+  <p><strong>Acción:</strong> ${content.action}</p>
+`);
 
     return;
 }
@@ -6797,3 +6807,4 @@ document.addEventListener("click", function (event) {
     });
 
 });
+console.log("APP CARGADA");
